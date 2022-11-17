@@ -7,3 +7,8 @@ Matias Alemany: Tengo 24 años, trabajo en la parte de sistemas de una fabrica. 
 Sitios de referencia:
  Me parecio bien la dinamica para manejarse dentro de la pagina y simplemente me gusto: https://complot.com.ar/.
  Me parece que tiene una buena idea de Home: https://www.enlighted.com.ar/.
+https://www.platoniaclothes.com.ar/
+https://www.bandobasicos.com.ar/
+https://www.montagne.com.ar/
+https://www.isostasia.com.ar/
+https://bellkys.com.ar/
