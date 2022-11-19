@@ -12,7 +12,7 @@ Ricardo García: Tengo 56 años, soy ingeniero en electrónica, trabajo desde ha
     Me resultan prácticos, sencillos y con buena dinámica los siguientes: https://hellsbellsclothing.com.ar/ , https://www.platoniaclothes.com.ar/  , https://www.montagne.com.ar/  , https://www.isostasia.com.ar/ , https://bellkys.com.ar/.
 
     
-
+Leonardo
 
 
 
