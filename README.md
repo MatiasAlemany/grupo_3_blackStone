@@ -12,7 +12,20 @@ Ricardo García: Tengo 56 años, soy ingeniero en electrónica, trabajo desde ha
     Me resultan prácticos, sencillos y con buena dinámica los siguientes: https://hellsbellsclothing.com.ar/ , https://www.platoniaclothes.com.ar/  , https://www.montagne.com.ar/  , https://www.isostasia.com.ar/ , https://bellkys.com.ar/.
 
     
-Leonardo
+Leonardo Acquaotta: Tengo 42 años, soy Licenciado en Nutrición y trabajo de mi profesión. Me atrae la tecnología desde siempre. Viendo como un programador desarrollaba una página web desde el backend y frontend me interesó la programación, el mundo que la rodea, la dinámica, creatividad, etc. Me recomendó Digital House, me anoté en el curso para aprender programación web y luego de haber terminado el curso seguir aprendiendo y perfeccionándome. Me gustaría trabajar e incursionar en este mundo.
+
+Sitios de referencia:
+
+https://www.adidas.com.ar/ropa-unisex
+https://www.viena.com.ar
+https://lanansashop.com/  me gustó el home y la dinámica, no así los colores utilizados
+https://www.calvinklein.ar/
+https://www.benka.com.ar/
+https://www.dafiti.com.ar/
+
+
+
+
 
 
 
