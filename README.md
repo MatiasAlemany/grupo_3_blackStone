@@ -23,6 +23,11 @@ https://www.calvinklein.ar/
 https://www.benka.com.ar/
 https://www.dafiti.com.ar/
 
+Iván  Reyes:Tengo 23 años,actualmente trabajo como operario en una fabrica de rubro alimenticio,comencé este curso por curiosidad a la programación ya que siempre me interesó como se desarrollaban muchas de las aplicaciones que uso cotidianamente,espero poder terminar el curso y seguir perfeccionandome para entrar al mundo de la programación.
+Sitios de referencia: Utilize estos dos sitios de referencia para crear la página de carrito de compras porque me parecieron muy simples e intuitivos de usar.
+https://www.midway.com.ar/
+https://www.seaquestshop.com.ar/
+
 
 Tipografía: 
 
