@@ -1,0 +1,22 @@
+{
+  "name": "grupo_3_blackstone",
+  "version": "1.0.0",
+  "description": "TEMATICA: Venta de ropa unisex para todas las temporadas del año. Para el rango de edades de 16 años en adelante. Publicidad a travéz de redes sociales.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiasAlemany/grupo_3_blackStone.git"
+  },
+  "author": "grupo3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatiasAlemany/grupo_3_blackStone/issues"
+  },
+  "homepage": "https://github.com/MatiasAlemany/grupo_3_blackStone#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
