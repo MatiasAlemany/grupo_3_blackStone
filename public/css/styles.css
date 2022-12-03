@@ -39,6 +39,9 @@ body {
   width: 100px;
   height: 30px;
 }
+.logo:hover {
+  -webkit-transform: scale(1.5);
+}
 .lupa {
   color:black;
   font-size: 20px;
@@ -99,8 +102,9 @@ main {
   text-align: center;
   align-items: center;
   font-size: 14px;
-  padding-top: 38px;
+  padding-top: 0;
   width: 100%;
+ 
 }
 
 
@@ -118,6 +122,7 @@ main {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  padding-top: 45px;
   
 }
 .seccion2 {
@@ -153,6 +158,33 @@ main {
   width: 100%;
 }
 
+.comprar{
+  color:green; 
+  margin-top: 8px;
+}
+.circulo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 1px green;
+  text-align: center;
+  margin: auto;
+  font-size: 24px;
+}
+.circulo:hover {
+  color:blue;
+  -webkit-transform: scale(1.5);
+  
+}
+
+
+.mostrar-mas {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-top: 25px;
+  color: var(--black-coral);
+}
 
 
 .precio{
@@ -218,6 +250,10 @@ color: var(--celeste);
 /*  tablets    */
 @media (min-width:361px){
   .container1{box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  }
+  .cabecera {
+    padding-left: 60px;
+    padding-right: 60px;
   }
   .logo {
     width: 120px;

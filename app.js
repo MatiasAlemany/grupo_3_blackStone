@@ -15,11 +15,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/index.html'));
 });
 
-app.get('/pro', (req, res) => {
+app.get('/product-cart', (req, res) => {
     res.sendFile(path.join(__dirname,'/views/pro.html'));
 });
 
-app.get('/hatori-sushi', (req, res) => {
+app.get('/hatori-sushi., (req, res) => {
     res.sendFile(path.join(__dirname,'/views/hatori-sushi.html'));
 });
 /*
