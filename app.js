@@ -16,10 +16,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/product-cart', (req, res) => {
-    res.sendFile(path.join(__dirname,'/views/pro.html'));
+    res.sendFile(path.join(__dirname,'/views/product-cart.html'));
 });
 
-app.get('/hatori-sushi., (req, res) => {
+app.get('/hatori-sushi', (req, res) => {
     res.sendFile(path.join(__dirname,'/views/hatori-sushi.html'));
 });
 /*
