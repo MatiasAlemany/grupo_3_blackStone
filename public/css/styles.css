@@ -176,16 +176,18 @@ main {
   -webkit-transform: scale(1.5);
   
 }
-
-
 .mostrar-mas {
   width: 100%;
   margin: auto;
   text-align: center;
   padding-top: 25px;
   color: var(--black-coral);
+  font-size: 24px;
 }
-
+.mostrar-mas:hover {
+  color:green;
+  font-weight: bold;
+}
 
 .precio{
   
