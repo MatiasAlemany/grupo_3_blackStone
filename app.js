@@ -23,12 +23,12 @@ app.get('/productDetail', (req, res) => {
     res.sendFile(path.join(__dirname,'/views/productDetail.html'));
 });
 
-/*
-app.get('/clarke', (req, res) => {
-    res.sendFile(path.join(__dirname,'/views/clarke.html'));
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname,'/views/login.html'));
 });
 
-app.get('/hamilton', (req, res) => {
+/*app.get('/hamilton', (req, res) => {
     res.sendFile(path.join(__dirname,'/views/hamilton.html'));
  });
 
