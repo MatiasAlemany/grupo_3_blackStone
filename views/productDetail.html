@@ -47,22 +47,109 @@
 
     <!-- MAIN -->
     <main>
-                      <!-- IMAGEN ARTICULO A DETALLAR: EN UN FUTURO VA A SER UN CARRUSEL -->
+        <!-- IMAGEN ARTICULO A DETALLAR: EN UN FUTURO VA A SER UN CARRUSEL -->
         <div class="imagen-articulo">
             <img src="/images/ac_dc.jpg" alt="FOTO DE PRUEBA">
         </div>
-        
+
         <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
         <div class="caja-detalles">
-        <div class="titulo-articulo">
-            <h2>Titulo articulo</h2>
+            <div class="titulo-articulo">
+                <h2>Titulo articulo</h2>
+            </div>
+            <div class="precio-articulo">
+                <h3>$45.000</h3>
+            </div>
         </div>
-        <div class="precio-articulo">
-            <h3>$45.000</h3>
+
+        <!-- TALLES -->
+        <div class="talle">
+            <h4>Talle:</h4>
+            <label><input type="checkbox" id="cbox1" value="first_checkbox">S</label>
+            <label><input type="checkbox" id="cbox2" value="second_checkbox">M</label>
+            <label for="cbox3"><input type="checkbox" id="cbox3" value="third_checkbox">L</label>
+            <label for="cbox4"><input type="checkbox" id="cbox4" value="four_checkbox">XL</label>
         </div>
+
+        <!-- DESCRIPCION DEL PRODUCTO -->
+        <div class="descripcion-articulo">
+            <h4>DESCRIPCION DEL PRODUCTO:</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum dolorum adipisci sed qui minus
+                molestiae similique voluptatum!</p>
+            <ul>
+                <li class="primer-descripcion">Descripcion 1</li>
+                <li>Descripcion 2</li>
+                <li>Descripcion 3</li>
+                <li>Descripcion 4</li>
+            </ul>
         </div>
-        
+
+        <!-- BOTON AGREGAR A CARRITO -->
+        <div>
+            <a href="/product-cart">
+                <input type="submit" class="boton-comprar" value="Agregar al carrito">
+            </a>
+        </div>
+
+        <!-- PRODUCTOS RELACIONADOS: FUTURO CARRUSEL -->
+        <div>
+            <h5>PRODUCTOS RELACIONADOS:</h5>
+            <div class="productos-relacionados">
+                <article>
+                    <img src="/images/acdc_roja.jpg" alt="">
+                </article>
+                <article>
+                    <img src="/images/baller.jpg" alt="">
+                </article>
+                <article>
+                    <img src="/images/bowie.jpg" alt="">
+                </article>
+            </div>
+        </div>
+
     </main>
+
+
+    <!-- FOOTER -->
+    <footer class="pie-pagina">
+        <section class="footer">
+            <section class="sector-footer">
+                <i class="fa-regular fa-credit-card icono-footer"></i>
+                <h2 class="titulo-footer">Pagá con las tarjetas</h2>
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/american-express.png"></i>
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/visa.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/mastercard.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/cabal.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/diners-club.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/naranja.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/maestro.png">
+            </section>
+            <section class="sector-footer">
+
+                <h2 class="titulo-footer">Seguridad, de principio a fin pagando con: </h2>
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/pagofacil.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/mercadopago.png">
+                <img src="https://dk0k1i3js6c49.cloudfront.net/iconos-pago/rapipago.png">
+            </section>
+            <section class="sector-footer">
+                <i class="fa-solid fa-truck-arrow-right icono-footer"></i>
+                <h2 class="titulo-footer">Envío gratis desde $ 12.500</h2>
+            </section>
+            <section class="sector-footer">
+                <p class="texto-footer">
+                    Si estas registrad@, pulsá la opción devolver, en el menú superior, ante cualquier
+                    detalle de la prenda.
+                </p>
+            </section>
+        </section>
+
+
+
+        <div>
+            <h6>Powered by: DH_grupo3</h6>
+        </div>
+
+    </footer>
 </body>
 
 </html>
