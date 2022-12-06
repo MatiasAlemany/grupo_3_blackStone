@@ -40,6 +40,28 @@ body {
     width: 100%;
     padding: 10px 10px ;
     text-decoration: none;
+    max-width: 94%;
+    margin: auto;
+  }
+
+  .cabecera a img {
+    width: 105%;
+  }
+
+  .barra-menu {
+    display: none;
+    margin-left: 15%;
+  }
+
+  .menu-inicioSesion {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+  }
+
+  .menu-item a {
+    margin-left: 5px;
+    color: black;
   }
 
   .logo {
@@ -106,6 +128,10 @@ body {
     padding: 5px;
     display: flex;
     flex-direction: column;
+  }
+
+  .menu {
+    display: none;
   }
 
   /* DETALLES ARTICULO */
@@ -180,6 +206,8 @@ body {
   .productos-relacionados {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 90%;
   }
 
   .productos-relacionados article {
@@ -194,6 +222,7 @@ body {
 
    .titulo-productosRelacionados {
     margin: 18px;
+    text-align: center;
     font-size: 16px;
    }
 
@@ -241,4 +270,52 @@ body {
   
   .container1:hover{
     border: solid 1px var(--independence); 
+    }
+
+
+    @media (min-width: 767px) {
+
+      /* SE AGREGA MENU A LA DERECHA DE LA FOTO ARTICULO */
+      .menu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menu h4 {
+        margin-bottom: 15px;
+        padding: 2px;
+      }
+
+      .menu li {
+        padding: 2px;
+        margin-top: 15px;
+        list-style-type: none;
+        color: black;
+      }
+
+      .menu li a {
+        color: black;
+      }
+
+      .barra-menu {
+        display: flex;
+        font-size: 13px;
+        margin-left: 34%;
+      }
+
+      .imagen-articulo {
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+     }
+
+     .imagen-articulo img {
+      border-style: none;
+      max-width: 60%;
+      align-items: flex-end;
+      display: flex;
+     }
+
     }
