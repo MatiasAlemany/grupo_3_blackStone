@@ -264,7 +264,7 @@ color: var(--celeste);
     display: block;
   }
   .division{
-    font-size: 28px;
+    font-size: 22px;
     padding-top: 36px;
   }
   .ofertas {
@@ -321,7 +321,7 @@ color: var(--celeste);
     display: none;
   }
   .division{
-    font-size: 40px;
+    font-size: 38px;
     padding-top: 16px;
   }
   .ofertas {
@@ -340,7 +340,7 @@ color: var(--celeste);
   
 }
 @media (min-width: 1200px){
-  .navbar, .buscar-lupa, {
+  .navbar, .buscar-lupa {
     max-width: 1200px;  
   }
 }

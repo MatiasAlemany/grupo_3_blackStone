@@ -24,7 +24,6 @@
 }
 
 .contenedor2 {
-
     display: flex;
     border-bottom: solid black 1px;
     margin-bottom: 20px;
@@ -33,7 +32,6 @@
     justify-content: space-between;
 
 }
-
 .carro {
     display: flex;
     align-items: center;
@@ -47,73 +45,49 @@
     text-align: center;
     vertical-align: auto
 }
-
-
-
 .imagen2 {
 
     width: 100px;
     height: 100px;
-
-
 }
-
 .descripcion {
     display: block;
     margin-left: 20px;
-
 }
-
 .articulo {
-
     margin-bottom: 27px;
     font-size: 20px;
     font-weight: bold;
 }
-
 .talle {
-
     margin-bottom: 15px;
 }
-
-
 .info-costo {
     display: flex;
     justify-content: space-between;
     border-bottom: solid black 1px;
     padding-bottom: 20px;
     margin-bottom: 20px;
-
 }
-
 .off {
     display: flex;
     justify-content: space-between;
     border-bottom: solid black 1px;
     padding-bottom: 20px;
     margin-bottom: 20px;
-
 }
-
 .info-total {
     display: flex;
     justify-content: space-between;
     border-bottom: solid black 1px;
     padding-bottom: 20px;
     margin-bottom: 20px;
-
 }
-
 .compra {
-
     display: flex;
     justify-content: space-evenly
 }
-
-
-
 .boton {
-
     height: 60px;
     width: 250px;
     font-size: 26cpx;
