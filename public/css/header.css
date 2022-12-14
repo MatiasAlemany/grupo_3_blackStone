@@ -76,7 +76,7 @@ background-color: var(--independence);
   height: auto;
   
 }
-@media (min-width:361px){
+@media (min-width:421px){
     .cabecera {
         padding-left: 60px;
         padding-right: 60px;

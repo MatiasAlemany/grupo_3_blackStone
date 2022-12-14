@@ -44,7 +44,7 @@ footer{
     border: solid 1px var(--independence); 
     }
   /*  tablets    */
-  @media (min-width:361px){
+  @media (min-width:421px){
     .footer {
         display: flex;
         justify-content: space-around;
