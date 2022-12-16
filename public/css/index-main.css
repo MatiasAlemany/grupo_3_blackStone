@@ -1,4 +1,4 @@
-*{
+* {
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -44,7 +44,6 @@ main {
 .seccion1 {
   display: flex;
   flex-direction: row;
-  /*justify-content: space-around;*/
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
@@ -54,7 +53,6 @@ main {
 .seccion2 {
   display: flex;
   flex-direction: row;
-  /*justify-content: space-around;*/
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
@@ -94,7 +92,7 @@ main {
 }
 .circulo:hover {
   color:blue;
-  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
 }
 .mostrar-mas {
   width: 100%;

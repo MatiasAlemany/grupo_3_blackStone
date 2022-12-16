@@ -47,7 +47,7 @@ body {
 }
 
 .logo:hover {
-    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 .lupa {
@@ -64,7 +64,7 @@ body {
 
 .carrito:hover,
 .lupa:hover {
-    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
     color: green;
 }
 
@@ -117,17 +117,12 @@ body {
 
 }
 
-
 /*---------------------MAIN------------------------*/
-
-
-
 
 .control-login {
     margin-bottom: 15px;
     text-align: center;
 }
-
 
 .control-login label {
 
@@ -135,7 +130,6 @@ body {
     font-style: italic;
     display: block;
 }
-
 
 .sesion {
 
@@ -154,11 +148,7 @@ body {
     width: 90%;
     padding: 10px;
     border-radius: 10px;
-
-
 }
-
-.contraseña {}
 
 .olvido {
 
