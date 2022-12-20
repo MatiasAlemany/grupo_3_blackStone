@@ -47,7 +47,7 @@ body {
 }
 
 .logo:hover {
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
 }
 
 .lupa {
@@ -64,7 +64,7 @@ body {
 
 .carrito:hover,
 .lupa:hover {
-    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
     color: green;
 }
 
@@ -117,22 +117,25 @@ body {
 
 }
 
+
 /*---------------------MAIN------------------------*/
 
 
+.inicio-sesion {
 
+    border: solid black 1px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    height: 50vh;
+
+    
+}
 
 .control-login {
     margin-bottom: 15px;
     text-align: center;
-}
-
-
-.control-login label {
-
-    margin-bottom: 5px;
-    font-style: italic;
-    display: block;
 }
 
 
@@ -153,9 +156,13 @@ body {
     width: 90%;
     padding: 10px;
     border-radius: 10px;
-
-
+    border: solid #F4F4F4 3px;
+    margin-top: 10px;
+    background-color:#F4F4F4;
+    color: black
 }
+
+.contraseña {}
 
 .olvido {
 
