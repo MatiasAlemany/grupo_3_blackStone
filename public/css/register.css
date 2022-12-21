@@ -54,7 +54,7 @@ main {
 input {
     width: 100%;
     padding: 10px;
-    color: gray;
+    color:var(--gris);
     border: none;
     outline: none;
 
@@ -90,7 +90,7 @@ label, .foto {
 }
 .register , .reset {
     margin-top: 15px;
-    background-color: var(--celeste);
+    background-color: var(--granite-gray);
     color: #ffffff;
     width:50%;
     border-radius: 3px;
