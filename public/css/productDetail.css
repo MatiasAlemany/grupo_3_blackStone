@@ -21,105 +21,9 @@ body {
   
 
 /* HEADER */
-
-  .marquesina {
-    height: 33px;
-    background-color: var(--independence);
-    color: white;
-    padding-top:12px ;
-  }
-
-  .texto-marquesina {
-    font-size: 16px;
-  }
-
-  .cabecera {
-    display: flex;
-    align-items: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 10px ;
-    text-decoration: none;
-    max-width: 94%;
-    margin: auto;
-  }
-
-  .cabecera a img {
-    width: 105%;
-  }
-
-  .barra-menu {
-    display: none;
-    margin-left: 15%;
-  }
-
-  .menu-inicioSesion {
-    display: flex;
-    flex-direction: row;
-    margin: 15px;
-  }
-
-  .menu-item a {
-    margin-left: 5px;
-    color: black;
-  }
-
-  .logo {
-    width: 125px;
-    height: 45px;
-  }
-
-  .logo:hover {
-    -webkit-transform: scale(1.5);
-  }
-
-  .lupa {
-    color:black;
-    font-size: 20px;
-    margin-left:auto;
-  }
-
-  .carrito {
-    color:black;
-    margin-left: 25px;
-    font-size: 20px;
-  }
-
-  .carrito:hover, .lupa:hover {
-    -webkit-transform: scale(1.3);
-    color: green;
-  }
-
-  .burger-menu {
-    text-align: center;
-    margin-left: 20px;
-    color: white;
-  }
-
-  .burger {
-    background-color: var(--gris);
-    border-radius: 10%;
-    padding: 10px; 
-  }
- 
-  .menu_visible{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* DIV BANNER */
-
-  .banner {
-    display: none;
-  }
-
-  .img-ban {
-    width: 100%;
-    height: auto;
- 
-  }
-
+.img-ban {
+  display: none;
+}
   /* MAIN */
 
   /* FOTO ARTICULO A DETALLAR */
@@ -160,28 +64,9 @@ body {
 
   .talle {
     margin: 15px;
-    display: flex;
+    display:flex ;
     flex-direction: row;
-    align-items: center;
-    margin-left: 15%;
-  }
-
-  .talle label {
-    margin-left: 20px;
-  }
-
-  /* CANTIDAD */
-
-  .cantidad {
-    margin: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 15%;
-  }
-
-  .cantidad select {
-    margin-left: 10px;
+    justify-content: space-evenly;
   }
 
   /* DESCRIPCION ARTICULO */
@@ -246,7 +131,7 @@ body {
    }
 
   /* FOOTER */
-
+/*
   footer{
     box-sizing: border-box;
     padding-bottom: 10px;
@@ -280,7 +165,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
-  
+  */
   /* para agrandar y achicar figura  20% */
   .icono-footer:hover {
   -webkit-transform: scale(1.2);
@@ -295,32 +180,33 @@ body {
     @media (min-width: 767px) {
 
       /* SE AGREGA MENU A LA DERECHA DE LA FOTO ARTICULO */
-      .menu {
+      .menu-derecha {
         display: flex;
         flex-direction: column;
       }
 
-      .menu h4 {
+      .menu-derecha h4 {
         margin-bottom: 15px;
         padding: 2px;
       }
 
-      .menu li {
+      .menu-derecha li {
         padding: 2px;
         margin-top: 15px;
         list-style-type: none;
         color: black;
       }
 
-      .menu li a {
+      .menu-derecha li a {
         color: black;
       }
-
+/*
       .barra-menu {
         display: flex;
         font-size: 13px;
         margin-left: 34%;
       }
+      */
 
       .imagen-articulo {
         padding: 5px;
@@ -335,13 +221,6 @@ body {
       max-width: 60%;
       align-items: flex-end;
       display: flex;
-     }
-
-     /* ---FOOTER--- */
-
-     .footer {
-      display: flex;
-      align-items: center;
      }
 
     }

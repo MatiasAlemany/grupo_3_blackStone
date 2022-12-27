@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partials/head.ejs') %>
+    
+    <link rel="stylesheet" href="css/productDetail.css" />
+    <title>Detalle de Producto</title>
+</head>
+
+<body>
+    <!------------------------------------ header ------------------------------------------------------>
+<%- include('partials/header.ejs') %>
+
+    <!-- MAIN -->
+    <main>
+        <!-- IMAGEN ARTICULO A DETALLAR: EN UN FUTURO VA A SER UN CARRUSEL -->
+        <div class="imagen-articulo">
+            <img src="/images/ac_dc.jpg" alt="FOTO DE PRUEBA">
+        
+        <nav class="menu-derecha">
+            <h4>MENU</h4>
+            <ul>
+                <li><a href="">NUEVO LANZAMIENTO</a></li>
+                <li><a href="">REMERAS</a></li>
+                <li><a href="">CAMPERAS</a></li>
+                <li><a href="">PANTALONES</a></li>
+            </ul>
+        </nav>
+    </div>
+        <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
+        <div class="caja-detalles">
+            <div class="titulo-articulo">
+                <h2>Titulo articulo</h2>
+            </div>
+            <div class="precio-articulo">
+                <h3>$45.000</h3>
+            </div>
+        </div>
+
+        <!-- TALLES -->
+        <div class="talle">
+            <h4>Talle:</h4>
+            <label><input type="checkbox" id="cbox1" value="first_checkbox">S</label>
+            <label><input type="checkbox" id="cbox2" value="second_checkbox">M</label>
+            <label for="cbox3"><input type="checkbox" id="cbox3" value="third_checkbox">L</label>
+            <label for="cbox4"><input type="checkbox" id="cbox4" value="four_checkbox">XL</label>
+        </div>
+
+        <!-- DESCRIPCION DEL PRODUCTO -->
+        <div class="descripcion-articulo">
+            <h4>DESCRIPCION DEL PRODUCTO:</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum dolorum adipisci sed qui minus
+                molestiae similique voluptatum!</p>
+            <ul>
+                <li class="primer-descripcion">Descripcion 1</li>
+                <li>Descripcion 2</li>
+                <li>Descripcion 3</li>
+                <li>Descripcion 4</li>
+            </ul>
+        </div>
+
+        <!-- BOTON AGREGAR A CARRITO -->
+        <div>
+            <a href="/product-cart">
+                <input type="submit" class="boton-comprar" value="Agregar al carrito">
+            </a>
+        </div>
+
+        <!-- PRODUCTOS RELACIONADOS: FUTURO CARRUSEL -->
+        <div>
+            <h5 class="titulo-productosRelacionados">PRODUCTOS RELACIONADOS:</h5>
+            <div class="productos-relacionados">
+                <article>
+                    <a href="/product-cart">
+                    <img src="/images/acdc_roja.jpg" alt="">
+                </a>
+                </article>
+                <article>
+                    <a href="/product-cart">
+                    <img src="/images/baller.jpg" alt="">
+                </a>
+                </article>
+            </div>
+        </div>
+
+    </main>
+<!--------------------------------- footer --------------------------------------------------------------->
+<%- include('partials/footer.ejs') %>
+
+</body>
+
+</html>

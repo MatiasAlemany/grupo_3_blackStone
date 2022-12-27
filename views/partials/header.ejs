@@ -1,0 +1,157 @@
+
+<header>
+<!--------------------------codigo de ventana emergente de inicio de sesion ------------------------>
+<section id="inicio-sesion" class="modalDialog">
+    <div class="modal">
+        <form action="" method="">
+         <div class=" control-login">
+             <input type="email" name="email" class="control" placeholder="E-mail" required>
+        </div>
+          <div class="control-login">
+                <input type="password" name="password" class="control" placeholder="Contraseña" required>
+            </div>
+            <div class="control-login">
+             <button class="envio" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
+             <button type="submit" class="envio">Enviar</button> 
+            </div>
+        </form>
+        <div class="contraseña">
+            <p href="" class="olvido">Has olvidado tu contraseña?</p> <a href=""></a>
+        </div>
+    </div>
+</section>
+<!---------------------------------------------------------------------------------------------------->
+
+<!--------------------------codigo de ventana emergente de  registro------------------------>
+
+<section id="registro" class="modalDialog">
+
+    <div class="modal">
+    <form action="/registro" method="POST" class="formulario">
+        <div class="nombre">
+            
+            <input type="text" name="nombre" id="nombre" placeholder="nombre y apellido" required minlength="12">
+        </div>
+        <div class="nombre-usuario">
+            <input outline="none"  type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="12">
+        </div>
+
+        
+         <div class="foto">
+            <label class="fechaNacimiento">Fecha de nacimiento</label>
+            <input  type="date" name="fechaNacimiento" id="fechaNacimiento" required>
+        </div>
+        
+    
+       
+        <div class="foto">
+            <label for="foto"><h4>Foto de perfil</h4></label>
+            <input type="file" name="foto" id="foto" required>
+        </div>
+
+        <div class="nombre">
+        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+        </div>
+        <div class="nombre">
+        <input type="password" name="confirmarpassword" id="confirmarpassword" placeholder="Confirmar contraseña" required>
+        </div>
+
+        <div class="reg-reset">
+        <button class="reset" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
+        <button class="register" type="submit">Enviar</button>
+        </div>
+
+    </form>
+</div>
+</section>
+<!-------------------------------------------------------------------------------------->
+
+
+<!----------------- aca esta el codigo de ventana emergente devolucion ------------------------------>
+<section id="devolver" class="modalDialog" >
+    <div class="modal">
+
+
+        <h4 class="tiulo-modal">Solicitud de cancelación de compra</h4>
+        <p class="subtitulo-modal">La solicitud tendrá validez si es realizada dentro de
+            los plazos determinados en la <a
+                href="https://www.boletinoficial.gob.ar/detalleAviso/primera/235729/20201005"
+                style="text-decoration: underline;color: blue;">Resolución 424/2020</a> de la Secretaría
+            de Comercio Interior y no se traten de productos exceptuados como productos personalizados y
+            todos los comprendidos en el art. 1116 del Código Civil y Comercial.</p>
+
+        <form action="/devolucion" method="POST" class="formulario">
+            <div class="nombre">
+
+                <input type="text"  name="nombre" id="nombre" placeholder="nombre y apellido" required
+                    minlength="12">
+            </div>
+            <div class="nombre-usuario">
+                <input outline="none" type="text" name="nombreUsuario" id="nombreUsuario"
+                    placeholder="Nombre de Usuario" required minlength="12">
+            </div>
+            <div class="nombre-usuario">
+                <input outline="none" type="text" name="nombreUsuario" id="nombreUsuario"
+                    placeholder="Numero de factura" required>
+            </div>
+
+
+            <div class="nombre">
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            </div>
+            <div class="nombre">
+                <input type="password" name="confirmarpassword" id="confirmarpassword"
+                    placeholder="Confirmar contraseña" required>
+            </div>
+
+            <div class="reg-reset">
+                <button class="reset" type="reset"><a href="/" title="Close" id="close">Volver</a></button>
+                <button class="register" type="submit">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<!----------------------------------------------------------------------------------------->
+<!---------------sigue el header-------------------------------------------------->
+
+<marquee scrollamount="10" class="marquesina">
+    <div>
+        <p class="texto-marquesina">Semana de ofertas increibles en StoneBlack!!!</p>
+    </div>
+</marquee>
+
+<section class="cabecera">
+    <a href="/">
+    <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
+        
+    <div class="lupa">
+        <a href="#"><i class="fas fa-search"></i></a></div>
+    
+    <div class="carrito-compras">
+        <a href="/product-cart">
+        <i class="fa-solid fa-cart-shopping carrito"></i></a>
+    </div>
+
+    <div class="burger-menu">
+        <button class="abrir-menu" aria-label="Abrir menú">
+        <i class="fa fa-bars burger"></i></button>
+    </div>
+</section>
+<section class="barra-menu">
+    <ul class="menu">
+        <li class="menu-item"><a href="#inicio-sesion" class="boton-inicio">Inicio de sesion</a></li>
+        <li class="menu-item"><a href="#registro" class="registrarse">Registrarse</a></li>
+        <li class="menu-item"><a href="#devolver" class="devolver">Devolver</a></li>
+    </ul>
+</section>
+
+
+<div class="banner">
+    <img src="/images/banner.jpg"  class="img-ban" alt="banner" />
+</div>
+
+<!----------------------------- fin del header ----------------------------------------------------------------->
+</header>
+    

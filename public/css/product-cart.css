@@ -15,6 +15,10 @@
     --independence: #525b76;
 }
 
+/* header */
+.img-ban {
+    display: none;
+}
 
 /*--------------------MAIN--------------------*/
 

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partials/head.ejs') %>
+
+
+    <link rel="stylesheet" href="css/index-main.css" />
+
+    <title>StoneBlack</title>
+</head>
+
+<body>
+<!------------------------------------ header ------------------------------------------------------>
+<%- include('partials/header.ejs') %>
+
+<!--------------------------------------------- main ----------------------------------------------->
+    <main>
+        
+        <section class="division">
+            <h2>Remeras con diseños originales</h2>
+        </section>
+
+    <section class="seccion1">
+
+        
+        <% for(let i=0; i < allProducts.length; i++) {%>
+            
+            <section class="container1">
+                <div class="container2">
+                    <a href="/product/<%= allProducts[i].id %>">
+                    <img src=<%= allProducts[i].img %>class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">       
+                    <section class="precio-dto">
+                        <p class="descripcion"><%= allProducts[i].descripcion %></p>
+                        <h4 class="precio"><%= allProducts[i].precio %></h4>
+                        <p class="descuento"><%= allProducts[i].descuento %></p>
+                        <p class="cuotas"><%= allProducts[i].cuotas %></p>
+                        <a href="/product-cart" class="add-to-a-cart">
+                        <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                        </a>
+                    </section>
+                </div>
+
+                <%}%>
+            </section>
+
+
+        <!--
+        
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="/productDetail">
+                    <img src="/images/sushi.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">       
+                    <section class="precio-dto">
+                        <p class="descripcion">Hattori sushi</p>
+                        <h4 class="precio">$3.770</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">3 coutas sin interés</p>
+                        <a href="/product-cart" class="add-to-a-cart">
+                        <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                        </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/ac_dc.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">   
+                    <section class="precio-dto">
+                        <p class="descripcion">AC DC rojo-amarillo</p>
+                        <h4 class="precio">$2.000</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">3 cuotas sin interes</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/bart+lisa.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">
+                    <section class="precio-dto">
+                        <p class="descripcion">Burt y Lisa</p>
+                        <h4 class="precio">$2.500</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">3 cuotas sin interes</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/infierno.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">     
+                    <section class="precio-dto">
+                        <p class="descripcion">Hell</p>
+                        <h4 class="precio">$3.200</h4>
+                        <p class="descuento">5% OFF</p>
+                        <p class="cuotas">Sin cuotas</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+        </section>
+        
+        
+        <section class="seccion2">
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/oasis.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">
+                    <section class="precio-dto">
+                        <p class="descripcion">Oasis</p>
+                        <h4 class="precio">$3.770</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">Sin cuotas</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/mini-yoda.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">         
+                    <section class="precio-dto">
+                        <p class="descripcion">Yoda bebe</p>
+                        <h4 class="precio">$2.000</h4>
+                        <p class="descuento">5% OFF</p>
+                        <p class="cuotas">3 cuotas sin interes</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                    <img src="/images/rollings-2.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">         
+                    <section class="precio-dto">
+                        <p class="descripcion">The Rollings Stones</p>
+                        <h4 class="precio">$2.500</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">Sin cuotas</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                    <img src="/images/ramones.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">
+                    <section class="precio-dto">
+                        <p class="descripcion">Ramones</p>
+                        <h4 class="precio">$3.200</h4>
+                        <p class="descuento">5% OFF</p>
+                        <p class="cuotas">3 cuotas sin interes</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+        </section>
+           
+        -->
+
+        <details>
+            <summary ><div class="mostrar-mas">
+                <p>Mostrar/ocultar mas</p>
+            </div></summary>
+           
+
+            <section class="seccion2">
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/i-am-the-bomb.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">
+                    <section class="precio-dto">
+                        <p class="descripcion">I Am the bomb</p>
+                        <h4 class="precio">$3.770</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">Sin cuotas</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                        <img src="/images/ramones2.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">         
+                    <section class="precio-dto">
+                        <p class="descripcion">The Ramones</p>
+                        <h4 class="precio">$2.000</h4>
+                        <p class="descuento">5% OFF</p>
+                        <p class="cuotas">3 cuotas sin interes</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                    <img src="/images/motorhead.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">         
+                    <section class="precio-dto">
+                        <p class="descripcion">Motorhead</p>
+                        <h4 class="precio">$2.500</h4>
+                        <p class="descuento">10% OFF</p>
+                        <p class="cuotas">Sin cuotas</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            <section class="container1">
+                <div class="container2">
+                    <a href="#">
+                    <img src="/images/relax.jpg" class="img1" alt="imagen" /></a>
+                </div>
+                <div class="container3">
+                    <section class="precio-dto">
+                        <p class="descripcion">Relax blanca</p>
+                        <h4 class="precio">$3.200</h4>
+                        <p class="descuento">5% OFF</p>
+                        <p class="cuotas">3 cuotas sin interes</p>
+                        <a href="#" class="add-to-a-cart">
+                            <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                            </a>
+                    </section>
+                </div>
+            </section>
+
+            </section>
+
+            <section class="seccion2">
+                <section class="container1">
+                    <div class="container2">
+                        <a href="#">
+                            <img src="/images/wi-fi.jpg" class="img1" alt="imagen" /></a>
+                    </div>
+                    <div class="container3">
+                        <section class="precio-dto">
+                            <p class="descripcion">Wi Fi negra</p>
+                            <h4 class="precio">$3.770</h4>
+                            <p class="descuento">10% OFF</p>
+                            <p class="cuotas">Sin cuotas</p>
+                            <a href="#" class="add-to-a-cart">
+                                <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                                </a>
+                        </section>
+                    </div>
+                </section>
+    
+                <section class="container1">
+                    <div class="container2">
+                        <a href="#">
+                            <img src="/images/homero.jpg" class="img1" alt="imagen" /></a>
+                    </div>
+                    <div class="container3">         
+                        <section class="precio-dto">
+                            <p class="descripcion">Homero azul</p>
+                            <h4 class="precio">$2.000</h4>
+                            <p class="descuento">5% OFF</p>
+                            <p class="cuotas">3 cuotas sin interes</p>
+                            <a href="#" class="add-to-a-cart">
+                                <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                                </a>
+                        </section>
+                    </div>
+                </section>
+    
+                <section class="container1">
+                    <div class="container2">
+                        <a href="#">
+                        <img src="/images/calabera.jpg" class="img1" alt="imagen" /></a>
+                    </div>
+                    <div class="container3">         
+                        <section class="precio-dto">
+                            <p class="descripcion">Calabera negra</p>
+                            <h4 class="precio">$2.500</h4>
+                            <p class="descuento">10% OFF</p>
+                            <p class="cuotas">Sin cuotas</p>
+                            <a href="#" class="add-to-a-cart">
+                                <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                                </a>
+                        </section>
+                    </div>
+                </section>
+    
+                <section class="container1">
+                    <div class="container2">
+                        <a href="#">
+                        <img src="/images/bowie.jpg" class="img1" alt="imagen" /></a>
+                    </div>
+                    <div class="container3">
+                        <section class="precio-dto">
+                            <p class="descripcion">David Bowie blanca</p>
+                            <h4 class="precio">$3.200</h4>
+                            <p class="descuento">5% OFF</p>
+                            <p class="cuotas">3 cuotas sin interes</p>
+                            <a href="#" class="add-to-a-cart">
+                                <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                                </a>
+                        </section>
+                    </div>
+                </section>
+    
+                </section>
+
+        </details>
+    </main>
+
+   <!--------------------------------- footer --------------------------------------------------------------->
+   <%- include('partials/footer.ejs') %> 
+    
+</body>
+
+</html>
