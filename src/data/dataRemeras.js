@@ -1,6 +1,7 @@
 const dataRemeras = [
     {
         id: 1,
+        nombre: "Remera1",
         img: "/images/sushi.jpg",
         descripcion: "Hattori sushi",
         precio: 3770,
@@ -10,6 +11,7 @@ const dataRemeras = [
     },
     {
         id: 2,
+        nombre: "Remera1",
         img: "/images/sushi.jpg",
         descripcion: "Hattori sushi",
         precio: 3770,
@@ -19,6 +21,7 @@ const dataRemeras = [
     },
     {
         id: 3,
+        nombre: "Remera1",
         img: "/images/sushi.jpg",
         descripcion: "Hattori sushi",
         precio: 3770,
@@ -28,6 +31,7 @@ const dataRemeras = [
     },
     {
         id: 4,
+        nombre: "Remera1",
         img: "/images/sushi.jpg",
         descripcion: "Hattori sushi",
         precio: 3770,

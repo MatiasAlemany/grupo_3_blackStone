@@ -3,6 +3,7 @@
 footer{
     box-sizing: border-box;
     padding-bottom: 10px;
+    flex-direction: column;
   }
   .pie-pagina {
     width: 100%;
@@ -43,13 +44,15 @@ footer{
   .container1:hover{
     border: solid 1px var(--independence); 
     }
+    
   /*  tablets    */
-  @media (min-width:421px){
+  @media (min-width:426px){
     .footer {
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-wrap: nowrap;
+        flex-direction: row;
       }
       .texto-footer{
         font-size: 14px;

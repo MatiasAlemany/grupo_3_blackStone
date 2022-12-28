@@ -10,14 +10,20 @@ const path = require("path");
 const indexController = {
            // manejo del pedido get con ruta /
           index: (req, res) => {
-                return res.render ('index.ejs',{'allProducts':data} );
+                return res.render ('index.ejs', {'allProducts':data} );
                 
            },
 
           detalleProd: (req, res) => {
-               return res.render('productDetail');
+               const { id } = req.params;
 
+               const listaProductos = data.filter((prod) => prod.id == id);
+    
+               if(listaProductos.length) return res.render('productDetail', {'allProducts': data});
+               res.send("Not Found"); 
+               
           },
+
           detalleCarrito: (req, res) => {
                return res.render('product-cart');
           },
