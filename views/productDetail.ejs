@@ -4,7 +4,8 @@
 <head>
     <%- include('partials/head.ejs') %>
     
-    <link rel="stylesheet" href="css/productDetail.css" />
+    <link rel="stylesheet" href="/css/productDetail.css" /> 
+
     <title>Detalle de Producto</title>
 </head>
 
@@ -16,8 +17,19 @@
     <main>
         <!-- IMAGEN ARTICULO A DETALLAR: EN UN FUTURO VA A SER UN CARRUSEL -->
         <div class="imagen-articulo">
-            <img src="/images/ac_dc.jpg" alt="FOTO DE PRUEBA">
+            <img src=<%= allProducts[0].img %> alt="FOTO DE PRUEBA">
         
+        
+        <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
+        <div class="caja-detalles">
+            <div class="titulo-articulo">
+                <h2><%= allProducts[0].nombre%></h2>
+            </div>
+            <div class="precio-articulo">
+                <h3>$<%= allProducts[0].precio%></h3>
+            </div>
+        </div>
+
         <nav class="menu-derecha">
             <h4>MENU</h4>
             <ul>
@@ -28,15 +40,6 @@
             </ul>
         </nav>
     </div>
-        <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
-        <div class="caja-detalles">
-            <div class="titulo-articulo">
-                <h2>Titulo articulo</h2>
-            </div>
-            <div class="precio-articulo">
-                <h3>$45.000</h3>
-            </div>
-        </div>
 
         <!-- TALLES -->
         <div class="talle">
@@ -50,8 +53,7 @@
         <!-- DESCRIPCION DEL PRODUCTO -->
         <div class="descripcion-articulo">
             <h4>DESCRIPCION DEL PRODUCTO:</h4>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum dolorum adipisci sed qui minus
-                molestiae similique voluptatum!</p>
+            <p><%= allProducts[0].descripcion%></p>
             <ul>
                 <li class="primer-descripcion">Descripcion 1</li>
                 <li>Descripcion 2</li>
