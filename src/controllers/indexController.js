@@ -22,6 +22,8 @@ const indexController = {
                return res.render('product-cart');
           },
 
+          
+
 
 
 }
