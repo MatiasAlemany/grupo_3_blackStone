@@ -10,3 +10,8 @@ Deberemos hacer una o dos reuniones virtuales semanales.
 
 
 Sprint 3:
+Venimos bien con los tiempos, nos reunimos para terminar el sprint2.
+En mi opinión personal (Ricardo) la parte de MVC y EJS es complicada, y mas aún
+cuando en el playground se explica de una manera, el prof. Guido lo explica de otra
+y el prof. suplente de otra, seguramente todos los caminos conducen a Roma,
+pero se transitan de a uno a la vez.

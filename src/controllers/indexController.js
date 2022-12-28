@@ -7,24 +7,23 @@ const path = require("path");
 
 
 //creamos el objeto literal con los metodos a exportar
-const mainController = {
+const indexController = {
            // manejo del pedido get con ruta /
-           index: (req, res) => {
-                return res.render ('index.ejs');
+          index: (req, res) => {
+                return res.render ('index.ejs',{'allProducts':data} );
+                
            },
 
-           detalleProd: (req, res) => {
+          detalleProd: (req, res) => {
                return res.render('productDetail');
+
           },
           detalleCarrito: (req, res) => {
                return res.render('product-cart');
           },
 
-          allProducts: (req, res) => {
-               return res.render('index.ejs', {'allProducts':data});
-          }
 
 
 }
 
-module.exports = mainController;
+module.exports = indexController;

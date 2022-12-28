@@ -14,13 +14,11 @@ app.use(express.static('public'));
 let rutaIndex= require ('./routers/rutaIndex.js');
 let rutaDetalleProd = require ('./routers/rutaDetalleProd.js');
 let rutaCarritoProd = require ('./routers/rutaCarritoProd.js');
-let rutaAllProducts = require ('./routers/rutaAllProducts.js');
 
 // usando los enrutadores importados
-app.use('/', rutaIndex);
-app.use('/productDetail', rutaDetalleProd);
-app.use('/product-cart', rutaCarritoProd);
-app.use('/', rutaAllProducts);
+app.use(rutaIndex);
+app.use(rutaDetalleProd);
+app.use(rutaCarritoProd);
 
 // ponemos a escuchar el servidor
 app.listen(3030, () =>
