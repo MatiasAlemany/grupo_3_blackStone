@@ -66,6 +66,10 @@ footer{
     
 /*   notebook   */
 @media (min-width:769px){
+    .footer {
+      max-width: 80%;
+      margin: auto;
+    }
     .sector-footer img{
         width: 65px;
       }
