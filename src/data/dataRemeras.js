@@ -1,4 +1,4 @@
-const dataRemeras = [
+const dataRemeras1 = [
     {
         id: 1,
         nombre: "Remera1",
@@ -65,13 +65,85 @@ const dataRemeras = [
     {
         id: 8,
         nombre: "Remera8",
+        img: "/images/i-am-the-bomb.jpg",
+        descripcion: "I Am the bomb",
+        precio: 3770,
+        descuento: '10% OFF',
+        cuotas:"Sin cuotas",
+    },
+    {
+        id: 9,
+        nombre: "Remera9",
         img: "/images/ramones.jpg",
         descripcion: "The Ramones",
+        precio: 2000,
+        descuento: '5% OFF',
+        cuotas:"3 coutas sin interés",
+    },
+    {
+        id: 10,
+        nombre: "Remera10",
+        img: "/images/motorhead.jpg",
+        descripcion: "Motorhead",
+        precio: 2500,
+        descuento: '10% OFF',
+        cuotas:"Sin cuotas",
+    },
+    {
+        id: 11,
+        nombre: "Remera11",
+        img: "/images/relax.jpg",
+        descripcion: "Relax blanca",
         precio: 3200,
         descuento: '5% OFF',
         cuotas:"3 coutas sin interés",
+    },
+    {
+        id: 12,
+        nombre: "Remera12",
+        img: "/images/wi-fi.jpg",
+        descripcion: "wi Fi negra",
+        precio: 3700,
+        descuento: '10% OFF',
+        cuotas:"Sin cuotas",
+    },
+    {
+        id: 13,
+        nombre: "Remera13",
+        img: "/images/homero.jpg",
+        descripcion: "Homero azul",
+        precio: 2200,
+        descuento: '5% OFF',
+        cuotas:"Sin cuotas",
+    },
+    {
+        id: 14,
+        nombre: "Remera14",
+        img: "/images/calabera.jpg",
+        descripcion: "Calabera negra",
+        precio: 2300,
+        descuento: '5% OFF',
+        cuotas:"Sin cuotas",
+    },
+    {
+        id: 15,
+        nombre: "Remera15",
+        img: "/images/bowie.jpg",
+        descripcion: "David Bowie blanca",
+        precio: 2100,
+        descuento: '5% OFF',
+        cuotas:"3 cuotas sin interes",
+    },
+    {
+        id: 16,
+        nombre: "Remera16",
+        img: "/images/ramones2.jpg",
+        descripcion: "The Ramones two",
+        precio: 2000,
+        descuento: '5% OFF',
+        cuotas:"Sin cuotas",
     }
 
 ]
 
-module.exports = dataRemeras;
+module.exports = dataRemeras1;

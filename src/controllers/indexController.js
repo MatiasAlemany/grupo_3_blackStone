@@ -2,6 +2,7 @@
 // requerimos el archivo con la imagen y los datos de las remeras
 const data = require('../data/dataRemeras');
 
+
 // requerimos path para poder enviar los archivos HTML
 const path = require("path");
 
@@ -19,7 +20,7 @@ const indexController = {
 
                const listaProductos = data.filter((prod) => prod.id == id);
     
-               if(listaProductos.length) return res.render('productDetail', {'allProducts': data});
+               if(listaProductos.length) return res.render('productDetail', {'allProducts': listaProductos});
                res.send("Not Found"); 
                
           },

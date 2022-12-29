@@ -62,8 +62,6 @@ transition: opacity 400ms ease-in;
 	-moz-border-radius: 12px;
 	-moz-box-shadow: 1px 1px 3px #000;
 }
-
-/* ---------------------- para emergente devolver --------------------------*/
 #devolver {
     display: flex;
     flex-direction: column;
@@ -86,21 +84,22 @@ transition: opacity 400ms ease-in;
     height: 30px;
     text-align: center;
 }
-input {
+
+												/* -- COMENTADO PARA QUE FUNCIONE EN PRODUCT DETAIL-- antes:  input ahora: .control */
+ .control {
     width: 70%;
     padding: 10px;
     color:var(--black-coral);
     border: none;
     outline: none;
     background-color:var(--silver-chalice);
-	border-radius: 10px;
-}
+} 
+
 .reg-reset {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-	
    
 }
 .register , .reset {
@@ -108,7 +107,7 @@ input {
     background-color: var(--granite-gray);
     color:white;
     width:50%;
-    border-radius: 20px;
+    border-radius: 3px;
     height: 40px;
     width: 130px;
     margin: 15px;  
@@ -119,7 +118,7 @@ input {
     
 }
 
-/* ---------------------- para emergente de registrar ------------------- */
+/* para emergente de registrar */
 #registro {
     display: flex;
     flex-direction: column;
@@ -130,17 +129,16 @@ input {
     margin: auto;
 	margin-top: 100px;
 }
-
-label, .foto {
+											/* -- COMENTADO PARA QUE FUNCIONE EN PRODUCTDETAIL--  */
+  .etiqueta, .fotoP{
     margin-top: 25px;
-	
     
-}
+}  
 .fechaNacimiento{
     margin-top:10px;
 }
 
-.foto {
+.fotoP {
     text-align: center;
 }
 /*----------------------------------------------------------------------*/
@@ -157,7 +155,6 @@ label, .foto {
 	margin-top: 100px;
 
 }
-
 .control-login {
     margin-bottom: 15px;
     text-align: center;
@@ -257,25 +254,30 @@ label, .foto {
   .barra-menu{
 	padding: 30px;
   }
-  .menu{
-	display: none;
-
-  }
+ 
   .menu_visible{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-   
-  
   }
+  
+  .menu {
+	/*display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	*/
+	display: none;
+  }
+
   .boton-inicio, .registrarse, .devolver{
 	color: var(--silver-chalice);
 	border-radius: 3px;
-	font-size: 24px;
+	font-size: 22px;
   }
   .boton-inicio:hover, .registrarse:hover, .devolver:hover{
   color: white;
   background-color: var(--independence);
+
   }
   .img-ban {
 	width: 100%;
@@ -322,19 +324,11 @@ label, .foto {
 		  color: #111;
 		  font-size: 14px;
 		}
-
 		.boton-inicio, .registrarse, .devolver{
 			font-size: 16px;
 		  }
 /* -------------fin header---------------------------------------*/
 	  }
-/*  tablets    */
-@media (min-width:521px){
-    .nombre, .nombre-usuario {
-        width: 150%;
-    }
-    }
-
 
 /*   notebook   */
 @media (min-width:968px){
@@ -354,4 +348,5 @@ label, .foto {
 		.boton-inicio, .registrarse, .devolver{
 			font-size: 22px;
 		  }
+  
 	  }

@@ -15,11 +15,11 @@ main {
 .division {
   background-color: var(--granite-gray);
   color: white;
-  height: 100px;
+  height: 50px;
   text-align: center;
   align-items: center;
   font-size: 14px;
-  padding-top: 0;
+  padding-top: 10px;
   width: 100%;
 }
 .img1 {
@@ -100,19 +100,14 @@ main {
   font-size: 12px;
 }
 
-
-
-
-
-
 /*  tablets    */
 @media (min-width:426px){
   .container1{box-shadow: 0px 0px 10px rgb(100, 100, 100);
   }
-  
   .division{
-    font-size: 22px;
+    font-size: 18px;
     padding-top: 36px;
+    height: 100px;
   }
   .ofertas {
     font-size: 14px;
@@ -128,7 +123,6 @@ main {
 /*   notebook   */
 @media (min-width:769px){
   
-  
   .division{
     font-size: 38px;
     padding-top: 16px;
@@ -143,7 +137,6 @@ main {
   .img1{
     height: 420px;
   }
-  
   
 }
 @media (min-width: 1200px){

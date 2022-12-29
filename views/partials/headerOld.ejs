@@ -1,6 +1,4 @@
 
-<link rel="stylesheet" href="/css/header.css" />
-
 <header>
 <!--------------------------codigo de ventana emergente de inicio de sesion ------------------------>
 <section id="inicio-sesion" class="modalDialog">
@@ -32,30 +30,30 @@
     <form action="/registro" method="POST" class="formulario">
         <div class="nombre">
             
-            <input type="text" name="nombre" id="nombre" placeholder="nombre y apellido" required minlength="12">
+            <input type="text" name="nombre"  class="control" id="nombre" placeholder="nombre y apellido" required minlength="12">
         </div>
         <div class="nombre-usuario">
-            <input outline="none"  type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="12">
+            <input outline="none"  type="text"  class="control" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="12">
         </div>
 
         
-         <div class="foto">
+         <div class="fotoP">
             <label class="fechaNacimiento">Fecha de nacimiento</label>
-            <input  type="date" name="fechaNacimiento" id="fechaNacimiento" required>
+            <input  type="date"  class="control" name="fechaNacimiento" id="fechaNacimiento" required>
         </div>
         
     
        
-        <div class="foto">
-            <label for="foto"><h4>Foto de perfil</h4></label>
-            <input type="file" name="foto" id="foto" required>
+        <div class="fotoP">
+            <label class="etiqueta" for="foto"><h4>Foto de perfil</h4></label>
+            <input type="file" class="control"  name="foto" id="foto" required>
         </div>
 
         <div class="nombre">
-        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+        <input type="password" name="password" class="control" id="password" placeholder="Contraseña" required>
         </div>
         <div class="nombre">
-        <input type="password" name="confirmarpassword" id="confirmarpassword" placeholder="Confirmar contraseña" required>
+        <input type="password" name="confirmarpassword"  class="control"  id="confirmarpassword" placeholder="Confirmar contraseña" required>
         </div>
 
         <div class="reg-reset">
@@ -85,24 +83,24 @@
         <form action="/devolucion" method="POST" class="formulario">
             <div class="nombre">
 
-                <input type="text"  name="nombre" id="nombre" placeholder="nombre y apellido" required
+                <input type="text"  name="nombre"  class="control" id="nombre" placeholder="nombre y apellido" required
                     minlength="12">
             </div>
             <div class="nombre-usuario">
-                <input outline="none" type="text" name="nombreUsuario" id="nombreUsuario"
+                <input outline="none" type="text"  class="control" name="nombreUsuario" id="nombreUsuario"
                     placeholder="Nombre de Usuario" required minlength="12">
             </div>
             <div class="nombre-usuario">
-                <input outline="none" type="text" name="nombreUsuario" id="nombreUsuario"
+                <input outline="none" type="text"  class="control" name="nombreUsuario" id="nombreUsuario"
                     placeholder="Numero de factura" required>
             </div>
 
 
             <div class="nombre">
-                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                <input type="password" name="password"  class="control" id="password" placeholder="Contraseña" required>
             </div>
             <div class="nombre">
-                <input type="password" name="confirmarpassword" id="confirmarpassword"
+                <input type="password"  class="control" name="confirmarpassword" id="confirmarpassword"
                     placeholder="Confirmar contraseña" required>
             </div>
 

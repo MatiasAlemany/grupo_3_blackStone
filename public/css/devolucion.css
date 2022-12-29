@@ -65,7 +65,7 @@ main {
     text-align: center;
 }
 
-input {
+.control {
     width: 70%;
     padding: 10px;
     color:var(--black-coral);
@@ -97,7 +97,7 @@ input {
 }
 
 /*  tablets    */
-@media (min-width:361px){
+@media (min-width:426px){
     .nombre, .nombre-usuario {
         width: 150%;
     }
