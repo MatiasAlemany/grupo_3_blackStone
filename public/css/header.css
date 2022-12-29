@@ -84,14 +84,17 @@ transition: opacity 400ms ease-in;
     height: 30px;
     text-align: center;
 }
-input {
+
+												/* -- COMENTADO PARA QUE FUNCIONE EN PRODUCT DETAIL-- */
+/* input {
     width: 70%;
     padding: 10px;
     color:var(--black-coral);
     border: none;
     outline: none;
     background-color:var(--silver-chalice);
-}
+} */
+
 .reg-reset {
     display: flex;
     flex-direction: row;
@@ -126,11 +129,11 @@ input {
     margin: auto;
 	margin-top: 100px;
 }
-
-label, .foto {
+											/* -- COMENTADO PARA QUE FUNCIONE EN PRODUCTDETAIL--  */
+ /* label, .foto {
     margin-top: 25px;
     
-}
+}  */
 .fechaNacimiento{
     margin-top:10px;
 }
@@ -260,21 +263,23 @@ label, .foto {
   .barra-menu{
 	padding: 30px;
   }
-  .menu{
-	display: none;
-
-  }
+ 
   .menu_visible{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-   
-  
   }
+  
+  .menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+  }
+
   .boton-inicio, .registrarse, .devolver{
 	color: var(--silver-chalice);
 	border-radius: 3px;
-	font-size: 24px;
+	font-size: 22px;
   }
   .boton-inicio:hover, .registrarse:hover, .devolver:hover{
   color: white;
@@ -285,7 +290,7 @@ label, .foto {
 	height: auto;
 	
   }
-  @media (min-width:421px){
+  @media (min-width:426px){
 	  .cabecera {
 		  padding-left: 60px;
 		  padding-right: 60px;

@@ -16,18 +16,9 @@
     <!-- MAIN -->
     <main>
         <!-- IMAGEN ARTICULO A DETALLAR: EN UN FUTURO VA A SER UN CARRUSEL -->
+        <div class="caja-menu-imagen">
         <div class="imagen-articulo">
             <img src=<%= allProducts[0].img %> alt="FOTO DE PRUEBA">
-        
-        
-        <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
-        <div class="caja-detalles">
-            <div class="titulo-articulo">
-                <h2><%= allProducts[0].nombre%></h2>
-            </div>
-            <div class="precio-articulo">
-                <h3>$<%= allProducts[0].precio%></h3>
-            </div>
         </div>
 
         <nav class="menu-derecha">
@@ -40,32 +31,50 @@
             </ul>
         </nav>
     </div>
+</div>
+        
+        <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
+        <div class="caja-detalles">
+            <div class="titulo-articulo">
+                <h2><%= allProducts[0].nombre%></h2>
+            </div>
+            <div class="precio-articulo">
+                <h3>$<%= allProducts[0].precio%></h3>
+            </div>
+        </div>
 
         <!-- TALLES -->
-        <div class="talle">
-            <h4>Talle:</h4>
-            <label><input type="checkbox" id="cbox1" value="first_checkbox">S</label>
-            <label><input type="checkbox" id="cbox2" value="second_checkbox">M</label>
-            <label for="cbox3"><input type="checkbox" id="cbox3" value="third_checkbox">L</label>
-            <label for="cbox4"><input type="checkbox" id="cbox4" value="four_checkbox">XL</label>
+        <div class="talle talle1">
+            <h4>ELEGI TU TALLE:</h4>
+            <div class="caja-talles">
+            <label class="listado-talles"><input type="checkbox" id="cbo" value="first_checkbox">S</label>
+            <label class="listado-talles"><input type="checkbox" id="cbo" value="second_checkbox">M</label>
+            <label for="cbox3" class="listado-talles"><input type="checkbox" id="cbox" value="third_checkbox">L</label>
+            <label for="cbox4" class="listado-talles"><input type="checkbox" id="cbox" value="four_checkbox">XL</label>
+            </div>
+        </div>
+
+        <!-- COLORES -->
+        <div class="talle talle1">
+            <h4>AHORA TU COLOR:</h4>
+            <div class="caja-talles">
+            <label class="listado-color1 borde"><input type="checkbox" id="cb1" value="first_checkbox"></label>
+            <label class="listado-color2 borde"><input type="checkbox" id="cb2" value="second_checkbox"></label>
+            <label for="cbox3" class="listado-color3 borde"><input type="checkbox" id="cb3" value="third_checkbox"></label>
+            <label for="cbox4" class="listado-color4 borde"><input type="checkbox" id="cbox4" value="four_checkbox"></label>
+            </div>
         </div>
 
         <!-- DESCRIPCION DEL PRODUCTO -->
         <div class="descripcion-articulo">
             <h4>DESCRIPCION DEL PRODUCTO:</h4>
             <p><%= allProducts[0].descripcion%></p>
-            <ul>
-                <li class="primer-descripcion">Descripcion 1</li>
-                <li>Descripcion 2</li>
-                <li>Descripcion 3</li>
-                <li>Descripcion 4</li>
-            </ul>
         </div>
 
         <!-- BOTON AGREGAR A CARRITO -->
         <div>
             <a href="/product-cart">
-                <input type="submit" class="boton-comprar" value="Agregar al carrito">
+                <input type="submit" class="boton-comprar" value="AGREGAR AL CARRITO">
             </a>
         </div>
 
