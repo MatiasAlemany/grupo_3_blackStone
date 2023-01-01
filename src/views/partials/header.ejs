@@ -1,7 +1,28 @@
 
 <link rel="stylesheet" href="/css/header.css" />
 
+
 <header>
+<!--------------------------codigo de ventana emergente buscar ------------------------>
+<section id="buscar" class="modalDialog">
+    <div class="modal">
+        <form action="" method="">
+         <div class=" control-login">
+             <input type="tesx" name="buscar" class="control" placeholder="Ingrese texto" required>
+        </div>     
+            <div class="control-login">
+             <button class="envio" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
+             <button type="submit" class="envio"><a href="/productDetail/3" title="Close" id="close">Buscar</a></button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+<!----------------------------------------------------------------------------------------------->
+
 <!--------------------------codigo de ventana emergente de inicio de sesion ------------------------>
 <section id="inicio-sesion" class="modalDialog">
     <div class="modal">
@@ -118,6 +139,7 @@
 <!----------------------------------------------------------------------------------------->
 <!---------------sigue el header-------------------------------------------------->
 
+
 <marquee scrollamount="10" class="marquesina">
     <div>
         <p class="texto-marquesina">Semana de ofertas increibles en StoneBlack!!!</p>
@@ -129,7 +151,7 @@
     <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
         
     <div class="lupa">
-        <a href="#"><i class="fas fa-search"></i></a></div>
+        <a href="#buscar"><i class="fas fa-search"></i></a></div>
     
     <div class="carrito-compras">
         <a href="/product-cart">
@@ -149,10 +171,10 @@
     </ul>
 </section>
 
-
 <div class="banner">
     <img src="/images/banner.jpg"  class="img-ban" alt="banner" />
 </div>
+
 
 <!----------------------------- fin del header ----------------------------------------------------------------->
 </header>

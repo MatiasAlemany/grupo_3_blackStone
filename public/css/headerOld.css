@@ -262,10 +262,6 @@ transition: opacity 400ms ease-in;
   }
   
   .menu {
-	/*display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	*/
 	display: none;
   }
 

@@ -2,10 +2,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// indicamos a express usar la plantilla EJS que esta en carpeta views
+// indicamos a express usar la plantilla EJS que esta en carpeta views.
 app.set('view engine', 'ejs');
-//si la ruta por defecto no es /views/partials
-//app.set('views', './carpeta/partials')
+
+//si la ruta por defecto no es /views debemos decirle a node que la carpeta se encuentra
+// en otra ruta, para ello usamos:
+app.set('views', './src/views')
+
+// o tambien asi :
+//app.set('views', path.join(__dirname,'../src/views'));
 
 // usando los recursos estaticos css,images,etc
 app.use(express.static('public'));
