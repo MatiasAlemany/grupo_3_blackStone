@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/creacionProducto.css" />
+        <title>Creacion de Producto</title>
+</head>
+
+<body>
+    <main>
+        <div>
+            <h2>MODIFICA TU PRODUCTO:</h2>
+        </div>
+        <section>
+            <form action="/" method="" class="">
+
+                <!-- NUMERO DE ID -->
+                <div>
+                    <input type="text" name="id" class="boton3" id="id" placeholder="Numero de ID" required />
+                </div>
+                <!-- BOTON CARGAR ARTICULO -->
+                <div>
+                    <input type="submit" name="cargar" class="boton3" id="cargar" placeholder="Cargar" required />
+                </div>
+                <!-- NOMBRE ARTICULO -->
+                <div>
+                    <input type="text" name="nombre" class="boton3" id="nombre" placeholder="Nombre de articulo"
+                        required />
+                </div>
+                <!-- DESCRIPCION ARTICULO -->
+                <div >
+                    <input outline="none" type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"
+                        placeholder="Descripcion de articulo" required />
+                </div>
+                <!-- FOTO DE PRODUCTO -->
+                <div class="foto">
+                    <label for="foto">Fotos de producto</label>
+                    <input type="file" name="foto" class="boton3" placeholder="Fotos de producto" id="foto" required />
+                </div>
+                <!-- PRECIO ARTICULO -->
+                <div>
+                    <input type="text" name="precio" class="boton3" id="precio" placeholder="Precio de articulo"
+                        required />
+                </div>
+                <!-- DESCUENTO ARTICULO -->
+                <div>
+                    <input type="text" name="descuento" class="boton3" id="descuento"
+                        placeholder="Descuento de articulo" required />
+                </div>
+                <!-- CUOTAS ARTICULO -->
+                <div>
+                    <input type="text" name="cuotas" class="boton3" id="cuotas" placeholder="Cuotas de articulo"
+                        required />
+                </div>
+                <!-- BOTON MODIFICAR ARTICULO -->
+                <div>
+                    <input type="submit" name="cargar" class="boton3" id="modificar" placeholder="Modificar" required />
+                </div>
+                <!-- BOTON RESETEAR FORMULARIO -->
+                <div>
+                    <input type="reset" name="borrar" class="boton3" id="borrar" placeholder="Borrar" required />
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
