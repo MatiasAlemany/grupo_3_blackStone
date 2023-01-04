@@ -86,7 +86,8 @@ transition: opacity 400ms ease-in;
     height: 30px;
     text-align: center;
 }
-input {
+
+.boton3 {
     width: 70%;
     padding: 10px;
     color:var(--black-coral);
@@ -95,6 +96,7 @@ input {
     background-color:var(--silver-chalice);
 	border-radius: 10px;
 }
+
 .reg-reset {
     display: flex;
     flex-direction: row;
