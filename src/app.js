@@ -19,13 +19,18 @@ app.use(express.static('public'));
 let rutaIndex= require ('./routers/rutaIndex.js');
 let rutaDetalleProd = require ('./routers/rutaDetalleProd.js');
 let rutaCarritoProd = require ('./routers/rutaCarritoProd.js');
+let rutaCreacionProd = require ('./routers/rutaCreacionProd.js');
+let rutaEdicionProd = require ('./routers/rutaEdicionProd.js');
 
 // usando los enrutadores importados
 app.use(rutaIndex);
 app.use(rutaDetalleProd);
 app.use(rutaCarritoProd);
+app.use(rutaCreacionProd);
+app.use(rutaEdicionProd);
 
 // ponemos a escuchar el servidor
 app.listen(3030, () =>
 console.log('Servidor corriendo en http://localhost:3030')
 );
+

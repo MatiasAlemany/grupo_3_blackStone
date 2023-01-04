@@ -29,6 +29,14 @@ const indexController = {
                return res.render('product-cart');
           },
 
+          edicionProd: (req, res) => {
+               return res.render('edicionProduct');
+          },
+
+          creacionProd: (req, res) => {
+               return res.render('creacionProduct');
+          },
+
           
 
 
