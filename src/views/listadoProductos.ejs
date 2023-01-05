@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/listadoProductos.css" />
+    
+    <title>Listado de productos </title>
+</head>
+<body>
+    <div class="titulo">
+    <h2>Listado de productos</h2>
+    </div>
+
+
+    <section class="seccion1">
+
+        
+        <% for(let i=0; i < allProducts.length; i++) {%>
+            
+            <section class="container1">
+
+                
+                <div class="container2">
+                    <a href="/productDetail/<%= allProducts[i].id%>">
+                    <img src=<%= allProducts[i].img%> class="img1" alt="imagen" />
+                    </a>
+                </div>
+                <div class="container3">       
+                    <section class="precio-dto">
+                        <p class="descripcion"><%= "Descripcion: "+ allProducts[i].descripcion %></p>
+                        <h4 class="precio"><%= "Precio = $ " + allProducts[i].precio %></h4>
+                        <p class="descuento"><%= "Descuento: " + allProducts[i].descuento %></p>
+                        <p class="cuotas"><%= "Cuotas: " + allProducts[i].cuotas %></p>
+                        
+                        
+                    
+                    </section>
+                </div>
+            </section>
+            <%}%>
+    </section>
+</body>
+</html>

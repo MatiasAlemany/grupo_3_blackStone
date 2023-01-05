@@ -36,6 +36,9 @@ const indexController = {
           creacionProd: (req, res) => {
                return res.render('creacionProduct');
           },
+          listarProd: (req, res) => {
+               return res.render ('listadoProductos.ejs', {'allProducts':data} );
+          },
 
           
 
