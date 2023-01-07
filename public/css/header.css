@@ -202,18 +202,16 @@ label, .foto {
     color: white;
     background-color: #525b76;
     margin-top:25px;
-	margin-left: 10px;
+	margin-left: 25px;  /* <----------fijo 25 antes 10px */
 
     
 }
 /*-----fin emergente login-------------------------------------------*/
 
 /*-------------------- sigue el header ----------------------------------*/
-
-
-
-
 .marquesina {
+	position: fixed; /* <--- posicion fija arriba */
+
 	height: 40px;
 	background-color: var(--independence);
 	color: white;
@@ -224,13 +222,17 @@ label, .foto {
 	font-size: 16px;
   }
   .cabecera {
+	position: fixed; /* <--- posicion fija arriba */
+	margin-top: 40px; /*  <------- para acomodarla */
+	background-color: white; /* <----------  fondo blanco */
+
+
 	display: flex;
 	align-items: space-between;
 	align-items: center;
 	width: 100%;
-	padding: 15px 30px ;
+	padding: 8px 30px ;  /* <-------------- fijo 8px antes 15  */
 	text-decoration: none;
-
   }
   .logo {
 	width: 100px;
@@ -238,7 +240,7 @@ label, .foto {
   }
   
   .logo:hover {
-	transform: scale(1.5);
+	transform: scale(1.2);
   }
   
   .lupa {
@@ -263,12 +265,19 @@ label, .foto {
   .burger {
 	background-color: var(--gris);
 	border-radius: 10%;
-	padding: 16px; 
+	padding: 10px; 
   }
   .barra-menu{
-	padding: 15px;
-	padding-top: 0;
+	margin-top: 90px; /* <-----------   para header fijo  */
+	position: fixed;
+	background-color: white;
+	width: 100%;
+	height: 40px;
+	/*padding: 10px;  <----------- hasta aca  */
 
+	/*
+	padding: 15px;      <-----------    header movil
+	padding-top: 0; */
   }
   .menu{
 	display: none;
@@ -278,24 +287,23 @@ label, .foto {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-   
-  
   }
   .boton-inicio, .registrarse, .devolver{
 	color: var(--silver-chalice);
 	border-radius: 3px;
-	font-size: 24px;
+	font-size: 14px;
   }
   .boton-inicio:hover, .registrarse:hover, .devolver:hover{
   color: white;
   background-color: var(--independence);
   }
   .img-ban {
+	margin-top: 140px; /*  <----    para header fijo   */
+
 	width: 100%;
 	height: auto;
-	
-	
   }
+  /*  -----------------------------   TABLETAS ----------------------------- */
   @media (min-width:426px){
 	  .cabecera {
 		  padding-left: 60px;
@@ -317,6 +325,9 @@ label, .foto {
 		  justify-content: space-around;
 		  align-items: center;
 		}
+		.barra-menu{   /*  <-----------   HEADER FIJO  */
+			margin-top: 100px;
+		}
 		.banner {
 		  display: block;
 		}
@@ -336,21 +347,21 @@ label, .foto {
 		  color: #111;
 		  font-size: 14px;
 		}
-
 		.boton-inicio, .registrarse, .devolver{
 			font-size: 20px;
 		  }
-/* -------------fin header---------------------------------------*/
+
 	  }
 /*  tablets    */
+/*
 @media (min-width:521px){
     .nombre, .nombre-usuario {
         width: 150%;
     }
     }
 
-
-/*   notebook   */
+*/
+/* -----------------------------  notebook -----------------------------------------  */
 @media (min-width:968px){
 	  .navbar ul {
 		  display: flex;
@@ -369,3 +380,5 @@ label, .foto {
 			font-size: 24px;
 		  }
 	  }
+
+	  /* ---------------------------fin header---------------------------------------*/

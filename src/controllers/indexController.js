@@ -20,24 +20,24 @@ const indexController = {
 
                const listaProductos = data.filter((prod) => prod.id == id);
     
-               if(listaProductos.length) return res.render('productDetail', {'allProducts': listaProductos});
+               if(listaProductos.length) return res.render('./productos/productDetail', {'allProducts': listaProductos});
                res.send("Not Found"); 
                
           },
 
           detalleCarrito: (req, res) => {
-               return res.render('product-cart');
+               return res.render('./productos/product-cart');
           },
 
           edicionProd: (req, res) => {
-               return res.render('edicionProduct');
+               return res.render('./productos/edicionProduct');
           },
 
           creacionProd: (req, res) => {
-               return res.render('creacionProduct');
+               return res.render('./productos/creacionProduct');
           },
           listarProd: (req, res) => {
-               return res.render ('listadoProductos.ejs', {'allProducts':data} );
+               return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
           },
 
           

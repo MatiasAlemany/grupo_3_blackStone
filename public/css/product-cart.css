@@ -23,7 +23,8 @@
 /*--------------------MAIN--------------------*/
 
 .contenedor1 {
-    padding: 15px;
+    
+    padding: 170px;  /* <-------   header fijo 170  antes 10px */
     background-color: whitesmoke
 }
 

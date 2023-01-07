@@ -26,10 +26,11 @@ body {
   display: none;
 }
   /* MAIN */
-
+  
   /* FOTO ARTICULO A DETALLAR */
 
   .imagen-articulo {
+    margin-top: 180px;  /*  <--------- header fijo sino 0 */
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -59,6 +60,7 @@ body {
   /* MENU DERECHA */
 
    .menu-derecha {
+    margin-top: 180px;  /*  <--------- header fijo sino 0 */
     display: none;
    };
 
