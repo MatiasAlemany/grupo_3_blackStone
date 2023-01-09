@@ -3,64 +3,73 @@
 
 <head>
     <%- include('../partials/head.ejs') %>
+        <!-- LINK CSS -->
         <link rel="stylesheet" href="/css/creacionProducto.css" />
+        <!-- BOOTSTRAP -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <title>Creacion de Producto</title>
 </head>
 
 <body>
     <main>
         <div>
-            <h2>MODIFICA TU PRODUCTO:</h2>
+            <h2 class="titulo-principal">MODIFICA TU PRODUCTO:</h2>
         </div>
         <section>
             <form action="/" method="" class="">
-
+                <!-- CAJA FORMULARIO -->
+                <div class="caja-formulario">
                 <!-- NUMERO DE ID -->
                 <div>
-                    <input type="text" name="id" class="boton3" id="id" placeholder="Numero de ID" required />
+                    <input type="text" name="id" class="form-control" id="id" placeholder="Numero de ID" required />
                 </div>
                 <!-- BOTON CARGAR ARTICULO -->
                 <div>
-                    <input type="submit" name="cargar" class="boton3" id="cargar" placeholder="Cargar" required />
+                    <input type="submit" name="cargar" class="form-control" id="cargar" placeholder="Cargar" required />
                 </div>
                 <!-- NOMBRE ARTICULO -->
                 <div>
-                    <input type="text" name="nombre" class="boton3" id="nombre" placeholder="Nombre de articulo"
+                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre de articulo"
                         required />
                 </div>
                 <!-- DESCRIPCION ARTICULO -->
                 <div >
-                    <input outline="none" type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"
+                    <input outline="none" type="text" name="nombreUsuario" class="form-control" id="nombreUsuario"
                         placeholder="Descripcion de articulo" required />
                 </div>
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
-                    <label for="foto">Fotos de producto</label>
-                    <input type="file" name="foto" class="boton3" placeholder="Fotos de producto" id="foto" required />
+                    <label for="foto">Fotos de producto:</label>
+                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto" required />
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
-                    <input type="text" name="precio" class="boton3" id="precio" placeholder="Precio de articulo"
+                    <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio de articulo"
                         required />
                 </div>
                 <!-- DESCUENTO ARTICULO -->
                 <div>
-                    <input type="text" name="descuento" class="boton3" id="descuento"
+                    <input type="text" name="descuento" class="form-control" id="descuento"
                         placeholder="Descuento de articulo" required />
                 </div>
                 <!-- CUOTAS ARTICULO -->
                 <div>
-                    <input type="text" name="cuotas" class="boton3" id="cuotas" placeholder="Cuotas de articulo"
+                    <input type="text" name="cuotas" class="form-control" id="cuotas" placeholder="Cuotas de articulo"
                         required />
                 </div>
+                </div>
+
+                <!-- CAJA BOTONES -->
+                <div class="caja-botones">
                 <!-- BOTON MODIFICAR ARTICULO -->
                 <div>
-                    <input type="submit" name="cargar" class="boton3" id="modificar" placeholder="Modificar" required />
+                    <input class="btn btn-outline-secondary" type="submit" value="Modificar" placeholder="Modificar">
                 </div>
                 <!-- BOTON RESETEAR FORMULARIO -->
                 <div>
-                    <input type="reset" name="borrar" class="boton3" id="borrar" placeholder="Borrar" required />
+                    <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer" value="Restablecer">
                 </div>
+            </div>
             </form>
         </section>
     </main>

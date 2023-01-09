@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.body {
+    font-family: "Roboto", sans-serif;
+  }
+
+main {
+    max-width: 90%;
+}
+
+  /* CAJA GENERAL FORMULARIO */
+.caja-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+} 
+
+/* SEPARACION ENTRE CAMPOS A RELLENAR */
+.caja-formulario div {
+    margin-top: 5%;
+}
+
+/* TITULO PRINCIPAL */
+.titulo-principal {
+    text-align: center;
+}
+
+/* TITULO FOTO PRODUCTO */
+.titulo-foto {
+    margin: 0px;
+}
+
+/* CAJA FLEX PARA BOTONES */
+
+.caja-botones {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+/* COLORES BOTONES CARGAR Y RESTABLECER */
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #656f78;
+    --bs-btn-border-color: #656f78;
+}
+
+/* LAPTOP */
+
+@media (min-width: 769px) {
+    main {
+      max-width: 25%;
+      margin: 10%;
+    }
+  }
