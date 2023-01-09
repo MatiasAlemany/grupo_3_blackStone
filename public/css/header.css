@@ -304,7 +304,7 @@ label, .foto {
 	height: auto;
   }
   /*  -----------------------------   TABLETAS ----------------------------- */
-  @media (min-width:426px){
+  @media (min-width:424px){
 	  .cabecera {
 		  padding-left: 60px;
 		  padding-right: 60px;
