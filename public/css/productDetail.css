@@ -30,8 +30,7 @@ body {
   /* FOTO ARTICULO A DETALLAR */
 
   .imagen-articulo {
-    margin-top: 180px;  /*  <--------- header fijo sino 0 */
-    padding: 5px;
+    padding-top: 140px;  /*  <--------- header fijo sino 0 */
     display: flex;
     flex-direction: column;
   }
@@ -281,6 +280,7 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        padding-top: 170px;
      }
 
      .imagen-articulo img {
