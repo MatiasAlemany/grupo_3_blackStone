@@ -155,6 +155,19 @@ const indexController = {
 
           },
 
+          destroy: (req, res) => {
+          let id = req.params.id;
+		const remeras = JSON.parse(fs.readFileSync(remerasFilePath, 'utf-8'));
+          console.log(remeras);
+		let productosFiltrados = remeras.filter(producto => {
+			return producto.id != id
+		})
+          console.log(productosFiltrados);
+		fs.writeFileSync(remerasFilePath, JSON.stringify(productosFiltrados, null, " "));
+
+		 res.redirect("/login"); 
+          },
+
           creacionProd: (req, res) => {
                return res.render('./productos/creacionProduct');
           },

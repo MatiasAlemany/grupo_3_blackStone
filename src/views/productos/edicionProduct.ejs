@@ -24,10 +24,6 @@
                     <label for="">Numero de id:</label>
                     <input type="text" name="id" value="<%= allProducts.id %>" class="form-control" id="id" required />
                 </div>
-                <!-- BOTON CARGAR ARTICULO -->
-                <div>
-                    <input type="submit" name="cargar" class="form-control" id="cargar" placeholder="Cargar" required />
-                </div>
                 <!-- NOMBRE ARTICULO -->
                 <div>
                     <label for="">Nombre de articulo:</label>
@@ -75,8 +71,14 @@
                 <div>
                     <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer" value="Restablecer">
                 </div>
-            </div>
             </form>
+                <!-- BOTON ELIMINAR ARTICULO --> 
+                <div>
+                    <form action="/delete/<%= allProducts.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="btn btn-outline-secondary">ELIMINAR ARTICULO</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 </body>

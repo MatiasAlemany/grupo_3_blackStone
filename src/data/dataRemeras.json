@@ -4,7 +4,7 @@
   "nombre": "Remera1",
   "img": "/images/sushi.jpg",
   "descripcion": "Hattori sushi",
-  "precio": 3770,
+  "precio": "3770",
   "descuento": "10% OFF",
   "cuotas": "3 coutas sin interés"
  },
@@ -46,10 +46,10 @@
  },
  {
   "id": 6,
-  "nombre": "Remera6",
+  "nombre": "Star Wars",
   "img": "/images/mini-yoda.jpg",
   "descripcion": "Yoda bebe",
-  "precio": 2000,
+  "precio": "2000",
   "descuento": "5% OFF",
   "cuotas": "3 coutas sin interés"
  },
