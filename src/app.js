@@ -1,10 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
-// MUY IMPORTANTE!!!  para usar el metodo POST
-app.use(express.urlencoded({extended:false}));
-app.use(express.json());
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 
 // indicamos a express usar la plantilla EJS que esta en carpeta views.
 app.set('view engine', 'ejs');
@@ -18,6 +15,9 @@ app.set('views', './src/views');
 
 // usando los recursos estaticos css,images,etc
 app.use(express.static('public'));
+app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
+app.use(express.urlencoded({extended:false})); // MUY IMPORTANTE!!!  para usar el metodo POST
+app.use(express.json()); // MUY IMPORTANTE!!!  para usar el metodo POST
 
 //importamos los distintos enrutadores
 let rutaIndex= require ('./routers/rutaIndex.js');

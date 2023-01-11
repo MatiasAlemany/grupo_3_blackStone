@@ -11,6 +11,7 @@ const indexController = require ("../controllers/indexController.js");
 
 //procesa el pedido get con ruta /
 router.get ('/edicionProduct/:id', indexController.edicionProd);
+router.put('/edicionProduct/:id', indexController.procesoEdicion);
 
 
 //exportamos la variable router ya con todas las rutas guardadas, que se usará en app.js

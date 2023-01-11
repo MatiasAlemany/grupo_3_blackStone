@@ -110,15 +110,49 @@ const indexController = {
           },
 
           edicionProd: (req, res) => {
+               const remeras = JSON.parse(fs.readFileSync(remerasFilePath, 'utf-8'));
                const { id } = req.params;
-               const listaProductos = remeras.filter((prod) => prod.id == id);
 
-
-    
-               if(listaProductos.length) return res.render('./productos/edicionProduct', {'allProducts': listaProductos});
-               res.send("Not Found"); 
+               const listaProductos = remeras.find(prod => {
+                    return prod.id == id
+                    });
+               
+               res.render('./productos/edicionProduct', {'allProducts': listaProductos});
+               
 
                //return res.render('./productos/edicionProduct');
+          },
+
+          procesoEdicion: (req, res) => {
+               const remeras = JSON.parse(fs.readFileSync(remerasFilePath, 'utf-8'));
+
+		     let id = req.params.id;
+		     let productoAnterior = remeras.find(producto => {
+			return producto.id == id
+		})
+
+               let productoEditado = {
+                         id: productoAnterior.id,
+                         nombre: req.body.nombre,
+                         img: productoAnterior.img,
+                         descripcion: req.body.descripcion,
+                         precio: req.body.precio,
+                         descuento: req.body.descuento,
+                         cuotas: req.body.cuotas,
+                 }
+               
+               /* "PUSHEANDO" El archivo editado */
+               
+               let indice = remeras.findIndex(product => {
+                    return product.id == id
+               })
+
+               remeras[indice] = productoEditado;
+
+               /* Sobreescribir el archivo JSON */
+               fs.writeFileSync(remerasFilePath, JSON.stringify(remeras, null, " "));
+		     res.redirect("/login");
+
           },
 
           creacionProd: (req, res) => {

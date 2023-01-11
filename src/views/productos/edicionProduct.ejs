@@ -13,15 +13,16 @@
 <body>
     <main>
         <div>
-            <h2 class="titulo-principal">MODIFICA TU PRODUCTO:</h2>
+            <h2 class="titulo-principal">Estas editando: <%=allProducts.nombre %></h2>
         </div>
         <section>
-            <form action="/" method="" class="">
+            <form action="/edicionProduct/<%= allProducts.id %>?_method=PUT" method="POST" class="">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
                 <!-- NUMERO DE ID -->
                 <div>
-                    <input type="text" name="id" class="form-control" id="id" placeholder="Numero de ID" required />
+                    <label for="">Numero de id:</label>
+                    <input type="text" name="id" value="<%= allProducts.id %>" class="form-control" id="id" required />
                 </div>
                 <!-- BOTON CARGAR ARTICULO -->
                 <div>
@@ -29,32 +30,37 @@
                 </div>
                 <!-- NOMBRE ARTICULO -->
                 <div>
-                    <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre de articulo"
+                    <label for="">Nombre de articulo:</label>
+                    <input type="text" name="nombre" class="form-control" id="nombre" value="<%= allProducts.nombre %>" placeholder="Nombre de articulo"
                         required />
                 </div>
                 <!-- DESCRIPCION ARTICULO -->
                 <div >
-                    <input outline="none" type="text" name="nombreUsuario" class="form-control" id="nombreUsuario"
-                        placeholder="Descripcion de articulo" required />
+                    <label for="">Descripcion de articulo:</label>
+                    <input outline="none" type="text" name="descripcion" class="form-control" id="nombreUsuario"
+                        placeholder="Descripcion de articulo" value="<%= allProducts.descripcion %>" required />
                 </div>
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto" required />
+                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto"/>
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
-                    <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio de articulo"
+                    <label for="">Precio articulo:</label>
+                    <input type="text" name="precio" class="form-control" id="precio" value="<%= allProducts.precio%>"
                         required />
                 </div>
                 <!-- DESCUENTO ARTICULO -->
                 <div>
+                    <label for="">Descuento articulo:</label>
                     <input type="text" name="descuento" class="form-control" id="descuento"
-                        placeholder="Descuento de articulo" required />
+                    value="<%= allProducts.descuento %>" required />
                 </div>
                 <!-- CUOTAS ARTICULO -->
                 <div>
-                    <input type="text" name="cuotas" class="form-control" id="cuotas" placeholder="Cuotas de articulo"
+                    <label for="">Cuotas articulo:</label>
+                    <input type="text" name="cuotas" class="form-control" id="cuotas" value="<%= allProducts.cuotas %>"
                         required />
                 </div>
                 </div>
@@ -63,7 +69,7 @@
                 <div class="caja-botones">
                 <!-- BOTON MODIFICAR ARTICULO -->
                 <div>
-                    <input class="btn btn-outline-secondary" type="submit" value="Modificar" placeholder="Modificar">
+                    <button class="btn btn-outline-secondary" type="submit">Modificar</button>
                 </div>
                 <!-- BOTON RESETEAR FORMULARIO -->
                 <div>
