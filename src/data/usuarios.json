@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nombreYapellido": "",
+    "fechaNacimiento": "",
+    "nombreUsuario": "",
+    "email": "ingeniero_rik@hotmail.com",
+    "clave": "1234",
+    "rol": "administrador"
+  },
+  {
+    "id": 2,
+    "nombreYapellido": "",
+    "fechaNacimiento": "",
+    "nombreUsuario": "",
+    "email": "pedro@hotmail.com",
+    "clave": "123",
+    "rol": "usuario"
+  },
+  {
+    "id": 3,
+    "nombreYapellido": "ricardo",
+    "nombreUsuario": "ricardo",
+    "fechaNacimiento": "",
+    "email": "unotecnologia@hotmail.com.ar",
+    "clave": "5689",
+    "rol": "usuario"
+  },
+  {
+    "id": 4,
+    "nombreYapellido": "leonardo",
+    "nombreUsuario": "leobardo",
+    "fechaNacimiento": "",
+    "email": "leo@hotmail.com",
+    "clave": "1234",
+    "rol": "usuario"
+  },
+  {
+    "id": 5,
+    "nombreYapellido": "leonardo",
+    "nombreUsuario": "leobardo",
+    "fechaNacimiento": "",
+    "email": "tt@kk.com",
+    "clave": "2316",
+    "rol": "usuario"
+  }
+]

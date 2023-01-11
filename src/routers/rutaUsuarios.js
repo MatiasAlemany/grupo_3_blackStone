@@ -10,8 +10,10 @@ const indexController = require ("../controllers/indexController.js");
 //las distintas rutas, que luego exportamos
 
 //procesa el pedido get con ruta /
-router.get ('/edicionProduct/:id', indexController.edicionProd);
+router.get ('/crearUsuario', indexController.crearUsuario);
 
+//procesa el pedido post con ruta /
+router.post ('/crearUsuario', indexController.crearUsuario);
 
 //exportamos la variable router ya con todas las rutas guardadas, que se usará en app.js
 module.exports = router;

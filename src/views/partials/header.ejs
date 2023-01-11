@@ -6,36 +6,33 @@
 <!--------------------------codigo de ventana emergente buscar ------------------------>
 <section id="buscar" class="modalDialog">
     <div class="modal">
-        <form action="" method="">
+        <form action="/buscarProd" method="GET">
          <div class=" control-login">
-             <input type="text" name="buscar" class="control boton3" placeholder="Ingrese texto" required>
+             <input type="text" name="buscar" class="control boton3" placeholder="Ingrese descripción" required>
         </div>     
             <div class="control-login">
              <button class="envio" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
-             <button type="submit" class="envio"><a href="/productDetail/3" title="Close" id="close">Buscar</a></button>
+             <button type="submit" class="envio" title="buscar" id="buscar">Buscar</button>
             </div>
         </form>
     </div>
 </section>
-
-
-
 
 <!----------------------------------------------------------------------------------------------->
 
 <!--------------------------codigo de ventana emergente de inicio de sesion ------------------------>
 <section id="inicio-sesion" class="modalDialog">
     <div class="modal">
-        <form action="" method="">
+        <form action="/login" method="POST">
          <div class=" control-login">
-             <input type="email" name="email" class="control boton3" placeholder="E-mail" required>
+             <input type="email" name="email" class="control boton3" placeholder="e-mail" required>
         </div>
           <div class="control-login">
-                <input type="password" name="password" class="control boton3" placeholder="Contraseña" required>
+                <input type="password" name="clave" class="control boton3" placeholder="Contraseña" required>
             </div>
             <div class="control-login">
              <button class="envio" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
-             <button type="submit" class="envio">Enviar</button> 
+             <input type="submit" class="envio"></input> 
             </div>
         </form>
         <div class="contraseña">
@@ -50,38 +47,40 @@
 <section id="registro" class="modalDialog">
 
     <div class="modal">
-    <form action="/registro" method="POST" class="formulario">
-        <div class="nombre">
-            
-            <input type="text" name="nombre" class="boton3" id="nombre" placeholder="nombre y apellido" required minlength="12">
+    <form action="/crearUsuario" method="POST" class="formulario">
+        <div class="nombre">      
+            <input type="text" name="nombreYapellido" class="boton3" id="nombre" placeholder="nombre y apellido" required minlength="4">
         </div>
         <div class="nombre-usuario">
-            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="12">
+            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="4">
         </div>
 
         
          <div class="foto">
             <label class="fechaNacimiento">Fecha de nacimiento</label>
-            <input  type="date" name="fechaNacimiento" class="boton3" id="fechaNacimiento" required>
+            <input  type="date" name="fechaNacimiento" class="boton3" id="fechaNacimiento" >
         </div>
         
     
-       
+       <!--
         <div class="foto">
             <label for="foto"><h4>Foto de perfil</h4></label>
             <input type="file" name="foto" class="boton3" id="foto" required>
         </div>
-
+        -->
         <div class="nombre">
-        <input type="password" name="password" class="boton3" id="password" placeholder="Contraseña" required>
+            <input type="emil" name="email" class="boton3" id="email" placeholder="e-mail" required>
         </div>
         <div class="nombre">
-        <input type="password" name="confirmarpassword" class="boton3" id="confirmarpassword" placeholder="Confirmar contraseña" required>
+            <input type="password" name="clave" class="boton3" id="password" placeholder="Contraseña" required minlength="4">
         </div>
-
+        <div class="nombre">
+            <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword" placeholder="Confirmar" required minlength="4">
+        </div>
+        
         <div class="reg-reset">
-        <button class="reset" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
-        <button class="register" type="submit">Enviar</button>
+            <button class="reset" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
+            <button class="register" type="submit">Enviar</button>
         </div>
 
     </form>

@@ -14,26 +14,8 @@
     <main>
 
     <div class="titulo">
-        <h1>Listado de productos</h1>
+        <h1>Listado de productos disponibles</h1>
     </div>
-
-    <div class="opcionesAdmin">
-        <button class="botonL" type="submit" ><a href="/" title="Close" id="close">Volver</a></button>
-        <button class="botonL" type="submit" ><a href="/creacionProduct" title="Close" id="close">Crear producto</a></button>
-        <label  class="botonL">Para editar haga click sobre cada producto</label>
-    </div>
-
-<!---
-    <div class="opcionesAdmin">
-        <div class="editar">
-            <a href="/creacionProduct"><p>Crear producto</p></a>
-        </div>
-        <div class="editar">
-            <a href="/edicionProduct"><p>Editar de producto</p></a>
-        </div>
-    </div>
-
--->
 
     <section class="seccion1">
 
@@ -44,9 +26,9 @@
 
                 
                 <div class="container2">
-                    <a href="/edicionProduct/<%= allProducts[i].id%>">
+                   
                     <img src=<%= allProducts[i].img%> class="img1" alt="imagen" />
-                    </a>
+                   
                 </div>
                 <div class="container3">       
                     <section class="precio-dto">
