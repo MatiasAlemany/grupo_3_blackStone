@@ -220,16 +220,16 @@
         
                         
                         <div class="container2">
-                            <a href="/productDetail/<%= allProducts[i].id%>">
-                            <img src=<%= allProducts[i].img%> class="img1" alt="imagen" />
+                            <a href="/productDetail/<%= allProducts.id%>">
+                            <img src=<%= allProducts.img%> class="img1" alt="imagen" />
                             </a>
                         </div>
                         <div class="container3">       
                             <section class="precio-dto">
-                                <p class="descripcion"><%= allProducts[i].descripcion %></p>
-                                <h4 class="precio"><%= allProducts[i].precio %></h4>
-                                <p class="descuento"><%= allProducts[i].descuento %></p>
-                                <p class="cuotas"><%= allProducts[i].cuotas %></p>
+                                <p class="descripcion"><%= allProducts.descripcion %></p>
+                                <h4 class="precio"><%= allProducts.precio %></h4>
+                                <p class="descuento"><%= allProducts.descuento %></p>
+                                <p class="cuotas"><%= allProducts.cuotas %></p>
                                 <a href="/product-cart" class="add-to-a-cart">
                                 <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
                                 </a>
