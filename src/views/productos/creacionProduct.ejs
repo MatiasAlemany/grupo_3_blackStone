@@ -16,40 +16,40 @@
             <h2 class="titulo-principal">SUBI TU NUEVO PRODUCTO:</h2>
         </div>
         <section>
-            <form action="/" method="" class="">
+            <form action="/creacionProduct" method="POST" class="">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
-                <!-- NUMERO DE ID -->
-                <div>
-                    <input type="text" name="id" class="form-control" id="id" placeholder="Numero de ID" required />
-                </div>
                 <!-- NOMBRE ARTICULO -->
                 <div>
+                    <label for="foto">Nombre articulo:</label>
                     <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre de articulo"
                         required />
                 </div>
                 <!-- DESCRIPCION ARTICULO -->
                 <div >
-                    <input outline="none" type="text" name="nombreUsuario" class="form-control" id="nombreUsuario"
-                        placeholder="Descripcion de articulo" required />
+                    <label for="foto">Descripcion articulo:</label>
+                    <input outline="none" type="text" name="descripcion" class="form-control" placeholder="Descripcion de articulo" required />
                 </div>
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto" required />
+                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto"/>
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
+                    <label for="foto">Precio de producto:</label>
                     <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio de articulo"
                         required />
                 </div>
                 <!-- DESCUENTO ARTICULO -->
                 <div>
+                    <label for="foto">Descuento de producto:</label>
                     <input type="text" name="descuento" class="form-control" id="descuento"
                         placeholder="Descuento de articulo" required />
                 </div>
                 <!-- CUOTAS ARTICULO -->
                 <div>
+                    <label for="foto">Cuotas de producto:</label>
                     <input type="text" name="cuotas" class="form-control" id="cuotas" placeholder="Cuotas de articulo"
                         required />
                 </div>

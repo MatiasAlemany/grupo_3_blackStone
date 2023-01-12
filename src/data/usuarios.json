@@ -43,5 +43,14 @@
     "email": "tt@kk.com",
     "clave": "2316",
     "rol": "usuario"
+  },
+  {
+    "id": 6,
+    "nombreYapellido": "Matias",
+    "nombreUsuario": "Matias",
+    "fechaNacimiento": "1998",
+    "email": "matiasalemany2@gmail.com",
+    "clave": "12345",
+    "rol": "administrador"
   }
 ]

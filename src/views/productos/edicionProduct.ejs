@@ -64,16 +64,16 @@
                 <!-- CAJA BOTONES -->
                 <div class="caja-botones">
                 <!-- BOTON MODIFICAR ARTICULO -->
-                <div>
+                <div class="espacio-botones">
                     <button class="btn btn-outline-secondary" type="submit">Modificar</button>
                 </div>
                 <!-- BOTON RESETEAR FORMULARIO -->
-                <div>
+                <div class="espacio-botones">
                     <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer" value="Restablecer">
                 </div>
             </form>
                 <!-- BOTON ELIMINAR ARTICULO --> 
-                <div>
+                <div class="espacio-botones">
                     <form action="/delete/<%= allProducts.id %>?_method=DELETE" method="POST">
                     <button type="submit" class="btn btn-outline-secondary">ELIMINAR ARTICULO</button>
                     </form>

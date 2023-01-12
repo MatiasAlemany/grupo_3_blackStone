@@ -5,7 +5,7 @@
   "img": "/images/sushi.jpg",
   "descripcion": "Hattori sushi",
   "precio": "3770",
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "3 coutas sin interés"
  },
  {
@@ -14,7 +14,7 @@
   "img": "/images/ac_dc.jpg",
   "descripcion": "AC DC rojo-amarillo",
   "precio": "2000",
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "3 coutas sin interés"
  },
  {
@@ -23,7 +23,7 @@
   "img": "/images/bart+lisa.jpg",
   "descripcion": "Bart y Lisa",
   "precio": "3500",
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "3 coutas sin interés"
  },
  {
@@ -32,7 +32,7 @@
   "img": "/images/infierno.jpg",
   "descripcion": "Hell",
   "precio": 3200,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "Sin cuotas"
  },
  {
@@ -41,7 +41,7 @@
   "img": "/images/oasis.jpg",
   "descripcion": "Oasis",
   "precio": 3750,
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "Sin cuotas"
  },
  {
@@ -50,7 +50,7 @@
   "img": "/images/mini-yoda.jpg",
   "descripcion": "Yoda bebe",
   "precio": "2000",
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "3 coutas sin interés"
  },
  {
@@ -59,7 +59,7 @@
   "img": "/images/rollings-2.jpg",
   "descripcion": "The Rolling Stones",
   "precio": 2500,
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "Sin cuotas"
  },
  {
@@ -68,7 +68,7 @@
   "img": "/images/i-am-the-bomb.jpg",
   "descripcion": "I Am the bomb",
   "precio": 3770,
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "Sin cuotas"
  },
  {
@@ -77,7 +77,7 @@
   "img": "/images/ramones.jpg",
   "descripcion": "The Ramones",
   "precio": 2000,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "3 coutas sin interés"
  },
  {
@@ -86,7 +86,7 @@
   "img": "/images/motorhead.jpg",
   "descripcion": "Motorhead",
   "precio": 2500,
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "Sin cuotas"
  },
  {
@@ -95,7 +95,7 @@
   "img": "/images/relax.jpg",
   "descripcion": "Relax blanca",
   "precio": 3200,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "3 coutas sin interés"
  },
  {
@@ -104,7 +104,7 @@
   "img": "/images/wi-fi.jpg",
   "descripcion": "wi Fi negra",
   "precio": 3700,
-  "descuento": "10% OFF",
+  "descuento": "10",
   "cuotas": "Sin cuotas"
  },
  {
@@ -113,7 +113,7 @@
   "img": "/images/homero.jpg",
   "descripcion": "Homero azul",
   "precio": 2200,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "Sin cuotas"
  },
  {
@@ -122,7 +122,7 @@
   "img": "/images/calabera.jpg",
   "descripcion": "Calabera negra",
   "precio": 2300,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "Sin cuotas"
  },
  {
@@ -131,7 +131,7 @@
   "img": "/images/bowie.jpg",
   "descripcion": "David Bowie blanca",
   "precio": 2100,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "3 cuotas sin interes"
  },
  {
@@ -140,7 +140,7 @@
   "img": "/images/ramones2.jpg",
   "descripcion": "The Ramones two",
   "precio": 2000,
-  "descuento": "5% OFF",
+  "descuento": "5",
   "cuotas": "Sin cuotas"
  }
 ]

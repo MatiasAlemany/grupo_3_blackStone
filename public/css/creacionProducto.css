@@ -38,8 +38,13 @@ main {
 
 .caja-botones {
     display: flex;
-    justify-content: space-evenly;
     margin: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.espacio-botones {
+    margin-right: 10px;
 }
 
 /* COLORES BOTONES CARGAR Y RESTABLECER */
@@ -53,7 +58,7 @@ main {
 
 @media (min-width: 769px) {
     main {
-      max-width: 25%;
-      margin: 10%;
+      max-width: 37%;
+      margin: 6%;
     }
   }

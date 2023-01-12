@@ -171,6 +171,28 @@ const indexController = {
 
           creacionProd: (req, res) => {
                return res.render('./productos/creacionProduct');
+               
+          },
+
+          procesoCreacion: (req, res) => {
+          const remeras = JSON.parse(fs.readFileSync(remerasFilePath, 'utf-8'));     
+          
+          let productoNuevo = {
+               id: remeras[remeras.length - 1].id + 1,
+               nombre: req.body.nombre,
+               img: " ",
+               descripcion: req.body.descripcion,
+               precio: req.body.precio,
+               descuento: req.body.descuento,
+               cuotas: req.body.cuotas,
+               }
+               
+               /* PUSHEANDO El archivo editado */
+               remeras.push(productoNuevo)
+
+               /* Sobreescribir el archivo JSON */
+               fs.writeFileSync(remerasFilePath, JSON.stringify(remeras, null, " "));
+               res.redirect("/login");     
           },
 
           listarProd: (req, res) => {
