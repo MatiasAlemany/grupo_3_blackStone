@@ -6,6 +6,10 @@ const app = express();
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
+// para usar verbos POST y DELETE
+//const methodOverride = require('method-override');
+//app.use(methodOverride('_method'));
+
 // indicamos a express usar la plantilla EJS que esta en carpeta views.
 app.set('view engine', 'ejs');
 

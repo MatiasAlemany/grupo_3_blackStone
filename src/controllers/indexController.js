@@ -63,8 +63,9 @@ const indexController = {
                }                   
                if(req.body.clave == req.body.confirmarClave){
                     // si clave y confirmar clave coinciden creamos el nuevo usuario   
-                    let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
-                   
+                    //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
+                    let id = usuariosJS[usuariosJS.length - 1 ] + 1; // para que no se reiptaid al eliminar y agregar
+                    
                     let user={"id":id,
                               "nombreYapellido":req.body.nombreYapellido,
                               "nombreUsuario":req.body.nombreUsuario,
@@ -75,7 +76,7 @@ const indexController = {
                   
                     usuariosJS.push(user);// agrego el usuario creado en el archivo js
 
-                    let usuariosJSON= JSON.stringify(usuariosJS);//convierto el js en JSON
+                    let usuariosJSON= JSON.stringify(usuariosJS, null, " ");//convierto el js en JSON
                     fs.writeFileSync('src/data/usuarios.json', usuariosJSON, 'utf-8');// vuelvo a crear el archivo JSON
                     
                     return res.send("usuario guardado correctamente");                   

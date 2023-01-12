@@ -95,6 +95,7 @@ transition: opacity 400ms ease-in;
     outline: none;
     background-color:var(--silver-chalice);
 	border-radius: 10px;
+	text-align: center;
 }
 
 .reg-reset {
