@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/listadoUsuarios.css" />
+    
+    <title>Listado de usuarios</title>
+</head>
+<body>
+<!--------------------------- modal de editar datos de usuarios registrados ------------------------->
+<section id="editarRegistro" class="modalDialog">
+
+    <div class="modal">
+    <form action="/crearUsuario" method="POST" class="formulario">
+        <div class="nombre">      
+            <input type="text" name="nombreYapellido" class="boton3" id="nombre" placeholder="nombre y apellido" required minlength="4">
+        </div>
+        <div class="nombre-usuario">
+            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="4">
+        </div>
+
+        
+         <div class="foto">
+            <label class="fechaNacimiento">Fecha de nacimiento</label>
+            <input  type="date" name="fechaNacimiento" class="boton3" id="fechaNacimiento" >
+        </div>
+        
+    
+        <div class="nombre">
+            <input type="emil" name="email" class="boton3" id="email" placeholder="e-mail" required>
+        </div>
+        <div class="nombre">
+            <input type="password" name="clave" class="boton3" id="password" placeholder="Contraseña" required minlength="4">
+        </div>
+        <div class="nombre">
+            <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword" placeholder="Confirmar" required minlength="4">
+        </div>
+        
+        <div class="reg-reset">
+            <button class="reset" type="reset" ><a href="/listaUsuarios" title="Close" id="close">Volver</a></button>
+            <button class="register" type="submit">Guardar</button>
+        </div>
+
+    </form>
+</div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------->
+<!-----------------------------------------------------seguro borrar --------------------------------------------------------->
+<section id="seguroBorrar" class="modalDialog">
+
+    <div class="modal">
+    <form action="/crearUsuario" method="POST" class="formulario">
+        <div class="nombre">      
+            <h4>¿seguro quiere borrar?</h4>
+        </div>
+        <div class="nombre-usuario">
+            <button class="borrar-usuario" type="reset"><a href="/">Borrar</a></button>
+        </div>
+        <div class="nombre-usuario">
+            <button class="boton3" type="reset"><a href="/listaUsuarios">Volver</a></button>     
+        </div>
+    </form>
+</div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+<!--
+ <% for(let i=0; i < usuariosSolos.length; i++) {%>
+
+    <section class="container1">
+   
+        <section class="usuario">
+            <div class="usuario">
+            <p class="datosUsuario"><%= "Nombre y Apellido: " + usuariosSolos[i].nombreYapellido  %></p>
+            </div>
+            <div>
+            <p class="datosUsuario"><%= "Nombre de usuario: " + usuariosSolos[i].nombreUsuario %></p>
+        </div>
+        <div>
+             <p class="datosUsuario"><%= "Fecha de nacimiento: " + usuariosSolos[i].fechaNacimiento %></p>
+            </div>
+            <div>
+             <h4 class="datosUsuario"><%= "email: " + usuariosSolos[i].email %></h4>
+            </div>
+            <div>  
+             <p class="datosUsuario"><%= "clave: " + usuariosSolos[i].clave %></p>
+            </div> 
+        </section> 
+ 
+    
+    </section>
+    <%}%>
+    -->
+
+    <section class="container3">
+
+    <table class="tablaUsuarios" >
+        <caption class="encabezado">Listado de usuarios</caption>
+        <tr>
+          <th class="titulos">Nombre y Apellido</th><th class="titulos">Nombre de usuario</th><th class="titulos">Fecha de nacimiento</th>
+          <th class="titulos">email</th><th class="titulos">clave</th>
+        </tr>
+        <tr>
+            <% for(let i=0; i < usuariosSolos.length; i++) {%>
+          <td class="fila"><%=usuariosSolos[i].nombreYapellido  %></td><td class="fila"><%= usuariosSolos[i].nombreUsuario %></td>
+          <td class="fila"><%= usuariosSolos[i].fechaNacimiento %></td><td class="fila"><%= usuariosSolos[i].email %></td>
+          <td class="fila"><%= usuariosSolos[i].clave %></td >
+            <td class="botones"><button class="botonEditar" type="submit"><a href="#editarRegistro">Editar</a></button>
+                <button class="botonBorrar" type="reset"><a href="#seguroBorrar">Borrar</a></button></td>
+        </tr>
+        
+        
+    
+        <%}%>
+      </table>
+
+      <div class="nombre-usuario">
+        <button class="botonVolver" type="reset"><a href="/">Volver</a></button>     
+        </div>
+        
+    </section>
+</body>
+</html>

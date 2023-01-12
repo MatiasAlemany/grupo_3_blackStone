@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "nombreYapellido": "",
+    "nombreYapellido": "Ricardo",
     "fechaNacimiento": "",
-    "nombreUsuario": "",
+    "nombreUsuario": "Ricardo",
     "email": "ingeniero_rik@hotmail.com",
     "clave": "1234",
     "rol": "administrador"
   },
   {
     "id": 2,
-    "nombreYapellido": "",
-    "fechaNacimiento": "",
-    "nombreUsuario": "",
+    "nombreYapellido": "Pedro",
+    "fechaNacimiento": "1998-02-25",
+    "nombreUsuario": "Peter",
     "email": "pedro@hotmail.com",
     "clave": "123",
     "rol": "usuario"
   },
   {
     "id": 3,
-    "nombreYapellido": "ricardo",
-    "nombreUsuario": "ricardo",
+    "nombreYapellido": "Ricardo",
+    "nombreUsuario": "Ricardo",
     "fechaNacimiento": "",
     "email": "unotecnologia@hotmail.com.ar",
     "clave": "5689",
@@ -28,8 +28,8 @@
   },
   {
     "id": 4,
-    "nombreYapellido": "leonardo",
-    "nombreUsuario": "leobardo",
+    "nombreYapellido": "Leonardo",
+    "nombreUsuario": "Leonardo",
     "fechaNacimiento": "",
     "email": "leo@hotmail.com",
     "clave": "1234",
@@ -37,8 +37,8 @@
   },
   {
     "id": 5,
-    "nombreYapellido": "leonardo",
-    "nombreUsuario": "leobardo",
+    "nombreYapellido": "Leonardo",
+    "nombreUsuario": "Leonardo",
     "fechaNacimiento": "",
     "email": "tt@kk.com",
     "clave": "2316",

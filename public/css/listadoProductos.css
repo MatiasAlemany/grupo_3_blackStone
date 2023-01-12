@@ -36,6 +36,7 @@ body {
     align-items: center;
     justify-content: space-around;
     padding-bottom: 20px;
+    padding-top: 30px;
     width:100%;
     margin: auto;
 	  margin-top: 2px;
@@ -52,10 +53,6 @@ body {
     text-align: center;
 }
 
-
-  h1 {
-    /*padding-top: 120px;       /* <-----  header fijo */
-  }
   .titulo {
    
     text-align: center;

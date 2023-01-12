@@ -13,7 +13,7 @@
   "nombre": "Remera2",
   "img": "/images/ac_dc.jpg",
   "descripcion": "AC DC rojo-amarillo",
-  "precio": 2000,
+  "precio": "2000",
   "descuento": "10% OFF",
   "cuotas": "3 coutas sin interés"
  },

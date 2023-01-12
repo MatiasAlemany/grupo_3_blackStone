@@ -64,7 +64,31 @@
 
 
                 <% for(let i=8; i < 16; i++) {%>
-            
+
+                    <section class="container1">
+
+                
+                        <div class="container2">
+                            <a href="/productDetail/<%= allProducts[i].id%>">
+                            <img src=<%= allProducts[i].img%> class="img1" alt="imagen" />
+                            </a>
+                        </div>
+                        <div class="container3">       
+                            <section class="precio-dto">
+                                <p class="descripcion"><%= allProducts[i].descripcion %></p>
+                                <h4 class="precio"><%= allProducts[i].precio %></h4>
+                                <p class="descuento"><%= allProducts[i].descuento %></p>
+                                <p class="cuotas"><%= allProducts[i].cuotas %></p>
+                                <a href="/product-cart" class="add-to-a-cart">
+                                <div class="circulo"><i class="fa-solid fa-cart-plus comprar"></i></div>
+                                </a>
+                            </section>
+                        </div>
+                    </section>
+
+
+
+            <!-- 
                     <section class="container1">
         
                         
@@ -85,6 +109,7 @@
                             </section>
                         </div>
                     </section>
+                    -->
                     <%}%>
 
            

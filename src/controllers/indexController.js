@@ -172,11 +172,25 @@ const indexController = {
           creacionProd: (req, res) => {
                return res.render('./productos/creacionProduct');
           },
+
           listarProd: (req, res) => {
                //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
                return res.render ('./productos/listadoProductos.ejs', {'allProducts':remeras} );
 
           },
+
+          listarUsuarios : (req, res) => {
+               const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+
+               //hacemos array de usuarios solamente
+               const usuariosSolos = usuariosJS.filter((user) => user.rol !="administrador");
+
+               return res.render ("./usuarios/listaUsuarios.ejs",{'usuariosSolos' : usuariosSolos});
+               //res.send(usuariosJS);
+
+          },
+
+
 
           listarProdBuscado: (req, res) => {
                //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );

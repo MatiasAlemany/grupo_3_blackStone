@@ -34,6 +34,7 @@ let rutaLogin = require ('./routers/rutaLogin.js');
 let rutaUsuarios = require('./routers/rutaUsuarios.js');
 let rutaBuscarProd = require('./routers/rutaBuscarProd.js');
 let rutaListarProdBuscado = require ('./routers/rutaListarProdBuscado.js');
+let rutaListarUsuarios = require ('./routers/rutaListarUsuarios.js');
 
 // usando los enrutadores importados
 app.use(rutaIndex);
@@ -46,6 +47,7 @@ app.use(rutaLogin);
 app.use(rutaUsuarios);
 app.use(rutaBuscarProd);
 app.use(rutaListarProdBuscado);
+app.use(rutaListarUsuarios);
 
 // ponemos a escuchar el servidor
 app.listen(3030, () =>
