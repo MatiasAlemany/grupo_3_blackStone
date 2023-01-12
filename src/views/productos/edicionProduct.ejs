@@ -16,6 +16,7 @@
             <h2 class="titulo-principal">Estas editando: <%=allProducts.nombre %></h2>
         </div>
         <section>
+            <div class="form-imagen">
             <form action="/edicionProduct/<%= allProducts.id %>?_method=PUT" method="POST" class="">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
@@ -79,6 +80,12 @@
                     </form>
                 </div>
             </div>
+            <!-- IMAGEN ARTICULO -->
+            <div class="imagen-art">
+                <label>Imagen de tu articulo:</label>
+                <img src=<%= allProducts.img %> alt="FOTO DE PRUEBA">
+            </div>
+        </div>
         </section>
     </main>
 </body>

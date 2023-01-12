@@ -19,6 +19,22 @@ main {
     margin-left: 5%;
 } 
 
+/* ACOMODANDO IMAGEN CON FORMULARIO */
+.form-imagen {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagen-art img {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+.imagen-art label {
+    margin-left: 5%;
+}
+
 /* SEPARACION ENTRE CAMPOS A RELLENAR */
 .caja-formulario div {
     margin-top: 5%;
@@ -60,5 +76,26 @@ main {
     main {
       max-width: 37%;
       margin: 6%;
+    }
+
+    .form-imagen {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .imagen-art {
+        display: flex;
+        flex-direction: column;
+        margin-left: 60px;
+    }
+    
+    .imagen-art img {
+        max-height: 80%;
+        max-width: 100%;
+    }
+    
+    .imagen-art label {
+        margin-left: 5%;
+        margin-top: 5%;
     }
   }
