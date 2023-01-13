@@ -17,7 +17,7 @@
         </div>
         <section>
             <div class="form-imagen">
-            <form action="/edicionProduct/<%= allProducts.id %>?_method=PUT" method="POST" class="">
+            <form action="/edicionProduct/<%= allProducts.id %>?_method=PUT" method="POST" class="" enctype="multipart/form-data">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
                 <!-- NUMERO DE ID -->
@@ -40,7 +40,7 @@
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto"/>
+                    <input type="file" name="imagenProducto" id="imagenProducto" class="form-control" required/>
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
@@ -83,7 +83,7 @@
             <!-- IMAGEN ARTICULO -->
             <div class="imagen-art">
                 <label>Imagen de tu articulo:</label>
-                <img src=<%= allProducts.img %> alt="FOTO DE PRUEBA">
+                <img src="/images/<%= allProducts.img%>" alt="FOTO DE PRUEBA">
             </div>
         </div>
         </section>

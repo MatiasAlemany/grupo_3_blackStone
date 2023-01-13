@@ -17,7 +17,7 @@
         </div>
         <section>
             
-            <form action="/creacionProduct" method="POST" class="">
+            <form action="/creacionProduct" method="POST" class="" enctype="multipart/form-data">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
                 <!-- NOMBRE ARTICULO -->
@@ -34,13 +34,12 @@
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="file" name="foto" class="form-control" placeholder="Fotos de producto" id="foto"/>
+                    <input type="file" name="imagenProducto" class="form-control" id="imagenProducto" required/>
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
                     <label for="foto">Precio de producto:</label>
-                    <input type="text" name="precio" class="form-control" id="precio" placeholder="Precio de articulo"
-                        required />
+                    <input type="text" name="precio" class="form-control" required />
                 </div>
                 <!-- DESCUENTO ARTICULO -->
                 <div>

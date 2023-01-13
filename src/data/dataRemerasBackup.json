@@ -2,7 +2,7 @@
     {
       "id": 1,
       "nombre": "Remera1",
-      "img": "/images/sushi.jpg",
+      "img": "sushi.jpg",
       "descripcion": "Hattori sushi",
       "precio": 3770,
       "descuento": "10% OFF",
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "nombre": "Remera2",
-      "img": "/images/ac_dc.jpg",
+      "img": "ac_dc.jpg",
       "descripcion": "AC DC rojo-amarillo",
       "precio": 2000,
       "descuento": "10% OFF",
@@ -20,7 +20,7 @@
     {
       "id": 3,
       "nombre": "Remera3",
-      "img": "/images/bart+lisa.jpg",
+      "img": "bart+lisa.jpg",
       "descripcion": "Burt y Lisa",
       "precio": 2500,
       "descuento": "10% OFF",
@@ -29,7 +29,7 @@
     {
       "id": 4,
       "nombre": "Remera4",
-      "img": "/images/infierno.jpg",
+      "img": "infierno.jpg",
       "descripcion": "Hell",
       "precio": 3200,
       "descuento": "5% OFF",
@@ -38,7 +38,7 @@
     {
       "id": 5,
       "nombre": "Remera5",
-      "img": "/images/oasis.jpg",
+      "img": "oasis.jpg",
       "descripcion": "Oasis",
       "precio": 3750,
       "descuento": "10% OFF",
@@ -47,7 +47,7 @@
     {
       "id": 6,
       "nombre": "Remera6",
-      "img": "/images/mini-yoda.jpg",
+      "img": "mini-yoda.jpg",
       "descripcion": "Yoda bebe",
       "precio": 2000,
       "descuento": "5% OFF",
@@ -56,7 +56,7 @@
     {
       "id": 7,
       "nombre": "Remera7",
-      "img": "/images/rollings-2.jpg",
+      "img": "rollings-2.jpg",
       "descripcion": "The Rolling Stones",
       "precio": 2500,
       "descuento": "10% OFF",
@@ -65,7 +65,7 @@
     {
       "id": 8,
       "nombre": "Remera8",
-      "img": "/images/i-am-the-bomb.jpg",
+      "img": "i-am-the-bomb.jpg",
       "descripcion": "I Am the bomb",
       "precio": 3770,
       "descuento": "10% OFF",
@@ -74,7 +74,7 @@
     {
       "id": 9,
       "nombre": "Remera9",
-      "img": "/images/ramones.jpg",
+      "img": "ramones.jpg",
       "descripcion": "The Ramones",
       "precio": 2000,
       "descuento": "5% OFF",
@@ -83,7 +83,7 @@
     {
       "id": 10,
       "nombre": "Remera10",
-      "img": "/images/motorhead.jpg",
+      "img": "motorhead.jpg",
       "descripcion": "Motorhead",
       "precio": 2500,
       "descuento": "10% OFF",
@@ -92,7 +92,7 @@
     {
       "id": 11,
       "nombre": "Remera11",
-      "img": "/images/relax.jpg",
+      "img": "relax.jpg",
       "descripcion": "Relax blanca",
       "precio": 3200,
       "descuento": "5% OFF",
@@ -101,7 +101,7 @@
     {
       "id": 12,
       "nombre": "Remera12",
-      "img": "/images/wi-fi.jpg",
+      "img": "wi-fi.jpg",
       "descripcion": "wi Fi negra",
       "precio": 3700,
       "descuento": "10% OFF",
@@ -110,7 +110,7 @@
     {
       "id": 13,
       "nombre": "Remera13",
-      "img": "/images/homero.jpg",
+      "img": "homero.jpg",
       "descripcion": "Homero azul",
       "precio": 2200,
       "descuento": "5% OFF",
@@ -119,7 +119,7 @@
     {
       "id": 14,
       "nombre": "Remera14",
-      "img": "/images/calabera.jpg",
+      "img": "calabera.jpg",
       "descripcion": "Calabera negra",
       "precio": 2300,
       "descuento": "5% OFF",
@@ -128,7 +128,7 @@
     {
       "id": 15,
       "nombre": "Remera15",
-      "img": "/images/bowie.jpg",
+      "img": "bowie.jpg",
       "descripcion": "David Bowie blanca",
       "precio": 2100,
       "descuento": "5% OFF",
@@ -137,7 +137,7 @@
     {
       "id": 16,
       "nombre": "Remera16",
-      "img": "/images/ramones2.jpg",
+      "img": "ramones2.jpg",
       "descripcion": "The Ramones two",
       "precio": 2000,
       "descuento": "5% OFF",

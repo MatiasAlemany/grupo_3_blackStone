@@ -63,7 +63,7 @@ const productsController = {
     let productoEditado = {
       id: productoAnterior.id,
       nombre: req.body.nombre,
-      img: productoAnterior.img,
+      img: req.file ? req.file.filename : productoAnterior.img,
       descripcion: req.body.descripcion,
       precio: req.body.precio,
       descuento: req.body.descuento,
@@ -109,7 +109,7 @@ const productsController = {
     let productoNuevo = {
       id: remeras[remeras.length - 1].id + 1,
       nombre: req.body.nombre,
-      img: " ",
+      img: req.file ? req.file.filename : "Carga tu foto",
       descripcion: req.body.descripcion,
       precio: req.body.precio,
       descuento: req.body.descuento,
