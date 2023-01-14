@@ -9,15 +9,15 @@
 </head>
 <body>
 <!--------------------------- modal de editar datos de usuarios registrados ------------------------->
-<section id="editarRegistro" class="modalDialog">
+<section id="modalEditarUsuario" class="modalDialog">
 
     <div class="modal">
-    <form action="/crearUsuario" method="POST" class="formulario">
+    <form action="/listaUsuarios/<%= usuariosSolos.id %>?_method=PUT" method="POST"  class="formulario">
         <div class="nombre">      
-            <input type="text" name="nombreYapellido" class="boton3" id="nombre" placeholder="nombre y apellido" required minlength="4">
+            <input type="text" name="nombreYapellido" class="boton3" id="nombre"  value="<%= usuariosSolos.nombreYapellido %>" required minlength="4">
         </div>
         <div class="nombre-usuario">
-            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="4">
+            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"  required minlength="4">
         </div>
 
         
@@ -46,82 +46,61 @@
 </div>
 </section>
 <!------------------------------------------------------------------------------------------------------------------------->
-<!-----------------------------------------------------seguro borrar --------------------------------------------------------->
+<!-----------------------------------------------------emergente seguro borrar --------------------------------------------------------->
 <section id="seguroBorrar" class="modalDialog">
 
     <div class="modal">
-    <form action="/crearUsuario" method="POST" class="formulario">
+    
         <div class="nombre">      
             <h4>¿seguro quiere borrar?</h4>
         </div>
         <div class="nombre-usuario">
-            <button class="borrar-usuario" type="reset"><a href="/">Borrar</a></button>
+
+            <form action="/listaUsuarios/<%= usuariosSolos.id %>?_method=DELETE" method="POST">
+            <button class="borrar-usuario" type="submit" >Borrar Usuario</button>
+            </form>
+
         </div>
         <div class="nombre-usuario">
-            <button class="boton3" type="reset"><a href="/listaUsuarios">Volver</a></button>     
+            <button class="boton3" type="submit"><a href="/listaUsuarios">Volver</a></button>     
         </div>
-    </form>
+   
 </div>
 </section>
 <!------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-<!--
- <% for(let i=0; i < usuariosSolos.length; i++) {%>
-
-    <section class="container1">
-   
-        <section class="usuario">
-            <div class="usuario">
-            <p class="datosUsuario"><%= "Nombre y Apellido: " + usuariosSolos[i].nombreYapellido  %></p>
-            </div>
-            <div>
-            <p class="datosUsuario"><%= "Nombre de usuario: " + usuariosSolos[i].nombreUsuario %></p>
-        </div>
-        <div>
-             <p class="datosUsuario"><%= "Fecha de nacimiento: " + usuariosSolos[i].fechaNacimiento %></p>
-            </div>
-            <div>
-             <h4 class="datosUsuario"><%= "email: " + usuariosSolos[i].email %></h4>
-            </div>
-            <div>  
-             <p class="datosUsuario"><%= "clave: " + usuariosSolos[i].clave %></p>
-            </div> 
-        </section> 
- 
+<!-----------------------------------------------------parte principal de tabla lista de usuarios --------------------------------------------------------->
+<section class="container3">
     
-    </section>
+<table class="tablaUsuarios" >
+    <caption class="encabezado">Listado de usuarios</caption>
+    <tr>
+      <th class="titulos">Nombre y Apellido</th><th class="titulos">Nombre de usuario</th><th class="titulos">Fecha de nacimiento</th>
+      <th class="titulos">email</th><th class="titulos">clave</th>
+    </tr>
+    <tr>
+        <% for(let i=0; i < usuariosSolos.length; i++) {%>
+      <td class="fila"><%=usuariosSolos[i].nombreYapellido  %></td>
+      <td class="fila"><%= usuariosSolos[i].nombreUsuario %></td>
+      <td class="fila"><%= usuariosSolos[i].fechaNacimiento %></td>
+      <td class="fila"><%= usuariosSolos[i].email %></td>
+      <td class="fila"><%= usuariosSolos[i].clave %></td >
+      <td class="botones">
+        <button class="botonEditar" type="submit"  data-dismiss="modal"><a href="/formUsuario/<%= usuariosSolos[i].id %> ">Editar</a></button>
+        <form action="/listaUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST">
+                    <button class="botonBorrar" type="submit" >Borrar</button>
+        </form>
+        </td>
+    </tr>
     <%}%>
-    -->
+</table>
 
-    <section class="container3">
+  <div class="nombre-usuario">
+    <button class="botonVolver" type="reset"><a href="/">Volver</a></button>     
+    </div>
 
-    <table class="tablaUsuarios" >
-        <caption class="encabezado">Listado de usuarios</caption>
-        <tr>
-          <th class="titulos">Nombre y Apellido</th><th class="titulos">Nombre de usuario</th><th class="titulos">Fecha de nacimiento</th>
-          <th class="titulos">email</th><th class="titulos">clave</th>
-        </tr>
-        <tr>
-            <% for(let i=0; i < usuariosSolos.length; i++) {%>
-          <td class="fila"><%=usuariosSolos[i].nombreYapellido  %></td><td class="fila"><%= usuariosSolos[i].nombreUsuario %></td>
-          <td class="fila"><%= usuariosSolos[i].fechaNacimiento %></td><td class="fila"><%= usuariosSolos[i].email %></td>
-          <td class="fila"><%= usuariosSolos[i].clave %></td >
-            <td class="botones"><button class="botonEditar" type="submit"><a href="#editarRegistro">Editar</a></button>
-                <button class="botonBorrar" type="reset"><a href="#seguroBorrar">Borrar</a></button></td>
-        </tr>
-        
-        
-    
-        <%}%>
-      </table>
+</section>
 
-      <div class="nombre-usuario">
-        <button class="botonVolver" type="reset"><a href="/">Volver</a></button>     
-        </div>
-        
-    </section>
+
+
 </body>
 </html>

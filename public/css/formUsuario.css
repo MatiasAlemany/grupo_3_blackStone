@@ -25,18 +25,8 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
-
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
 }
-.modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
-}
+	
 .modalDialog > div {
 	width:360px;
 	position: relative;
@@ -47,9 +37,7 @@ body {
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #6c6061);
 	background: -o-linear-gradient(#fff, #999);
-  -webkit-transition: opacity 400ms ease-in;
--moz-transition: opacity 400ms ease-in;
-transition: opacity 400ms ease-in;
+ 
 }
 #close {
 	color: #FFFFFF;
@@ -60,31 +48,11 @@ transition: opacity 400ms ease-in;
 	width: 24px;
 	text-decoration: none;
 	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
+	
 }
 /* ---------------------- para emergente de editarRegistro ------------------- */
-#registro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-bottom: 20px;
-  width:100%;
-  margin: auto;
-margin-top: 100px;
-}
-.borrar-usuario {
-  background-color: orange;
-  width: 80%;
-  padding: 10px;
-  color:var(--black-coral);
-  border: none;
-  outline: none;
-border-radius: 10px;
-text-align: center;
-}
+
+
 label, .foto {
   margin-top: 25px;    
 }
@@ -136,8 +104,6 @@ margin-top: 15px;
   background-color: #0022AA;
   
 }
-
-
 /*----------------------------------------------------------------------*/
   /* -------------------------main ---------------------*/
   main {
@@ -149,57 +115,15 @@ margin-top: 15px;
   .container3 {
     padding-top: 30px;
   }
-  .encabezado {
-    height: 30px;
-    background-color: black;
-    color: white;
-    font-size: 24px;
-  }
-  .tablaUsuarios {
   
-    border-style:solid;
-    border-width: 1px;
-    border-color: black;
-    margin: auto;
-  }
-  .fila{
-    
-    text-align: center;
-  }
   .botonVolver {
     width: 10%;
     height: 30px;
     border-radius: 10px;
     
   }
-  .botones {
+  
 
-    display: flex;
-    
-  }
-  .botonEditar {
-    margin: 4px;
-    background-color:lightgreen;
-    color: white;
-    border-radius: 5px;
-  }
-  .botonBorrar {
-    margin: 4px;
-    background-color:orangered;
-    color: white;
-    border-radius: 5px;
-  }
-  .titulos {
-    border-style:solid;
-    border-width: 1px;
-    border-color: black;
-    padding: 10px;
-  }
-  .datosUsuario {
-    font-size: 20px;
-    
-   
-  }
   
   /*  tablets    */
   @media (min-width:426px){

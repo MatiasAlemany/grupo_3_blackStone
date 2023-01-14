@@ -1,56 +1,101 @@
 [
-  {
-    "id": 1,
-    "nombreYapellido": "Ricardo",
-    "nombreUsuario": "Ricardo",
-    "fechaNacimiento": "",
-    "email": "ingeniero_rik@hotmail.com",
-    "clave": "1234",
-    "rol": "administrador"
-  },
-  {
-    "id": 2,
-    "nombreYapellido": "Pedro",
-    "fechaNacimiento": "1998-02-25",
-    "nombreUsuario": "Peter",
-    "email": "pedro@hotmail.com",
-    "clave": "123",
-    "rol": "usuario"
-  },
-  {
-    "id": 3,
-    "nombreYapellido": "Ricardo",
-    "nombreUsuario": "Ricardo",
-    "fechaNacimiento": "",
-    "email": "unotecnologia@hotmail.com.ar",
-    "clave": "5689",
-    "rol": "usuario"
-  },
-  {
-    "id": 4,
-    "nombreYapellido": "Leonardo",
-    "nombreUsuario": "Leonardo",
-    "fechaNacimiento": "",
-    "email": "leo@hotmail.com",
-    "clave": "1234",
-    "rol": "usuario"
-  },
-  {
-    "id": 5,
-    "nombreYapellido": "Leonardo",
-    "nombreUsuario": "Leonardo",
-    "fechaNacimiento": "",
-    "email": "tt@kk.com",
-    "clave": "2316",
-    "rol": "usuario"
-  },
-  {
-    "id": 6,
-    "nombreYapellido": "Matias",
-    "nombreUsuario": "Matias",
-    "fechaNacimiento": "1998",
-    "email": "matiasalemany2@gmail.com",
-    "clave": "12345",
-    "rol": "administrador"
-  }
+ {
+  "id": 1,
+  "nombreYapellido": "Ricardo",
+  "nombreUsuario": "Ricardo",
+  "fechaNacimiento": "",
+  "email": "ingeniero_rik@hotmail.com",
+  "clave": "1234",
+  "rol": "administrador"
+ },
+ {
+  "id": 2,
+  "nombreYapellido": "Pedro",
+  "fechaNacimiento": "1998-02-25",
+  "nombreUsuario": "Peter",
+  "email": "pedro@hotmail.com",
+  "clave": "123",
+  "rol": "usuario"
+ },
+ {
+  "id": 3,
+  "nombreYapellido": "Ricardo",
+  "nombreUsuario": "Ricardo",
+  "fechaNacimiento": "",
+  "email": "unotecnologia@hotmail.com.ar",
+  "clave": "5689",
+  "rol": "usuario"
+ },
+ {
+  "id": 4,
+  "nombreYapellido": "Leonardo",
+  "nombreUsuario": "Leonardo",
+  "fechaNacimiento": "",
+  "email": "leo@hotmail.com",
+  "clave": "1234",
+  "rol": "usuario"
+ },
+ {
+  "id": 5,
+  "nombreYapellido": "Leonardo",
+  "nombreUsuario": "Leonardo",
+  "fechaNacimiento": "",
+  "email": "tt@kk.com",
+  "clave": "2316",
+  "rol": "usuario"
+ },
+ {
+  "id": 6,
+  "nombreYapellido": "Matias",
+  "nombreUsuario": "Matias",
+  "fechaNacimiento": "1998",
+  "email": "matiasalemany2@gmail.com",
+  "clave": "12345",
+  "rol": "administrador"
+ },
+ {
+  "id": 7,
+  "nombreYapellido": "julieta",
+  "nombreUsuario": "July",
+  "fechaNacimiento": "",
+  "email": "jilo@juli.com",
+  "clave": "1111",
+  "rol": "usuario"
+ },
+ {
+  "id": 8,
+  "nombreYapellido": "julieta",
+  "nombreUsuario": "pedro",
+  "fechaNacimiento": "",
+  "email": "p@m.com",
+  "clave": "1000",
+  "rol": "usuario"
+ },
+ {
+  "id": 10,
+  "nombreYapellido": "miriam",
+  "nombreUsuario": "miriam",
+  "fechaNacimiento": "",
+  "email": "miriam@am.com",
+  "clave": "1000",
+  "rol": "usuario"
+ },
+ {
+  "id": 11,
+  "nombreYapellido": "miriam",
+  "nombreUsuario": "miriam",
+  "fechaNacimiento": "",
+  "email": "mi@am.com",
+  "clave": "1000",
+  "rol": "usuario"
+ },
+ {
+  "id": 12,
+  "nombreYapellido": "miriam",
+  "nombreUsuario": "miri",
+  "fechaNacimiento": "",
+  "email": "mimi@am.com",
+  "clave": "1000",
+  "rol": "usuario"
+ }
 ]

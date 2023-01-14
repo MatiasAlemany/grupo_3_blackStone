@@ -112,6 +112,41 @@ const indexController = {
     });
     //res.send(usuariosJS);
   },
+
+  editarUsuario : (req, res) => {
+               
+    let id = req.params.id;
+    const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+
+    console.log("entro en editar  " + id);
+
+    let usuarioFiltrado = usuariosJS.find(user => {
+         return user.id == id
+    })
+   
+
+    res.render("./usuarios/formUsuario.ejs", {'usuario': usuarioFiltrado})
+},
+
+eliminarUsuario: (req, res) => {
+               
+  const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+  
+  let id = req.params.id;
+  console.log("entro en borrar  " + id);
+
+
+  let usuariosFiltrados = usuariosJS.filter(user => {
+       return user.id != id
+  })
+  
+  fs.writeFileSync(usuariosFilePath, JSON.stringify(usuariosFiltrados, null, " "));
+
+   res.redirect("/listaUsuarios"); 
+  },
+
+
+
 };
 
 module.exports = indexController;

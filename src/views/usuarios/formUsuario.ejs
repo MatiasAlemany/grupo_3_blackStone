@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/formUsuario.css" />
+    <title>Edicion de Usuario</title>
+</head>
+<body>
+    <section  class="modalDialog">
+
+        <div class="modal">
+        <form action="/formUsuario/<%= usuario.id %>?_method=PUT" method="POST" class="formulario">
+            <div class="nombre">      
+                <input type="text" name="nombreYapellido" class="boton3" id="nombre" value="<%= usuario.nombreYapellido %>"  required minlength="4">
+            </div>
+            <div class="nombre-usuario">
+                <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"value="<%= usuario.nombreUsuario %>" required minlength="4">
+            </div>
+    
+            
+             <div class="foto">
+                <label class="fechaNacimiento">Fecha de nacimiento</label>
+                <input  type="date" name="fechaNacimiento" class="boton3" id="fechaNacimiento" >
+            </div>
+            
+        
+            <div class="nombre">
+                <input type="emil" name="email" class="boton3" id="email" value="<%= usuario.email %>" required>
+            </div>
+            <div class="nombre">
+                <input type="text" name="clave" class="boton3" id="password" value="<%= usuario.clave %>" required minlength="4">
+            </div>
+            <div class="nombre">
+                <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword" value="<%= usuario.confirmarClave %> " required minlength="4">
+            </div>
+            
+            <div class="reg-reset">
+                <button class="reset" type="reset" ><a href="/listaUsuarios" title="Close" id="close">Volver</a></button>
+                <button class="register" type="submit">Guardar</button>
+            </div>
+    
+        </form>
+    </div>
+    </section>
+
+
+    
+</body>
+</html>
