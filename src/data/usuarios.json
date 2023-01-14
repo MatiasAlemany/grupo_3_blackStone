@@ -2,8 +2,8 @@
   {
     "id": 1,
     "nombreYapellido": "Ricardo",
-    "fechaNacimiento": "",
     "nombreUsuario": "Ricardo",
+    "fechaNacimiento": "",
     "email": "ingeniero_rik@hotmail.com",
     "clave": "1234",
     "rol": "administrador"

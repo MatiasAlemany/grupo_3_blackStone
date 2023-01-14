@@ -54,6 +54,8 @@ const indexController = {
 
                
           crearUsuario : (req, res) => {
+		const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+
                //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
                
                for (let i=0; i<usuariosJS.length; i++){            
@@ -64,7 +66,7 @@ const indexController = {
                if(req.body.clave == req.body.confirmarClave){
                     // si clave y confirmar clave coinciden creamos el nuevo usuario   
                     //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
-                    let id = usuariosJS[usuariosJS.length - 1 ] + 1; // para que no se reiptaid al eliminar y agregar
+                    let id = usuariosJS[usuariosJS.length - 1 ].id + 1; // para que no se reiptaid al eliminar y agregar
                     
                     let user={"id":id,
                               "nombreYapellido":req.body.nombreYapellido,
