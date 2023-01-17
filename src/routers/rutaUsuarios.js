@@ -20,10 +20,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-
 //en vez de app.get , utilizamos router.get . Esto va guardando en router
 //las distintas rutas, que luego exportamos
 
+<<<<<<< HEAD
 // ****************** mostrar un usuario ***********************
 
 
@@ -59,6 +59,22 @@ router.delete ('/listaUsuarios/:id', userController.eliminarUsuario);
 // *************** eliminar un administrador o usuario *********************
 //procesa el pedido delete con ruta /listaTodosUsuarios  <------ ese nombre va en el action del HTML
 router.delete ('/listaTodosUsuarios/:id', userController.eliminarCualquiera);
+=======
+//procesa el pedido get con ruta /listaUsuarios  <------ ese nombre va en el action del HTML
+router.get ('/listaUsuarios', indexController.listarUsuarios);
+//router.get ('/listaUsuarios' , indexController.editarUsuario);
+//procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
+router.post ('/listaUsuarios', indexController.crearUsuario);
+
+//procesa el pedido delete con ruta /
+//router.get ('/listaUsuarios' , indexController.editarUsuario);
+//router.put ('/editarUsuario/:id', indexController.editarUsuario);
+
+
+//procesa el pedido delete con ruta /
+router.delete ('/listaUsuarios/:id', indexController.eliminarUsuario);
+
+>>>>>>> c686dbf15d956f7ceef3449c2e73f86916904df0
 
 
 //exportamos la variable router ya con todas las rutas guardadas, que se usará en app.js
