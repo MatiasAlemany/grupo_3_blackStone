@@ -30,7 +30,6 @@
   "id": 5,
   "nombreYapellido": "Leonardo",
   "nombreUsuario": "Leonardo",
-<<<<<<< HEAD
   "imagenUsuario": "hijitus.jpg",
   "email": "leo@hotmail.com",
   "clave": "1234",
@@ -41,15 +40,11 @@
   "nombreYapellido": "leonardo",
   "nombreUsuario": "leonardo",
   "imagenUsuario": "largirucho.jpg",
-=======
-  "fechaNacimiento": "",
->>>>>>> c686dbf15d956f7ceef3449c2e73f86916904df0
   "email": "tt@kk.com",
   "clave": "2316",
   "rol": "usuario"
  },
  {
-<<<<<<< HEAD
   "id": 8,
   "nombreYapellido": "leonardo",
   "nombreUsuario": "leonardo",
@@ -73,27 +68,10 @@
   "nombreUsuario": "cacha",
   "imagenUsuario": "imagenUsuarioEditada-1673829988682.jpg",
   "email": "c@bacha.com",
-=======
-  "id": 6,
-  "nombreYapellido": "Matias",
-  "nombreUsuario": "Matias",
-  "fechaNacimiento": "1998",
-  "email": "matiasalemany2@gmail.com",
-  "clave": "12345",
-  "rol": "administrador"
- },
- {
-  "id": 7,
-  "nombreYapellido": "julieta",
-  "nombreUsuario": "July",
-  "fechaNacimiento": "",
-  "email": "jilo@juli.com",
->>>>>>> c686dbf15d956f7ceef3449c2e73f86916904df0
   "clave": "1111",
   "rol": "usuario"
  },
  {
-<<<<<<< HEAD
   "id": 14,
   "nombreYapellido": "julieta",
   "nombreUsuario": "July",
@@ -109,41 +87,6 @@
   "imagenUsuario": "imagenUsuario-1673830065925.jpg",
   "email": "matias@m.com",
   "clave": "2222",
-=======
-  "id": 8,
-  "nombreYapellido": "julieta",
-  "nombreUsuario": "pedro",
-  "fechaNacimiento": "",
-  "email": "p@m.com",
-  "clave": "1000",
-  "rol": "usuario"
- },
- {
-  "id": 10,
-  "nombreYapellido": "miriam",
-  "nombreUsuario": "miriam",
-  "fechaNacimiento": "",
-  "email": "miriam@am.com",
-  "clave": "1000",
-  "rol": "usuario"
- },
- {
-  "id": 11,
-  "nombreYapellido": "miriam",
-  "nombreUsuario": "miriam",
-  "fechaNacimiento": "",
-  "email": "mi@am.com",
-  "clave": "1000",
-  "rol": "usuario"
- },
- {
-  "id": 12,
-  "nombreYapellido": "miriam",
-  "nombreUsuario": "miri",
-  "fechaNacimiento": "",
-  "email": "mimi@am.com",
-  "clave": "1000",
->>>>>>> c686dbf15d956f7ceef3449c2e73f86916904df0
   "rol": "usuario"
  }
 ]
