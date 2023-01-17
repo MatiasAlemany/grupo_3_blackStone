@@ -20,7 +20,7 @@
 
 <!----------------------------------------------------------------------------------------------->
 
-<!--------------------------codigo de ventana emergente de inicio de sesion ------------------------>
+<!--------------------------codigo de ventana emergente de inicio de sesion - LOGIN ------------------------>
 <section id="inicio-sesion" class="modalDialog">
     <div class="modal">
         <form action="/login" method="POST">
@@ -47,7 +47,7 @@
 <section id="registro" class="modalDialog">
 
     <div class="modal">
-    <form action="/crearUsuario" method="POST" class="formulario">
+    <form action="/listaUsuarios" method="POST" class="formulario" enctype="multipart/form-data">
         <div class="nombre">      
             <input type="text" name="nombreYapellido" class="boton3" id="nombre" placeholder="nombre y apellido" required minlength="4">
         </div>
@@ -56,18 +56,13 @@
         </div>
 
         
-         <div class="foto">
-            <label class="fechaNacimiento">Fecha de nacimiento</label>
-            <input  type="date" name="fechaNacimiento" class="boton3" id="fechaNacimiento" >
-        </div>
-        
     
-       <!--
+       
         <div class="foto">
             <label for="foto"><h4>Foto de perfil</h4></label>
-            <input type="file" name="foto" class="boton3" id="foto" required>
+            <input type="file" name="imagenUsuario" class="boton3" id="foto" >
         </div>
-        -->
+    
         <div class="nombre">
             <input type="emil" name="email" class="boton3" id="email" placeholder="e-mail" required>
         </div>

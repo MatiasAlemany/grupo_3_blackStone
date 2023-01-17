@@ -12,7 +12,7 @@ guardados en la carpeta data como Json (un array de objetos literales) */
 const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
-const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+//const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
 //creamos el objeto literal con los metodos a exportar
 
@@ -52,6 +52,28 @@ const productsController = {
     //return res.render('./productos/edicionProduct');
   },
 
+
+  buscarProd: (req, res) => {
+    // en loBuscado esta la descripcion que viene del formulario html
+    let loBuscado = req.query.buscar;
+    //creo array vacio donde pondremos los productos encontrado
+    let resultadoBuscar = [];
+    // recorremos las remeras buscando coincidencia
+    for (let i = 0; i < remeras.length; i++) {
+      if (remeras[i].descripcion.includes(loBuscado)) {
+        resultadoBuscar.push(remeras[i]);
+      }
+    }
+    // si el array resultadoBuscar no es cero lo mostramos
+    if (resultadoBuscar.length)
+      return res.render("./productos/listarProdBuscado", {
+        allProducts: resultadoBuscar,
+      });
+    // sinó indicamos que no hay productos que coincidan
+    res.send("No hay productos que coincidan con la busqueda");
+  },
+
+  
   procesoEdicion: (req, res) => {
     const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 
@@ -63,7 +85,7 @@ const productsController = {
     let productoEditado = {
       id: productoAnterior.id,
       nombre: req.body.nombre,
-      img: req.file ? req.file.filename : productoAnterior.img,
+      imagenUsuario: req.file ? req.file.filename : productoAnterior.img,
       descripcion: req.body.descripcion,
       precio: req.body.precio,
       descuento: req.body.descuento,
@@ -109,7 +131,7 @@ const productsController = {
     let productoNuevo = {
       id: remeras[remeras.length - 1].id + 1,
       nombre: req.body.nombre,
-      img: req.file ? req.file.filename : "Carga tu foto",
+      imagenUsuario: req.file ? req.file.filename : "Carga tu foto",
       descripcion: req.body.descripcion,
       precio: req.body.precio,
       descuento: req.body.descuento,

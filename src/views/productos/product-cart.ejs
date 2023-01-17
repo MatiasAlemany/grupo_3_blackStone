@@ -17,7 +17,12 @@
 
         <div class="contenedor1">
 
-            <p class="carro">Carrito de Compras de  <%= usuario %></p>
+            <div class="foto">
+                <img src="/images/usuarios/<%= usuario.imagenUsuario%>" alt="FOTO">
+                
+            </div>
+
+            <p class="carro">Carrito de Compras de  <%= usuario.nombreYapellido %></p>
 
             <div class="contenedor2">
                 <div class="imagen">

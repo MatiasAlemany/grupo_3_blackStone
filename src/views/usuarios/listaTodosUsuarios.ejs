@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/listadoUsuarios.css" />
+    
+    <title>Listado de usuarios</title>
+</head>
+<body>
+<!--------------------------- modal para agregar administrador ------------------------->
+<section id="formAdmin" class="modalDialog">
+
+    <div class="modal">
+    <form action="/listaTodosUsuarios" method="POST"  class="formulario">
+        <div class="nombre">      
+            <input type="text" name="nombreYapellido" class="boton3" id="nombre"   required minlength="4">
+        </div>
+        <div class="nombre-usuario">
+            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"  required minlength="4">
+        </div>
+
+        
+         <div class="foto">
+            <label class="fechaNacimiento">Fecha de nacimiento</label>
+            <input  type="date" name="imagenUsuario" class="boton3" id="fechaNacimiento" >
+        </div>
+        
+    
+        <div class="nombre">
+            <input type="emil" name="email" class="boton3" id="email" placeholder="e-mail" required>
+        </div>
+        <div class="nombre">
+            <input type="password" name="clave" class="boton3" id="password" placeholder="Contraseña" required minlength="4">
+        </div>
+        <div class="nombre">
+            <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword" placeholder="Confirmar" required minlength="4">
+        </div>
+        
+        <div class="reg-reset">
+            <button class="reset" type="submit" ><a href="/listaTodosUsuarios" title="Close" id="close">Volver</a></button>
+            <button class="register" type="submit">Guardar</button>
+        </div>
+
+    </form>
+</div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------->
+
+<!---------------------------------------------- parte principal de tabla lista de todos los usuarios y administradores --------------------------------------------------------->
+<section class="container3">
+    
+<table class="tablaUsuarios" >
+    <caption class="encabezado">Listado de usuarios y administradores </caption>
+    <tr>
+      <th class="titulos"> ---  Nombre y Apellido  --- </th><th class="titulos">---  Nombre de usuario  ---</th><th class="titulos">---  Categoría  ---</th>
+      <th class="titulos">---  email  --- </th><th class="titulos">---  clave  ---</th>
+    </tr>
+    <tr>
+        <% for(let i=0; i < usuariosSolos.length; i++) {%>
+      <td class="fila"><%=usuariosSolos[i].nombreYapellido  %></td>
+      <td class="fila"><%= usuariosSolos[i].nombreUsuario %></td>
+      <td class="fila"><%= usuariosSolos[i].rol %></td>
+      <td class="fila"><%= usuariosSolos[i].email %></td>
+      <td class="fila"><%= usuariosSolos[i].clave %></td >
+      <td class="botones">
+        <form action="/listaTodosUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST">
+                    <button class="botonBorrar" type="submit" >Borrar</button>
+        </form>
+        </td>
+    </tr>
+    <%}%>
+</table>
+<div class="nombre-usuario">
+    <button class="botonVolver" type="submit"><a href="#formAdmin">Agregar administrador</a></button>     
+    </div>
+  <div class="nombre-usuario">
+    <button class="botonVolver" type="submit"><a href="/">Volver</a></button>     
+    </div>
+    
+</section>
+
+
+
+</body>
+</html>

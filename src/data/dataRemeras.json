@@ -27,14 +27,14 @@
   "cuotas": "3 coutas sin interés"
  },
  {
-  "id": 4,
-  "nombre": "Remera4",
-  "img": "infierno.jpg",
-  "descripcion": "Hell",
-  "precio": 3200,
-  "descuento": "5",
-  "cuotas": "Sin cuotas"
- },
+      "id": 4,
+      "nombre": "Remera4",
+      "img": "infierno.jpg",
+      "descripcion": "Hell",
+      "precio": 3200,
+      "descuento": "5% OFF",
+      "cuotas": "Sin cuotas"
+    },
  {
   "id": 5,
   "nombre": "Remera5",
