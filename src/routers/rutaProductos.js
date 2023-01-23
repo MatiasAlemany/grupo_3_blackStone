@@ -2,9 +2,10 @@ let express = require ('express');
 let router = express.Router();
 let multer = require('multer');
 let path = require('path')
+const {body} = require('express-validator'); //requiero la propiedad body de express-validator
 
 
-
+/* MULTER PARA SUBIR ARCHIVOS */
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, "public/images")
@@ -19,6 +20,12 @@ const upload = multer({storage: storage})
 //importamos el controlador de las rutas por defecto 
 const productsController = require ("../controllers/productsController.js");
 
+/* VALIDACIONES */
+const validacionesForm = [
+    body('nombre').notEmpty().withMessage("Completa el nombre"),
+    body('descripcion').notEmpty().withMessage("Completa la descripcion"),
+    body('precio').notEmpty().withMessage("Completa el precio"),
+]
 
 // ******************* mostrar un producto ************************
 //procesa el pedido get con ruta /buscarProd <------ ese nombre va en el action del HTML
@@ -30,7 +37,7 @@ router.get ('/productDetail/:id', productsController.detalleProd);
 //Renderiza la pagina creacion producto
 router.get ('/creacionProduct', productsController.creacionProd);
 //Procesa la creacion del producto
-router.post ('/creacionProduct', upload.single("imagenProducto"),productsController.procesoCreacion)
+router.post ('/creacionProduct', upload.single("imagenProducto"), validacionesForm, productsController.procesoCreacion)
 
 
 // ********************* Devolver todos los productos *********************** 

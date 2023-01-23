@@ -50,6 +50,13 @@ main {
     margin: 0px;
 }
 
+/* ERRORES */
+.errores {
+    margin: 0%;
+    margin-left: 5%;
+    color: #ff5e00
+}
+
 /* CAJA FLEX PARA BOTONES */
 
 .caja-botones {

@@ -7,6 +7,9 @@ const fs = require("fs");
 const path = require("path");
 const { json } = require("express");
 
+/* Requerimos propiedad validationResult para poder validar campos de form */
+const {validationResult, body} = require('express-validator');
+
 /* En la constante "remeras" ya tenemos los productos que están 
 guardados en la carpeta data como Json (un array de objetos literales) */
 const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
@@ -127,7 +130,9 @@ const productsController = {
 
   procesoCreacion: (req, res) => {
     const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
+    let errors = validationResult(req);
 
+    if(errors.isEmpty()){
     let productoNuevo = {
       id: remeras[remeras.length - 1].id + 1,
       nombre: req.body.nombre,
@@ -144,6 +149,11 @@ const productsController = {
     /* Sobreescribir el archivo JSON */
     fs.writeFileSync(remerasFilePath, JSON.stringify(remeras, null, " "));
     res.redirect("/login");
+    }else {
+      return res.render("./productos/creacionProduct", 
+			{errors: errors.array(),
+			old: req.body })
+    }
   },
 
   listarProd: (req, res) => {
