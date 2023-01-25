@@ -215,14 +215,13 @@ eliminarUsuario: (req, res) => {
       const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
     //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
-    for (let i = 0; i < usuariosJS.length; i++)
-    
-    {
+    for (let i = 0; i < usuariosJS.length; i++) {
        console.log (usuariosJS [i].email, req.body.email);
-      if (
-        usuariosJS[i].email ==! req.body.email && usuariosJS[i].rol ==! "usuario") {
 
-          if (req.body.clave == req.body.confirmarClave) {
+
+       if (req.body.email == usuariosJS[i].email && req.body.clave == usuariosJS[i].clave && usuariosJS[i].rol == "usuario"){
+
+        console.log ("entro");
             // si clave y confirmar clave coinciden creamos la nueva devolucion
             //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
             let id = devoluciones[devoluciones.length - 1].id + 1; // para que no se reiptaid al eliminar y agregar
@@ -247,12 +246,11 @@ eliminarUsuario: (req, res) => {
             fs.writeFileSync("src/data/devoluciones.json", devolucionesJSON, "utf-8");
              // vuelvo a crear el archivo JSON
             return res.send("usuario guardado correctamente");
-          } else {
-            return res.send("la clave no coincide");
-          }
+          } 
+          
         }
-      return res.send("el usuario con este email no existe");
-    }
+        return res.send("el usuario con este email no existe");
+    
   },
        
       listaDevolucion:
