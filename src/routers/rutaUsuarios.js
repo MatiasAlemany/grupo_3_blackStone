@@ -3,9 +3,23 @@ let multer = require('multer');
 let router = express.Router();
 let path = require('path');
 
+const { body } = require('express-validator');// para validaciones <---- validacionRegistro
+
 //importamos el controlador de las rutas por defecto
 const userController = require ("../controllers/userController.js");
+const adminMiddleware = require('../middlewares/adminMiddleware.js');
+//const validacionRegistro = require('../middlewares/validateRegisterMiddleware.js');
 
+
+const validaciones = [
+	body('nombreYapellido').notEmpty().withMessage('escribe un nombre'),
+	body('nombreUsuario').notEmpty().withMessage('Escribe un nombre de usuario'),
+	body('email').notEmpty().withMessage('Tienes que escribir una contraseña').bail()
+			.isEmail().withMessage('Escribe un formato de correo válido'),
+	body('clave').notEmpty().withMessage('Escribe tu clave'),
+	body('confirmarClave').notEmpty().withMessage('Confirma tu clave')
+	
+]
 
 //********************** usamos multer para archivos,imagenes,etc ********************
 
@@ -31,17 +45,20 @@ const upload = multer({storage: storage})
 router.get ('/listaUsuarios', userController.listarUsuarios);
 
 
-
 // *************** crear un usuario *************
 //procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
-router.post ('/listaUsuarios/', upload.single("imagenUsuario"), userController.crearUsuario);
+router.get ('/registroUsuario/',  userController.verFormulario);
+//procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
+router.post ('/modalUsuario', upload.single("imagenUsuario"), validaciones,  userController.crearUsuario);// <----- validaciones
+
 //procesa el pedido post con ruta /formUsuario ------> ese nombre va en el action del HTML
 router.put ('/listaUsuarios/:id', userController.editarUsuario);
 
+
 // ******************* crear administrador *********************
-router.post ('/listaTodosUsuarios',upload.single("imagenUsuario"), userController.crearAdmin);
+router.post ('/listaTodosUsuarios',upload.single("imagenUsuario"), validaciones, userController.crearAdmin);//<---- validaciones
 //procesa el pedido post con ruta /listaTodosUsuarios    <------ ese nombre va en el action del HTML
-router.get ('/listaTodosUsuarios', userController.listarTodos);
+router.get ('/listaTodosUsuarios', userController.listarTodos);//<----------------- se saco adminMiddleware
 
 
 // ************ editar un usuario ***********************
