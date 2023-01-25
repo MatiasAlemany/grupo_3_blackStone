@@ -221,7 +221,7 @@ crearUsuario: (req, res) => {
         clave: req.body.clave,
         rol: "usuario"
       };
-      console.log(usuarioEditado);
+      //console.log(usuarioEditado);
       /* "PUSHEANDO" El archivo editado */
 
       let indice = usuariosJS.findIndex((user) => {

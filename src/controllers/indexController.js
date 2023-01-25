@@ -26,7 +26,7 @@ const indexController = {
 
   verLogin : (req, res) => {
 
-    console.log(req.cookie.usuarioEmail)
+    //console.log(req.cookie.usuarioEmail)
 
     return res.render ("./usuarios/loginUsuario.ejs", );
     },

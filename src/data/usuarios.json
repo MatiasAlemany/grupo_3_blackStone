@@ -18,39 +18,12 @@
   "rol": "administrador"
  },
  {
-  "id": 3,
-  "nombreYapellido": "Pedro",
-  "nombreUsuario": "pppp",
-  "imagenUsuario": "pucho.jpg",
-  "email": "pedro@hotmail.com",
-  "clave": "123",
-  "rol": "usuario"
- },
- {
-  "id": 5,
-  "nombreYapellido": "Leonardo",
-  "nombreUsuario": "Leonardo",
-  "imagenUsuario": "hijitus.jpg",
-  "email": "leo@hotmail.com",
-  "clave": "1234",
-  "rol": "usuario"
- },
- {
   "id": 6,
   "nombreYapellido": "leonardo",
   "nombreUsuario": "leonardo",
   "imagenUsuario": "largirucho.jpg",
   "email": "tt@kk.com",
   "clave": "2316",
-  "rol": "usuario"
- },
- {
-  "id": 8,
-  "nombreYapellido": "leonardo",
-  "nombreUsuario": "leonardo",
-  "imagenUsuario": "neurus.jpg",
-  "email": "kkkkk@h.com",
-  "clave": "88888",
   "rol": "usuario"
  },
  {
@@ -96,6 +69,15 @@
   "imagenUsuario": " ",
   "email": "carlos@hotmail.com",
   "clave": "1234",
+  "rol": "usuario"
+ },
+ {
+  "id": 17,
+  "nombreYapellido": "pedro",
+  "nombreUsuario": "pedro",
+  "imagenUsuario": "imagenUsuario-1674620268239.jpg",
+  "email": "pedro@hotmail.com",
+  "clave": "$2a$10$2bkhQEwVLOEvhjp5KuGT2.FoA0lh0RHek0HNOLWGnvw76J.PTeAbq",
   "rol": "usuario"
  }
 ]

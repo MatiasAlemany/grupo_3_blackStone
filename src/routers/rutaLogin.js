@@ -32,7 +32,7 @@ const upload = multer({storage: storage});
 //las distintas rutas, que luego exportamos
 
 //procesa el pedido get con ruta /
-router.get ('/login', indexController.login);
+router.get ('/', indexController.index);
 
 // logout
 router.get ('/logout', indexController.logout)
