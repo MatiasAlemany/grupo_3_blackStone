@@ -23,65 +23,131 @@
 <!--------------------------codigo de ventana emergente de inicio de sesion - LOGIN ------------------------>
 <section id="inicio-sesion" class="modalDialog">
     <div class="modal">
-        <form action="/login" method="POST">
+        <form action="/#inicio-sesion" method="POST">
          <div class=" control-login">
-             <input type="email" name="email" class="control boton3" placeholder="e-mail" required>
+             <input type="email" name="email" class="control boton3"class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                             placeholder="e-mail" value="<%= locals.oldData ? oldData.email : null %>">
+                    <%  if (locals.errors && errors.email) {  %> 
+                        <div class="texto-advertencia">
+                            <p class="credenciales-invalidas" ><%= errors.email.msg %> </p>
+                        </div>
+                    <% } %> 
+           
         </div>
           <div class="control-login">
-                <input type="password" name="clave" class="control boton3" placeholder="Contraseña" required>
+                <input type="password" name="clave" class="control boton3" placeholder="Contraseña" >
             </div>
             <div class="control-login">
+
+                    <%  if (locals.errors && errors.clave) {  %> 
+                        <div class="texto-advertencia">
+                            <p class="credenciales-invalidas" ><%= errors.clave.msg %> </p>
+                        </div>
+                    <% } %> 
+
              <button class="envio" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
-             <input type="submit" class="envio"></input> 
+             <button type="submit" class="envio">Enviar</button> 
             </div>
+
+            <div class="">
+                <label class="">
+                    <input type="checkbox" class="recordar-box" name="recordarme">Recordar mi usuario
+                </label>
+            </div>
+
+
+
         </form>
         <div class="contraseña">
-            <a href="/claveIncorrecta"> <p class="olvido">Has olvidado tu contraseña?</p> </a>
+            <p href="" class="olvido">Has olvidado tu contraseña?</p> <a href=""></a>
         </div>
     </div>
 </section>
+
 <!---------------------------------------------------------------------------------------------------->
 
-<!--------------------------codigo de ventana emergente de  registro------------------------>
+<!--------------------------codigo de ventana emergente de  registro de usuario------------------------>
 
-<section id="registro" class="modalDialog">
-
+<section id="registro-usuario" class="modalDialog">
     <div class="modal">
-    <form action="/listaUsuarios" method="POST" class="formulario" enctype="multipart/form-data">
-        <div class="nombre">      
-            <input type="text" name="nombreYapellido" class="boton3" id="nombre" placeholder="nombre y apellido" required minlength="4">
-        </div>
-        <div class="nombre-usuario">
-            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" placeholder="Nombre de Usuario" required minlength="4">
-        </div>
-
-        
-    
-       
+        <form action="/modalUsuario#registro-usuario" method="POST" class="formulario" enctype="multipart/form-data">
+            <div class="nombre">   
+                
+                
+                <input type="text" name="nombreYapellido" class="boton3" id="nombre" 
+                            class="form-control <%= locals.errors && errors.nombreYapellido ? 'is-invalid' : null %>" placeholder="nombre y apellido"
+                            value="<%= locals.oldData ? oldData.nombreYapellido : null %>" > 
+                      <%  if (locals.errors && errors.nombreYapellido) {  %> 
+                
+                    <div class="pie-form">
+                        <p class="credenciales-invalidas" ><%= errors.nombreYapellido.msg %> </p>
+                    </div>
+                    <% } %> 
+            </div>
+            <div class="nombre-usuario">
+                <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" value="<%= locals.oldData ? oldData.nombreUsuario : null %>" placeholder="Nombre de Usuario">
+                <%  if (locals.errors && errors.nombreUsuario) {  %> 
+                    <div class="pie-form">
+                        <p class="credenciales-invalidas" ><%= errors.nombreUsuario.msg %> </p>
+                    </div>
+                    <% } %> 
+            </div>
+              
+                
         <div class="foto">
-            <label for="foto"><h4>Foto de perfil</h4></label>
+            <label for="imagenUsuario">Foto de perfil</label>
             <input type="file" name="imagenUsuario" class="boton3" id="foto" >
+            
         </div>
-    
-        <div class="nombre">
-            <input type="emil" name="email" class="boton3" id="email" placeholder="e-mail" required>
-        </div>
-        <div class="nombre">
-            <input type="password" name="clave" class="boton3" id="password" placeholder="Contraseña" required minlength="4">
-        </div>
-        <div class="nombre">
-            <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword" placeholder="Confirmar" required minlength="4">
-        </div>
-        
-        <div class="reg-reset">
-            <button class="reset" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
-            <button class="register" type="submit">Enviar</button>
-        </div>
+            
+            <div class="nombre">
+                <input type="email" name="email" class="boton3" id="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="e-mail" >
 
-    </form>
-</div>
+                <%  if (locals.errors && errors.email) {  %> 
+                    <div class="pie-form">
+                        <p class="credenciales-invalidas" ><%= errors.email.msg %> </p>
+                    </div>
+                    <% } %> 
+
+
+
+            </div>
+            <div class="nombre">
+                <input type="password" name="clave" class="boton3" id="password"  value="<%= locals.oldData ? oldData.clave : null %>" placeholder="Contraseña">
+                <%  if (locals.errors && errors.clave) {  %> 
+                    <div class="pie-form">
+                        <p class="credenciales-invalidas" ><%= errors.clave.msg %> </p>
+                    </div>
+                    <% } %> 
+            </div>
+            <div class="nombre">
+                <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword"  placeholder="Confirmar">
+                <%  if (locals.errors && errors.confirmarClave) {  %> 
+                    <div class="pie-form">
+                        <p class="credenciales-invalidas" ><%= errors.confirmarClave.msg %> </p>
+                    </div>
+                    <% } %> 
+            </div>
+            
+            <div class="reg-reset">
+                <button class="reset" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
+                <button class="register" type="submit">Enviar</button>
+            </div>
+
+            
+            <%  if (locals.errors && errors.pieForm) {  %> 
+    
+                <div name="pieForm">
+                    <p class="pie-form" ><%= errors.pieForm.msg %> </p>
+                </div>
+                <% } %> 
+              
+        </form>
+    </div>
+    
 </section>
-<!-------------------------------------------------------------------------------------->
+
+<!-------------------------------------------------------------------------------------------------->
 
 
 <!----------------- aca esta el codigo de ventana emergente devolucion ------------------------------>
@@ -144,6 +210,16 @@
     <a href="/">
     <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
         
+
+    <% if (locals.isLogged) {   %> 
+        <div class="lupa">
+            <img src="/images/usuarios/<%= locals.usuarioLogueado.imagenUsuario %>" width="70px" style="border-radius: 100%;">
+                    
+        </div>
+        <div class="lupa">
+            <h5>Hola <%= locals.usuarioLogueado.nombreYapellido %></h5>             
+        </div>
+    <% } %>
     <div class="lupa">
         <a href="#buscar"><i class="fas fa-search"></i></a></div>
     
@@ -159,8 +235,19 @@
 </section>
 <section class="barra-menu">
     <ul class="menu">
-        <li class="menu-item"><a href="#inicio-sesion" class="boton-inicio">Inicio de sesion</a></li>
-        <li class="menu-item"><a href="#registro" class="registrarse">Registrarse</a></li>
+
+        <% if (locals.isLogged) {   %> 
+            <li class="menu-item"><a href="/logout" class="boton-inicio">Terminar sesion</a></li>
+        <% } else {%> 
+            <li class="menu-item" ><a href="#inicio-sesion" class="boton-inicio">Inicio de sesion</a></li> <!----para formulario loginUsuario href=loginUsuario  -->
+
+            <li class="menu-item"><a href="#registro-usuario" class="registrarse">Registrarse</a></li><!----para formulario loginUsuario href="/usuarios/registroUsuario"  -->
+
+        <% } %> 
+            
+          
+
+        
         <li class="menu-item"><a href="#devolver" class="devolver">Devolver</a></li>
     </ul>
 </section>
@@ -169,7 +256,7 @@
     <img src="/images/banner.jpg"  class="img-ban" alt="banner" />
 </div>
 
-
-<!----------------------------- fin del header ----------------------------------------------------------------->
 </header>
+<!----------------------------- fin del header ----------------------------------------------------------------->
+
     
