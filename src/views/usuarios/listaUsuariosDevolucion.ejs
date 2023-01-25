@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/listadoUsuarios.css" />
+    
+    <title>Listado de usuarios</title>
+</head>
+<body>
+<!--------------------------- modal tabla de devoluciones-------------------------------------->
+
+<section class="container3">
+    
+    <table class="tablaUsuarios" >
+        <caption class="encabezado">Listado de devolucion</caption>
+        <tr>
+          <th class="titulos">Nombre y Apellido</th><th class="titulos">Email</th><th class="titulos">Número de factura</th><th class="titulos">clave</th>
+        </tr>
+         <form action="/listaUsuariosDevolucion" method="POST">
+        <tr>
+            <% for(let i=0; i < devolucionesSolas.length; i++) {%>
+          <td class="fila"><%=devolucionesSolas[i].nombreYapellido  %></td>
+          <td class="fila"><%= devolucionesSolas[i].email%></td>
+          <td class="fila"><%= devolucionesSolas[i].numeroDeFactura %></td>
+          <td class="fila"><%= devolucionesSolas[i].clave %></td >
+          <td class="botones">
+          </form>
+           <!---- <button class="botonEditar" type="submit"  data-dismiss="modal"><a href="/formUsuario/<%= usuariosSolos[i].id %> ">Editar</a></button>
+            <form action="/listaUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST">
+                        <button class="botonBorrar" type="submit" >Borrar</button>
+            </form>  --->
+            </td>
+        </tr>
+        <%}%>
+    </table>
+    
+      <div class="nombre-usuario">
+        <button class="botonVolver" type="reset"><a href="/">Volver</a></button>     
+        </div>
+    
+    </section>
+    
+    
+    
+    </body>
+    </html>
+
+
+<!--<section id="devolver" class="modalDialog" >
+    <div class="modal">
+
+        <form action="/listaUsuariosDevolucion" method="POST" class="formulario">
+        <table class="default">
+
+            <tr>
+          
+              <th scope="row">Nombre y Apellido</th>
+          
+              <th>Email</th>
+          
+              <th>Número de factura</th>
+          
+            </tr>
+          
+            <tr>
+          
+              <th></th>
+          
+              <td></td>
+          
+              <td></td>
+          
+            </tr>   
+          
+          </table>
+          
+        </form>
+
+
+
+        
+           

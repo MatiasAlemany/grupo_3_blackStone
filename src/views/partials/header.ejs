@@ -36,7 +36,7 @@
             </div>
         </form>
         <div class="contraseña">
-            <p href="" class="olvido">Has olvidado tu contraseña?</p> <a href=""></a>
+            <a href="/claveIncorrecta"> <p class="olvido">Has olvidado tu contraseña?</p> </a>
         </div>
     </div>
 </section>
@@ -97,10 +97,10 @@
             de Comercio Interior y no se traten de productos exceptuados como productos personalizados y
             todos los comprendidos en el art. 1116 del Código Civil y Comercial.</p>
 
-        <form action="/devolucion" method="POST" class="formulario">
+        <form action="/crearDevolucion" method="POST" class="formulario">
             <div class="nombre">
 
-                <input type="text"  name="nombre" class="boton3" id="nombre" placeholder="nombre y apellido" required
+                <input type="text"  name="nombreYapellido" class="boton3" id="nombre" placeholder="nombre y apellido" required
                     minlength="12">
             </div>
             <div class="nombre-usuario">
@@ -108,16 +108,16 @@
                     placeholder="email" required>
             </div>
             <div class="nombre-usuario">
-                <input outline="none" type="text" class="boton3" name="numeroFactura" id="numeroFactura"
+                <input outline="none" type="text" class="boton3" name="numeroDeFactura" id="numeroFactura"
                     placeholder="Numero de factura" required>
             </div>
 
 
             <div class="nombre">
-                <input type="password" name="password" class="boton3" id="password" placeholder="Contraseña" required>
+                <input type="password" name="clave" class="boton3" id="password" placeholder="Contraseña" required>
             </div>
             <div class="nombre">
-                <input type="password" name="confirmarpassword" class="boton3" id="confirmarpassword"
+                <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword"
                     placeholder="Confirmar contraseña" required>
             </div>
 

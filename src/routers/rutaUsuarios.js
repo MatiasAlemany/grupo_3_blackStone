@@ -59,6 +59,24 @@ router.delete ('/listaUsuarios/:id', userController.eliminarUsuario);
 //procesa el pedido delete con ruta /listaTodosUsuarios  <------ ese nombre va en el action del HTML
 router.delete ('/listaTodosUsuarios/:id', userController.eliminarCualquiera);
 
+// ************** procesar devolucion********************
+//procesa el pedido get con ruta /crearDevolucion  <------ ese nombre va en el action del HTML
+router.get ('/crearDevolucion', userController.crearDevolucion);
+
+//procesa el pedido post con ruta /crearDevolucion    <------ ese nombre va en el action del HTML
+router.post ('/crearDevolucion', userController.crearDevolucion);
+
+// ************** Listar devolucion********************
+
+//procesa el pedido get con ruta /listaDevolucion  <------ ese nombre va en el action del HTML
+router.get ('/listaDevolucion', userController.listaDevolucion);
+
+//procesa el pedido post con ruta /listaDevolucion    <------ ese nombre va en el action del HTML
+router.post ('/listaDevolucion', userController.listaDevolucion);
+
+// ************** Recuperar contraseña********************
+//procesa el pedido get con ruta /claveIncorrecta     <------ ese nombre va en el action del HTML
+router.get ('/claveIncorrecta', userController.claveIncorrecta);
 
 //exportamos la variable router ya con todas las rutas guardadas, que se usará en app.js
 module.exports = router;

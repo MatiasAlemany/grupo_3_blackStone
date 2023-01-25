@@ -14,6 +14,10 @@ const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 //const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
+const devolucionesFilePath = path.join(__dirname, "../data/devoluciones.json");
+
+const devoluciones = JSON.parse(fs.readFileSync(devolucionesFilePath, "utf-8"));
+
 const userController = {
 
 crearUsuario: (req, res) => {
@@ -205,5 +209,77 @@ eliminarUsuario: (req, res) => {
      res.redirect("/listaTodosUsuarios"); 
     },
 
-};
+
+    crearDevolucion: (req, res) => {
+
+      const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+
+    //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
+    for (let i = 0; i < usuariosJS.length; i++)
+    
+    {
+       console.log (usuariosJS [i].email, req.body.email);
+      if (
+        usuariosJS[i].email ==! req.body.email && usuariosJS[i].rol ==! "usuario") {
+
+          if (req.body.clave == req.body.confirmarClave) {
+            // si clave y confirmar clave coinciden creamos la nueva devolucion
+            //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
+            let id = devoluciones[devoluciones.length - 1].id + 1; // para que no se reiptaid al eliminar y agregar
+      
+            console.log(id);
+      
+            let user = {
+              id: id,
+              nombreYapellido: req.body.nombreYapellido,
+              email: req.body.email,
+              numeroDeFactura: req.body.numeroDeFactura,
+              clave: req.body.clave,
+              rol: "usuario",
+            };
+      
+            console.log(user);
+      
+            devoluciones.push(user); // agrego el usuario creado en el archivo js
+      
+            let devolucionesJSON = JSON.stringify(devoluciones, null, " "); 
+            //convierto el js en JSON
+            fs.writeFileSync("src/data/devoluciones.json", devolucionesJSON, "utf-8");
+             // vuelvo a crear el archivo JSON
+            return res.send("usuario guardado correctamente");
+          } else {
+            return res.send("la clave no coincide");
+          }
+        }
+      return res.send("el usuario con este email no existe");
+    }
+  },
+       
+      listaDevolucion:
+
+      (req, res) => {
+        const devoluciones = JSON.parse(fs.readFileSync(devolucionesFilePath, "utf-8"));
+    
+        //hacemos array de las devoluciones solamente
+        const devolucionesSolas = devoluciones.filter(
+          (user) => user.rol == "administrador"
+        );
+    
+        return res.render("./usuarios/listaUsuariosDevolucion.ejs", {
+          devolucionesSolas: devolucionesSolas});
+
+        //res.send(devoluciones);
+      },
+
+      claveIncorrecta: (req, res) => {
+        const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+        for (let i = 0; i < usuariosJS.length; i++) {
+        if (req.body.email == usuariosJS[i].email){
+
+      //return res.render("./usuarios/formClaveIncorrecta.ejs")
+      return res.render('formClaveIncorrecta')
+           }    
+}
+}
+}
 module.exports = userController;

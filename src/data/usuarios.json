@@ -88,5 +88,14 @@
   "email": "matias@m.com",
   "clave": "2222",
   "rol": "usuario"
+ },
+ {
+  "id": 16,
+  "nombreYapellido": "Carlos Rodriguez",
+  "nombreUsuario": "Carlos",
+  "imagenUsuario": " ",
+  "email": "carlos@hotmail.com",
+  "clave": "1234",
+  "rol": "usuario"
  }
 ]
