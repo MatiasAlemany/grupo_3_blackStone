@@ -78,7 +78,7 @@ main {
 }
 .circulo:hover {
   color:blue;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .mostrar-mas {
   width: 100%;

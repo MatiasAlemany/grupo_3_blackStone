@@ -15,14 +15,20 @@
   
     <main>
 
+        
         <div class="contenedor1">
-
+            <%  if (locals.usuarioLogueado) {%> 
             <div class="foto">
-                <img src="/images/usuarios/<%= usuario.imagenUsuario%>" alt="FOTO">
-                
+                <img src="/images/usuarios/<%= locals.usuarioLogueado.imagenUsuario%>" alt="FOTO">
+                <p class="carro">Carrito de Compras de  <%= locals.usuarioLogueado.nombreYapellido %></p>
             </div>
-
-            <p class="carro">Carrito de Compras de  <%= usuario.nombreYapellido %></p>
+            <% } else { %>
+            <div class="foto">
+                <img src="/images/usuarios/hijitus2.jpg" alt="FOTO">
+                <p class="carro">Carrito de Compras de isuario no registrado</p>
+            </div>
+            <% } %> 
+            
 
             <div class="contenedor2">
                 <div class="imagen">
