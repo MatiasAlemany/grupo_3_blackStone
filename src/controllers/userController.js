@@ -1,4 +1,6 @@
 const fs = require("fs");
+const bcryptjs = require('bcryptjs'); //<--- para encriptar/desencriptar la clave
+const { validationResult } = require('express-validator');
 
 // requerimos el archivo con la imagen y los datos de las remeras
 //const data = require('../data/dataRemeras');
@@ -9,9 +11,9 @@ const { json } = require("express");
 
 /* En la constante "remeras" ya tenemos los productos que están 
 guardados en la carpeta data como Json (un array de objetos literales) */
-//const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
+const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-//const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
+const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
 const devolucionesFilePath = path.join(__dirname, "../data/devoluciones.json");
@@ -20,57 +22,116 @@ const devoluciones = JSON.parse(fs.readFileSync(devolucionesFilePath, "utf-8"));
 
 const userController = {
 
+  verFormulario : (req, res) => {
+    return res.render ("./usuarios/registroUsuario.ejs", );
+},
+
+
 crearUsuario: (req, res) => {
-    
-    const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+  const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
-    //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
-    for (let i = 0; i < usuariosJS.length; i++) {
-      if (
-        usuariosJS[i].email == req.body.email && usuariosJS[i].rol == "usuario") {
-        return res.send("el usuario con este email ya existe");
-      }
-    }
-    if (req.body.clave == req.body.confirmarClave) {
-      // si clave y confirmar clave coinciden creamos el nuevo usuario
-      //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
-      let id = usuariosJS[usuariosJS.length - 1].id + 1; // para que no se reiptaid al eliminar y agregar
+  const resultadosValidacion = validationResult(req);
 
-      console.log(id);
 
-      let user = {
-        id: id,
-        nombreYapellido: req.body.nombreYapellido,
-        nombreUsuario: req.body.nombreUsuario,
-        imagenUsuario: req.file ? req.file.filename : " ",
-        email: req.body.email,
-        clave: req.body.clave,
-        rol: "usuario",
-      };
+  //console.log(resultadosValidacion.errors.length);
+  //console.log("entro a crear usuario");
 
-      console.log(user);
-
-      usuariosJS.push(user); // agrego el usuario creado en el archivo js
-
-      let usuariosJSON = JSON.stringify(usuariosJS, null, " "); 
-      //convierto el js en JSON
-      fs.writeFileSync("src/data/usuarios.json", usuariosJSON, "utf-8");
-       // vuelvo a crear el archivo JSON
-      return res.send("usuario guardado correctamente");
+  if (resultadosValidacion.errors.length > 0) {
+    //console.log("entro");
+    return res.render("index.ejs", { 
+      allProducts: remeras ,
+      errors: resultadosValidacion.mapped(),
+      oldData: req.body
+    });
+  }
+  
+  // primero chequeamos que no haya campos en blanco en blanco
+  /*
+  if (
+    req.body.nombreUsuario == "" || req.body.nombreYapellido == "" || req.body.email == "" || req.body.clave == "") {
+    return res.render("index.ejs", { allProducts: remeras ,
+      errors:{ 
+        pieForm: { msg: 'debe ingresar los datos requeridos'},
+        email : { msg: 'debe ingresar email'},
+        nombreYapellido: { msg: 'debe ingresar nombre y apellido'},
+        clave : { msg: 'debe ingresar clave'},
+        nombreUsuario:{ msg: 'debe confirmar clave'},
+        confirmarClave:{ msg: 'debe ingresar los datos requeridos'},
+      },
+      oldData: req.body
+       }) ; 
     } else {
-      return res.send("la clave no coincide");
+ */
+  //segundo  chequeamos que el usuario no exista, lo que no se debe repetir es el email
+  for (let i = 0; i < usuariosJS.length; i++) {
+    if (
+      usuariosJS[i].email == req.body.email && usuariosJS[i].rol == "usuario") {
+
+      return res.render("index.ejs", { allProducts: remeras ,
+        errors:{ email: { msg: 'el usuario con este email ya existe'}}  }) ; 
     }
+  }
+  if (req.body.clave == req.body.confirmarClave) {
+    // si clave y confirmar clave coinciden creamos el nuevo usuario
+    //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
+    let id = usuariosJS[usuariosJS.length - 1].id + 1; // para que no se reiptaid al eliminar y agregar
+
+    let user = {
+      id: id,
+      nombreYapellido: req.body.nombreYapellido,
+      nombreUsuario: req.body.nombreUsuario,
+      imagenUsuario: req.file ? req.file.filename : " ",
+      email: req.body.email,
+      clave: bcryptjs.hashSync (req.body.clave, 10),  // <------------ se encripta la clave
+      rol: "usuario",
+    };
+
+    usuariosJS.push(user); // agrego el usuario creado en el archivo js
+
+    let usuariosJSON = JSON.stringify(usuariosJS, null, " "); 
+    //convierto el js en JSON
+    fs.writeFileSync("src/data/usuarios.json", usuariosJSON, "utf-8");
+     // vuelvo a crear el archivo JSON
+    return res.render("index.ejs", { allProducts: remeras ,
+      errors:{ pieForm: { msg: 'el usuario se creo correctamente'}}  }) ; 
+
+  } else {
+    return res.render("index.ejs", { allProducts: remeras ,
+      errors:{ confirmarClave: { msg: 'la clave no coincide'}}  }) ; 
+  }
+    
   },
 
   crearAdmin: (req, res) => {
     
     const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
+    const resultadosValidacion = validationResult(req);
+    console.log(resultadosValidacion.errors.length);
+    //console.log("entro a crear usuario");
+    
+    
+    let todos = usuariosJS;
+
+
+    if (resultadosValidacion.errors.length > 0) {
+      console.log("entro crear admin");
+			return res.render("./usuarios/listaTodosUsuarios", { 
+        usuariosSolos: todos,
+				errors: resultadosValidacion.mapped(),
+				oldData: req.body
+			});
+		}
+
     //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
     for (let i = 0; i < usuariosJS.length; i++) {
       if (
         usuariosJS[i].email == req.body.email && usuariosJS[i].rol == "usuario") {
-        return res.send("el administrador con este email ya existe");
+        //return res.send("el administrador con este email ya existe");
+        return res.render("index.ejs", { allProducts: remeras ,
+          errors:{ email: { msg: 'el administrador con este email ya existe'}}  }) ; 
+
+
       }
     }
     if (req.body.clave == req.body.confirmarClave) {
@@ -78,8 +139,7 @@ crearUsuario: (req, res) => {
       //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
       let id = usuariosJS[usuariosJS.length - 1].id + 1; // para que no se reiptaid al eliminar y agregar
 
-      console.log(id);
-
+      
       let user = {
         id: id,
         nombreYapellido: req.body.nombreYapellido,
@@ -89,8 +149,6 @@ crearUsuario: (req, res) => {
         clave: req.body.clave,
         rol: "administrador",
       };
-
-      console.log(user);
 
       usuariosJS.push(user); // agrego el usuario creado en el archivo js
 

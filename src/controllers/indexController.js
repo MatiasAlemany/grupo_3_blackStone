@@ -1,11 +1,13 @@
 const fs = require("fs");
-
+const bcryptjs = require('bcryptjs'); //<--- para encriptar/desencriptar la clave
 // requerimos el archivo con la imagen y los datos de las remeras
 //const data = require('../data/dataRemeras');
 
 // requerimos path para poder enviar los archivos HTML
 const path = require("path");
 const { json } = require("express");
+
+const { validationResult } = require('express-validator');
 
 /* En la constante "remeras" ya tenemos los productos que están 
 guardados en la carpeta data como Json (un array de objetos literales) */
@@ -22,30 +24,100 @@ const indexController = {
     return res.render("index.ejs", { allProducts: remeras }); // remeras es un js
   },
 
+  verLogin : (req, res) => {
+
+    console.log(req.cookie.usuarioEmail)
+
+    return res.render ("./usuarios/loginUsuario.ejs", );
+    },
+
+
+
+
   login: (req, res) => {
     // debe ser usuario y contraseña igual a la de la de usuarios regitrados, si es admin va
     // a la pagina de listado de clientes, sino va a la pag. ppal.
     // si nos es admin puede ser usuario y si esta registrado va al carrito
 
-    //console.log(req.body.email);
-    for (let i = 0; i < usuariosJS.length; i++) {
+    // <---------------------- para hacerlo con express-validator --------------------------------------------
+    const validacionLogin = validationResult(req);
+      
 
-      if ( req.body.email == "supervisor@supervisor" && req.body.clave == "supervisor"){
-            return res.render ("./usuarios/listaTodosUsuarios.ejs", { 'usuariosSolos': usuariosJS});
-      }
-      else if (
-        req.body.email == usuariosJS[i].email && req.body.clave == usuariosJS[i].clave && usuariosJS[i].rol == "administrador") {
-        return res.render("./productos/listadoProductos.ejs", {allProducts: remeras,});
-      } else if (
-        req.body.email == usuariosJS[i].email && req.body.clave == usuariosJS[i].clave && usuariosJS[i].rol == "usuario") {
-        //console.log("entro");
-        return res.render("./productos/product-cart", {usuario: usuariosJS[i],}); 
-        //devuelve mail de usuario para la pagina de carrito
-      }
+
+    if (validacionLogin.errors.length > 0 ){
+  
+        return res. render('index.ejs', {
+          allProducts: remeras,
+          errors: validacionLogin.mapped(),
+          oldData: req.body
+      });  
     }
-    //console.log(" NO entro");
-    return res.render("index.ejs", { allProducts: remeras });
+
+     //<-----------------------------------------------------------------------------------------------------
+     for (let i = 0; i < usuariosJS.length; i++) {
+      
+      const usuarioLogueado = req.body;
+    
+      // *******************  supervisor  ********************************************
+      if (  usuarioLogueado.email == "supervisor@supervisor" && usuarioLogueado.clave == "supervisor"){
+
+        //console.log("entro a supervisor");
+
+            return res.render ("./usuarios/listaTodosUsuarios.ejs", { usuariosSolos: usuariosJS});
+      }
+      // ************************  administrador  ******************************
+      else if (
+        usuarioLogueado.email == usuariosJS[i].email && usuarioLogueado.clave == usuariosJS[i].clave && usuariosJS[i].rol == "administrador") {
+
+          //console.log("entro a admin "+ usuarioLogueado.email);
+
+          req.session.usuarioLogueado=usuariosJS[i];
+          
+        return res.render("./productos/listadoProductos.ejs", {allProducts: remeras});
+
+      //  *******************************  usuario  ******************************
+      } else if ( usuarioLogueado.email == usuariosJS[i].email  && usuariosJS[i].rol == "usuario") {
+
+          let comparacion = bcryptjs.compareSync(usuarioLogueado.clave , usuariosJS[i].clave);
+
+
+          
+          
+            if (comparacion){  //<----------- comparo claves encriptadas
+              
+                if(req.body.recordarme) {
+                    res.cookie('usuarioEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
+                    console.log(req.body.email);
+              }
+              
+            //console.log("entro a usuario  " + usuarioLogueado.email);
+
+             req.session.usuarioLogueado=usuariosJS[i]
+        
+            //delete req.session.usuarioLogueado.clave; // si no quiero conservar la clave
+
+            return res.redirect ("/" ); //  <--------si ponemos el res.render de abajo  la pagina no actualiza
+                                    //devuelve mail de usuario para la pagina ppal
+      };
+    };
+    };
+    // *************************  ninguno ****************************
+
+      //console.log("no esta registrado");
+      //return res.redirect ("/#inicio-sesion"); // <------------- vuelve al modal login pero sin mensaje
+      return res.render("index.ejs", { allProducts: remeras ,
+        errors:{ email: { msg: 'Los datos del usuario ingresados antes no son correctos'}}  }) ; 
   },
 
+  logout: (req,res) => {
+      //console.log("se borra sesion " );
+     res.clearCookie('usuarioEmail');
+     req.session.destroy();
+      return res.redirect('/');
 }
+
+
+}
+
+
 module.exports = indexController;
