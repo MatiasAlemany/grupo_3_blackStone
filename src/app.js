@@ -31,7 +31,7 @@ app.use(session({
     resave: false,
     saveUninitialized:false,}));
 app.use(usuarioLogueadoMiddleware); // <----- tiene que ir despues de usar session
-app.use(loginVacioMiddleware)
+//app.use(loginVacioMiddleware)
 app.use(cookies());
 
 

@@ -1,83 +1,38 @@
 [
  {
-  "id": 1,
-  "nombreYapellido": "Ricardo",
-  "nombreUsuario": "Ricardo",
-  "imagenUsuario": "comisario.jpg",
-  "email": "ingeniero_rik@hotmail.com",
-  "clave": "1234",
-  "rol": "administrador"
- },
- {
-  "id": 2,
-  "nombreYapellido": "Matias",
-  "nombreUsuario": "Matias",
-  "imagenUsuario": "oaky.jpg",
-  "email": "matiasalemany2@gmail.com",
-  "clave": "12345",
-  "rol": "administrador"
- },
- {
-  "id": 6,
-  "nombreYapellido": "leonardo",
-  "nombreUsuario": "leonardo",
-  "imagenUsuario": "largirucho.jpg",
-  "email": "tt@kk.com",
-  "clave": "2316",
-  "rol": "usuario"
- },
- {
-  "id": 11,
-  "nombreYapellido": "Neurus",
-  "nombreUsuario": "Neurus",
-  "imagenUsuario": "imagenUsuarioEditada-1673829996591.jpg",
-  "email": "neurus@trulala.com",
-  "clave": "6666",
-  "rol": "usuario"
- },
- {
-  "id": 12,
-  "nombreYapellido": "cacha",
-  "nombreUsuario": "cacha",
-  "imagenUsuario": "imagenUsuarioEditada-1673829988682.jpg",
-  "email": "c@bacha.com",
-  "clave": "1111",
-  "rol": "usuario"
- },
- {
-  "id": 14,
-  "nombreYapellido": "julieta",
-  "nombreUsuario": "July",
-  "imagenUsuario": "imagenUsuarioEditada-1673829967723.jpg",
-  "email": "juli@n.com",
-  "clave": "3333",
-  "rol": "usuario"
- },
- {
-  "id": 15,
-  "nombreYapellido": "Matias",
-  "nombreUsuario": "Maty",
-  "imagenUsuario": "imagenUsuario-1673830065925.jpg",
-  "email": "matias@m.com",
-  "clave": "2222",
-  "rol": "usuario"
- },
- {
-  "id": 16,
-  "nombreYapellido": "Carlos Rodriguez",
-  "nombreUsuario": "Carlos",
-  "imagenUsuario": " ",
-  "email": "carlos@hotmail.com",
-  "clave": "1234",
-  "rol": "usuario"
- },
- {
   "id": 17,
   "nombreYapellido": "pedro",
   "nombreUsuario": "pedro",
   "imagenUsuario": "imagenUsuario-1674620268239.jpg",
   "email": "pedro@hotmail.com",
   "clave": "$2a$10$2bkhQEwVLOEvhjp5KuGT2.FoA0lh0RHek0HNOLWGnvw76J.PTeAbq",
+  "rol": "usuario"
+ },
+ {
+  "id": 18,
+  "nombreYapellido": "julieta",
+  "nombreUsuario": "July",
+  "imagenUsuario": "imagenUsuario-1674623264785.jpg",
+  "email": "juli@juli.com",
+  "clave": "$2a$10$p2Ho/4dWbOqsQk6VZ0VQreEyjjI.YzWuepAQURD6bAFjgYawEoDUG",
+  "rol": "usuario"
+ },
+ {
+  "id": 19,
+  "nombreYapellido": "ricardo",
+  "nombreUsuario": "ricardo",
+  "imagenUsuario": "comisario.jpg",
+  "email": "ingeniero_rik@hotmail.com",
+  "clave": "1234",
+  "rol": "administrador"
+ },
+ {
+  "id": 20,
+  "nombreYapellido": "pedro",
+  "nombreUsuario": "pedro",
+  "imagenUsuario": "imagenUsuario-1674688856199.jpg",
+  "email": "pedro@pedro.com",
+  "clave": "$2a$10$iNXo61Dfa9sSJxWX20CICem4xIgcqnltaNfUYOI5SKJDzDeezgysm",
   "rol": "usuario"
  }
 ]

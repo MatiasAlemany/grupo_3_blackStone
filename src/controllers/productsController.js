@@ -156,6 +156,13 @@ const productsController = {
     }
   },
 
+  listaProduct: (req, res) => {
+    //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
+    return res.render("./productos/listadoProductos.ejs", {
+      allProducts: remeras,
+    });
+  },
+
   listarProd: (req, res) => {
     //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
     return res.render("./productos/listadoProductos.ejs", {

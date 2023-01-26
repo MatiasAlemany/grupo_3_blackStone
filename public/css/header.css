@@ -23,7 +23,6 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-
 	z-index: 99999;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
@@ -87,7 +86,6 @@ transition: opacity 400ms ease-in;
     height: 30px;
     text-align: center;
 }
-
 .boton3 {
     width: 70%;
     padding: 10px;
@@ -98,14 +96,11 @@ transition: opacity 400ms ease-in;
 	border-radius: 10px;
 	text-align: center;
 }
-
 .reg-reset {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-	
-   
 }
 .register , .reset {
 	margin-top: 15px;
@@ -119,8 +114,7 @@ transition: opacity 400ms ease-in;
     border: none;
 }
 .register:hover , .reset:hover, .envio:hover{
-    background-color: #0022AA;
-    
+    background-color: #0022AA;  
 }
 
 /* ---------------------- para emergente de registrar ------------------- */
@@ -134,22 +128,17 @@ transition: opacity 400ms ease-in;
     margin: auto;
 	margin-top: 100px;
 }
-
 label, .foto {
     margin-top: 25px;
-	
-    
 }
 .fechaNacimiento{
     margin-top:10px;
 }
-
 .foto {
     text-align: center;
 }
 .pie-form {
     color:yellow;
-    /*padding-top: 10px;*/
   }
 /*----------------------------------------------------------------------*/
 
@@ -169,7 +158,6 @@ label, .foto {
 .control-login {
     margin-bottom: 15px;
     text-align: center;
-	
 }
 .sesion {
     font-size: 30px;
@@ -182,7 +170,6 @@ label, .foto {
     margin-bottom: 40px;
     background-attachment: white;
 }
-
 .control {
     width: 90%;
     padding: 10px;
@@ -192,7 +179,6 @@ label, .foto {
     background-color:#F4F4F4;
     color: black
 }
-
 .olvido {
     padding-top:20px;
     text-align: end;
@@ -222,12 +208,10 @@ label, .foto {
 /*-------------------- sigue el header ----------------------------------*/
 .marquesina {
 	position: fixed; /* <--- posicion fija arriba */
-
 	height: 40px;
 	background-color: var(--independence);
 	color: white;
 	padding-top:12px ;
-
   }
   .texto-marquesina {
 	font-size: 16px;
@@ -236,8 +220,6 @@ label, .foto {
 	position: fixed; /* <--- posicion fija arriba */
 	margin-top: 40px; /*  <------- para acomodarla */
 	background-color: white; /* <----------  fondo blanco */
-
-
 	display: flex;
 	align-items: space-between;
 	align-items: center;
@@ -248,12 +230,11 @@ label, .foto {
   .logo {
 	width: 100px;
 	height: 30px;
+	margin-left: -20px;
   }
-  
   .logo:hover {
 	transform: scale(1.2);
   }
-  
   .lupa {
 	color:black;
 	font-size: 20px;
@@ -288,7 +269,6 @@ label, .foto {
   }
   .menu{
 	display: none;
-
   }
   .menu_visible{
 	display: flex;
@@ -355,6 +335,10 @@ label, .foto {
 		}
 		.boton-inicio, .registrarse, .devolver{
 			font-size: 20px;
+		  }
+		  .menu{
+			
+
 		  }
 
 	  }

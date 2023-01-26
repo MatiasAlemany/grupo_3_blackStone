@@ -19,13 +19,11 @@ body {
   /* ------------------- para ventanas modales --------------------------*/
 .modalDialog {
 	position:absolute;
-  
 	font-family: Arial, Helvetica, sans-serif;
 	top: 50px;
 	right: 0;
 	bottom: 0;
 	left: 0;
-
 	z-index: 99999;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
@@ -136,7 +134,10 @@ margin-top: 15px;
   background-color: #0022AA;
   
 }
-
+.credenciales-invalidas {
+  color: red;
+  margin-top: 5px;
+}
 
 /*----------------------------------------------------------------------*/
   /* -------------------------main ---------------------*/
@@ -163,19 +164,15 @@ margin-top: 15px;
     margin: auto;
   }
   .fila{
-    
     text-align: center;
   }
   .botonVolver {
     width: 10%;
     height: 30px;
     border-radius: 10px;
-    
   }
   .botones {
-
     display: flex;
-    
   }
   .botonEditar {
     margin: 4px;
@@ -197,21 +194,15 @@ margin-top: 15px;
   }
   .datosUsuario {
     font-size: 20px;
-    
-   
   }
   
   /*  tablets    */
   @media (min-width:426px){
    
-    
   }
   
   /*   notebook   */
   @media (min-width:769px){
-
-   
-   
     
   }
   @media (min-width: 1200px){

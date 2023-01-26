@@ -42,6 +42,8 @@ router.post ('/creacionProduct', upload.single("imagenProducto"), validacionesFo
 
 // ********************* Devolver todos los productos *********************** 
 //procesa el pedido get con ruta /
+router.get ('/listadoProductos', productsController.listaProduct);
+//procesa el pedido get con ruta /
 router.get ('/listadoProductos/:id', productsController.listarProd);
 //procesa el pedido get con ruta /
 router.get ('/listarProdBuscado', productsController.listarProdBuscado);
