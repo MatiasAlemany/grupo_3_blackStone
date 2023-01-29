@@ -21,6 +21,11 @@
 <!----------------------------------------------------------------------------------------------->
 
 <!--------------------------codigo de ventana emergente de inicio de sesion - LOGIN ------------------------>
+
+<% if (locals.isLogged) {   %> 
+
+
+    <% } else {%> 
 <section id="inicio-sesion" class="modalDialog">
     <div class="modal">
         <form action="/#inicio-sesion" method="POST">
@@ -31,8 +36,7 @@
                         <div class="texto-advertencia">
                             <p class="credenciales-invalidas" ><%= errors.email.msg %> </p>
                         </div>
-                    <% } %> 
-           
+                    <% } %>           
         </div>
           <div class="control-login">
                 <input type="password" name="clave" class="control boton3" placeholder="Contraseña" >
@@ -54,16 +58,13 @@
                     <input type="checkbox" class="recordar-box" name="recordarme">Recordar mi usuario
                 </label>
             </div>
-
-
-
         </form>
         <div class="contraseña">
             <p href="" class="olvido">Has olvidado tu contraseña?</p> <a href=""></a>
         </div>
     </div>
 </section>
-
+<% } %>
 <!---------------------------------------------------------------------------------------------------->
 
 <!--------------------------codigo de ventana emergente de  registro de usuario------------------------>

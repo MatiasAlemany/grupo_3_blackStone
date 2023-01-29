@@ -93,7 +93,8 @@ crearUsuario: (req, res) => {
     fs.writeFileSync("src/data/usuarios.json", usuariosJSON, "utf-8");
      // vuelvo a crear el archivo JSON
     return res.render("index.ejs", { allProducts: remeras ,
-      errors:{ pieForm: { msg: 'el usuario se creo correctamente'}}  }) ; 
+      errors:{ pieForm: { msg: 'el usuario ' + req.body.nombreYapellido +'  se creo correctamente'}},
+      oldData: req.body }) ; 
 
   } else {
     return res.render("index.ejs", { allProducts: remeras ,
@@ -146,7 +147,7 @@ crearUsuario: (req, res) => {
         nombreUsuario: req.body.nombreUsuario,
         imagenUsuario: req.file ? req.file.filename : " ",
         email: req.body.email,
-        clave: req.body.clave,
+        clave:bcryptjs.hashSync (req.body.clave, 10),  // <------------ se encripta la clave ,
         rol: "administrador",
       };
 
@@ -156,9 +157,13 @@ crearUsuario: (req, res) => {
       //convierto el js en JSON
       fs.writeFileSync("src/data/usuarios.json", usuariosJSON, "utf-8");
        // vuelvo a crear el archivo JSON
-      return res.send("administrador guardado correctamente");
+       return res.render("./usuarios/listaTodosUsuarios.ejs", { usuariosSolos: usuariosJS,
+        errors:{ pieForm: { msg: 'el administrador '+req.body.nombreYapellido+' se creo correctamente'}},
+        oldData : req.body}) ; 
+      
     } else {
-      return res.send("la clave no coincide");
+      return res.render("./usuarios/listaTodosUsuarios.ejs", { usuariosSolos: usuariosJS ,
+        errors:{ confirmarClaveA: { msg: 'la clave no coincide'}}  }) ; 
     }
   },
 

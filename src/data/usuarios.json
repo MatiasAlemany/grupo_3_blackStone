@@ -34,5 +34,32 @@
   "email": "pedro@pedro.com",
   "clave": "$2a$10$iNXo61Dfa9sSJxWX20CICem4xIgcqnltaNfUYOI5SKJDzDeezgysm",
   "rol": "usuario"
+ },
+ {
+  "id": 21,
+  "nombreYapellido": "julieta",
+  "nombreUsuario": "July",
+  "imagenUsuario": "imagenUsuario-1675031154844.jpg",
+  "email": "julieta@julieta.com",
+  "clave": "$2a$10$j19jK1KOMLDfPehbweeEg.pk1IE65zna7I2ISGg1OYlk2LQPBrfhW",
+  "rol": "usuario"
+ },
+ {
+  "id": 22,
+  "nombreYapellido": "matias",
+  "nombreUsuario": "matias",
+  "imagenUsuario": " ",
+  "email": "matias@matias.com",
+  "clave": "$2a$10$TAHE9nXPcgsjg16O9GZ/PeObbWqAhj1JqHsl.Hp/ZYWFn2mtBdUM6",
+  "rol": "administrador"
+ },
+ {
+  "id": 23,
+  "nombreYapellido": "nico",
+  "nombreUsuario": "nico",
+  "imagenUsuario": " ",
+  "email": "nico@nico.com",
+  "clave": "$2a$10$EQwCoJYoTJDLFMviVFPet.7O5bpWtnS5WzexyrEEA65ne86Qyfnzq",
+  "rol": "usuario"
  }
 ]

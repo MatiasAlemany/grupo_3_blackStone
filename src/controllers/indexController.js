@@ -67,23 +67,23 @@ const indexController = {
       }
       // ************************  administrador  ******************************
       else if (
-        usuarioLogueado.email == usuariosJS[i].email && usuarioLogueado.clave == usuariosJS[i].clave && usuariosJS[i].rol == "administrador") {
+        usuarioLogueado.email == usuariosJS[i].email && usuariosJS[i].rol == "administrador") {
 
           //console.log("entro a admin "+ usuarioLogueado.email);
+          let comparacionA = bcryptjs.compareSync(usuarioLogueado.clave , usuariosJS[i].clave);
+
+        if (comparacionA){  //<----------- comparo claves encriptadas 
 
           req.session.usuarioLogueado=usuariosJS[i];
           
         return res.render("./productos/listadoProductos.ejs", {allProducts: remeras});
-
+      };
       //  *******************************  usuario  ******************************
       } else if ( usuarioLogueado.email == usuariosJS[i].email  && usuariosJS[i].rol == "usuario") {
 
-          let comparacion = bcryptjs.compareSync(usuarioLogueado.clave , usuariosJS[i].clave);
-
-
-          
-          
-            if (comparacion){  //<----------- comparo claves encriptadas
+          let comparacionU = bcryptjs.compareSync(usuarioLogueado.clave , usuariosJS[i].clave);
+               
+            if (comparacionU){  //<----------- comparo claves encriptadas
               
                 if(req.body.recordarme) {
                     res.cookie('usuarioEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
