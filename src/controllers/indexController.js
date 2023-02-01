@@ -2,6 +2,8 @@ const fs = require("fs");
 const bcryptjs = require('bcryptjs'); //<--- para encriptar/desencriptar la clave
 // requerimos el archivo con la imagen y los datos de las remeras
 //const data = require('../data/dataRemeras');
+const cookieParser = require ('cookie-parser'); //<--------------IMPORTANTE
+
 
 // requerimos path para poder enviar los archivos HTML
 const path = require("path");
@@ -27,7 +29,7 @@ const indexController = {
   verLogin : (req, res) => {
 
     //console.log(req.cookie.usuarioEmail)
-
+    //console.log (req.cookies.usuarioEmail);
     return res.render ("./usuarios/loginUsuario.ejs", );
     },
 
@@ -86,8 +88,8 @@ const indexController = {
             if (comparacionU){  //<----------- comparo claves encriptadas
               
                 if(req.body.recordarme) {
-                    res.cookie('usuarioEmail', req.body.email, { maxAge: (1000 * 60) * 60 });
-                    console.log(req.body.email);
+                    res.cookie('usuarioEmail', req.body.email, { maxAge: (1000 * 60) * 10 });// recordamos por 10 minutos
+                    console.log("recordando a "  + req.body.email);
               }
               
             //console.log("entro a usuario  " + usuarioLogueado.email);
@@ -112,6 +114,8 @@ const indexController = {
   logout: (req,res) => {
       //console.log("se borra sesion " );
      res.clearCookie('usuarioEmail');
+     //  otra forma de borrar la cookie
+     //res.cookie('usuarioEmail', null, { maxAge: -1 });
      req.session.destroy();
       return res.redirect('/');
 }

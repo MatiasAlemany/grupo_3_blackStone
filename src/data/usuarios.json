@@ -18,15 +18,6 @@
   "rol": "usuario"
  },
  {
-  "id": 19,
-  "nombreYapellido": "ricardo",
-  "nombreUsuario": "ricardo",
-  "imagenUsuario": "comisario.jpg",
-  "email": "ingeniero_rik@hotmail.com",
-  "clave": "1234",
-  "rol": "administrador"
- },
- {
   "id": 20,
   "nombreYapellido": "pedro",
   "nombreUsuario": "pedro",
@@ -61,5 +52,14 @@
   "email": "nico@nico.com",
   "clave": "$2a$10$EQwCoJYoTJDLFMviVFPet.7O5bpWtnS5WzexyrEEA65ne86Qyfnzq",
   "rol": "usuario"
+ },
+ {
+  "id": 24,
+  "nombreYapellido": "ricardo",
+  "nombreUsuario": "ricardo",
+  "imagenUsuario": " ",
+  "email": "ingeniero_rik@hotmail.com",
+  "clave": "$2a$10$r9Rg7rxcp/R5Z5zd5MaheOM9zfb9br/lCHXy6xp4GobjnHXFSgjma",
+  "rol": "administrador"
  }
 ]
