@@ -15,3 +15,18 @@ En mi opinión personal (Ricardo) la parte de MVC y EJS es complicada, y mas aú
 cuando en el playground se explica de una manera, el prof. Guido lo explica de otra
 y el prof. suplente de otra, seguramente todos los caminos conducen a Roma,
 pero se transitan de a uno a la vez.
+
+Sprint 4 :
+Nos requieren la administración completa de productos con:
+    ○ Listado 
+    ○ Detalle
+    ○ Creación
+    ○ Edición
+    ○ Eliminación
+Todo completado correctamente, tuvimos algo de tiempo extra en este sprint, gracias.
+Aprovechamos la clase de consulta muy bien, nos faltó la visita de los profes.
+
+Sprint 5: 
+El mas complicado de implementar hasta ahora, no solo por la complejidad de los temas sinó  también por la 
+fecha en la que se realiza. Quizá nos quede algo por corregir para mas adelante.
+Nos reunimos (siempre virtualmente) y compartimos la solución de todo lo que resolvimos.

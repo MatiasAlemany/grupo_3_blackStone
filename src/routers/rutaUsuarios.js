@@ -8,6 +8,7 @@ const { body } = require('express-validator');// para validaciones <---- validac
 //importamos el controlador de las rutas por defecto
 const userController = require ("../controllers/userController.js");
 const adminMiddleware = require('../middlewares/adminMiddleware.js');
+const supervisorMiddleware = require('../middlewares/supervisorMiddleware');
 //const validacionRegistro = require('../middlewares/validateRegisterMiddleware.js');
 
 
@@ -56,9 +57,9 @@ router.put ('/listaUsuarios/:id', userController.editarUsuario);
 
 
 // ******************* crear administrador *********************
-router.post ('/listaTodosUsuarios',upload.single("imagenUsuario"), validaciones, userController.crearAdmin);//<---- validaciones
+router.post ('/listaTodosUsuarios',upload.single("imagenUsuario"), supervisorMiddleware ,validaciones, userController.crearAdmin);//<---- validaciones-----  solo el supervisor ingresa
 //procesa el pedido post con ruta /listaTodosUsuarios    <------ ese nombre va en el action del HTML
-router.get ('/listaTodosUsuarios', userController.listarTodos);//<----------------- se saco adminMiddleware
+router.get ('/listaTodosUsuarios', supervisorMiddleware ,userController.listarTodos);//<----------- solo supervisor ingresa
 
 
 // ************ editar un usuario ***********************
@@ -74,7 +75,7 @@ router.delete ('/listaUsuarios/:id', userController.eliminarUsuario);
 
 // *************** eliminar un administrador o usuario *********************
 //procesa el pedido delete con ruta /listaTodosUsuarios  <------ ese nombre va en el action del HTML
-router.delete ('/listaTodosUsuarios/:id', userController.eliminarCualquiera);
+router.delete ('/listaTodosUsuarios/:id', supervisorMiddleware , userController.eliminarCualquiera);//<-----  solo el supervisor ingresa
 
 // ************** procesar devolucion********************
 //procesa el pedido get con ruta /crearDevolucion  <------ ese nombre va en el action del HTML
@@ -86,7 +87,7 @@ router.post ('/crearDevolucion', userController.crearDevolucion);
 // ************** Listar devolucion********************
 
 //procesa el pedido get con ruta /listaDevolucion  <------ ese nombre va en el action del HTML
-router.get ('/listaDevolucion', userController.listaDevolucion);
+router.get ('/listaDevolucion', adminMiddleware, userController.listaDevolucion);//<-----  solo el administrador ingresa
 
 //procesa el pedido post con ruta /listaDevolucion    <------ ese nombre va en el action del HTML
 router.post ('/listaDevolucion', userController.listaDevolucion);

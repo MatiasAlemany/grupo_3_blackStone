@@ -3,7 +3,7 @@ let router = express.Router();
 let multer = require('multer');
 let path = require('path')
 const {body} = require('express-validator'); //requiero la propiedad body de express-validator
-
+const adminMiddleware = require('../middlewares/adminMiddleware.js');
 
 /* MULTER PARA SUBIR ARCHIVOS */
 const storage = multer.diskStorage({
@@ -35,14 +35,14 @@ router.get ('/productDetail/:id', productsController.detalleProd);
 
 // *********************** Crear un producto **************************
 //Renderiza la pagina creacion producto
-router.get ('/creacionProduct', productsController.creacionProd);
+router.get ('/creacionProduct', adminMiddleware, productsController.creacionProd); //<-----  solo el administrador ingresa
 //Procesa la creacion del producto
 router.post ('/creacionProduct', upload.single("imagenProducto"), validacionesForm, productsController.procesoCreacion)
 
 
 // ********************* Devolver todos los productos *********************** 
 //procesa el pedido get con ruta /
-router.get ('/listadoProductos', productsController.listaProduct);
+router.get ('/listadoProductos', adminMiddleware, productsController.listaProduct); //<-----  solo el administrador ingresa
 //procesa el pedido get con ruta /
 router.get ('/listadoProductos/:id', productsController.listarProd);
 //procesa el pedido get con ruta /
@@ -51,16 +51,16 @@ router.get ('/listarProdBuscado', productsController.listarProdBuscado);
 
 // ************************** Editar un producto **************************
 //Renderiza la pagina de editar producto 
-router.get ('/edicionProduct/:id', productsController.edicionProd);
+router.get ('/edicionProduct/:id', adminMiddleware, productsController.edicionProd);
 //Renderiza la pagina de editar producto 
-router.get ('/edicionProduct/:id', productsController.edicionProd);
+//router.get ('/edicionProduct/:id', productsController.edicionProd); // <---------- esta  repetida
 //Procesa la edicion del producto
 router.put('/edicionProduct/:id', upload.single("imagenProducto"), productsController.procesoEdicion);
 
 
 // ************************** Eliminar un producto **************************
 //Elimina el producto
-router.delete('/delete/:id', productsController.destroy);
+router.delete('/delete/:id', adminMiddleware, productsController.destroy); //<-----  solo el administrador ingresa
 
 // ************************* muestra el carrito de compras *************************
 //procesa el pedido get con ruta /product-cart  <------ ese nombre va en el action del HTML
