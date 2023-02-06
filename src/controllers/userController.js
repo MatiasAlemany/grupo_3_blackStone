@@ -108,7 +108,7 @@ crearUsuario: (req, res) => {
     const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
     const resultadosValidacion = validationResult(req);
-    console.log(resultadosValidacion.errors.length);
+    //console.log(resultadosValidacion.errors.length);
     //console.log("entro a crear usuario");
     
     
@@ -195,7 +195,7 @@ crearUsuario: (req, res) => {
     let id = req.params.id;
     const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
-    console.log("entro en editar  " + id);
+    //console.log("entro en editar  " + id);
 
     let usuarioFiltrado = usuariosJS.find(user => {
          return user.id == id;
@@ -209,7 +209,7 @@ crearUsuario: (req, res) => {
       const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
       let id = req.params.id;
 
-      console.log("entro en editar  " + id);
+      //console.log("entro en editar  " + id);
 
       let usuarioAnterior = usuariosJS.find( user => {
         return user.id == id;
@@ -249,7 +249,7 @@ eliminarUsuario: (req, res) => {
   const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
   
   let id = req.params.id;
-  console.log("entro en borrar  " + id);
+  //console.log("entro en borrar  " + id);
 
 
   let usuariosFiltrados = usuariosJS.filter(user => {
@@ -276,20 +276,29 @@ eliminarUsuario: (req, res) => {
     crearDevolucion: (req, res) => {
 
       const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+      const resultadosValidacion = validationResult(req);
+
+       if (resultadosValidacion.errors.length > 0) { // <---- verificamos resultados de validacion
+      return res.render("index.ejs", {               // con array en ruta usuarios o middleware de ruta
+      allProducts: remeras ,
+      errors: resultadosValidacion.mapped(),
+      oldData: req.body
+      });
+      };
 
     //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
     for (let i = 0; i < usuariosJS.length; i++) {
-       console.log (usuariosJS [i].email, req.body.email);
+       //console.log (usuariosJS [i].email, req.body.email);
 
 
        if (req.body.email == usuariosJS[i].email && req.body.clave == usuariosJS[i].clave && usuariosJS[i].rol == "usuario"){
 
-        console.log ("entro");
+        //console.log ("entro");
             // si clave y confirmar clave coinciden creamos la nueva devolucion
             //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
             let id = devoluciones[devoluciones.length - 1].id + 1; // para que no se reiptaid al eliminar y agregar
       
-            console.log(id);
+            //console.log(id);
       
             let user = {
               id: id,
@@ -300,7 +309,7 @@ eliminarUsuario: (req, res) => {
               rol: "usuario",
             };
       
-            console.log(user);
+            //console.log(user);
       
             devoluciones.push(user); // agrego el usuario creado en el archivo js
       

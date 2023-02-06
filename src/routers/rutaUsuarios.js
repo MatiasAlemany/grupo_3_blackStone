@@ -9,6 +9,7 @@ const { body } = require('express-validator');// para validaciones <---- validac
 const userController = require ("../controllers/userController.js");
 const adminMiddleware = require('../middlewares/adminMiddleware.js');
 const supervisorMiddleware = require('../middlewares/supervisorMiddleware');
+const devolverMiddleware = require('../middlewares/devolverMiddleware.js');
 //const validacionRegistro = require('../middlewares/validateRegisterMiddleware.js');
 
 
@@ -73,16 +74,20 @@ router.put ('/formUsuario/:id', upload.single("imagenUsuarioEditada"), userContr
 //procesa el pedido delete con ruta /listaUsuarios  <------ ese nombre va en el action del HTML
 router.delete ('/listaUsuarios/:id', userController.eliminarUsuario);
 
+
 // *************** eliminar un administrador o usuario *********************
 //procesa el pedido delete con ruta /listaTodosUsuarios  <------ ese nombre va en el action del HTML
 router.delete ('/listaTodosUsuarios/:id', supervisorMiddleware , userController.eliminarCualquiera);//<-----  solo el supervisor ingresa
+
 
 // ************** procesar devolucion********************
 //procesa el pedido get con ruta /crearDevolucion  <------ ese nombre va en el action del HTML
 router.get ('/crearDevolucion', userController.crearDevolucion);
 
 //procesa el pedido post con ruta /crearDevolucion    <------ ese nombre va en el action del HTML
-router.post ('/crearDevolucion', userController.crearDevolucion);
+router.post ('/crearDevolucion',devolverMiddleware, userController.crearDevolucion);//<----- validamos los datos del formulario de devolucion
+                                                                                    // con devolverMiddleware
+
 
 // ************** Listar devolucion********************
 
@@ -90,7 +95,8 @@ router.post ('/crearDevolucion', userController.crearDevolucion);
 router.get ('/listaDevolucion', adminMiddleware, userController.listaDevolucion);//<-----  solo el administrador ingresa
 
 //procesa el pedido post con ruta /listaDevolucion    <------ ese nombre va en el action del HTML
-router.post ('/listaDevolucion', userController.listaDevolucion);
+router.post ('/listaDevolucion',  userController.listaDevolucion);
+
 
 // ************** Recuperar contraseña********************
 //procesa el pedido get con ruta /claveIncorrecta     <------ ese nombre va en el action del HTML
