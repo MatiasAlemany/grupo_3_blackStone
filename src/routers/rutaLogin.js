@@ -44,6 +44,13 @@ router.get ('/', indexController.verLogin); // <----- modal loginUsuario
 //procesa el pedido post con ruta /
 //router.post ('/loginUsuario',  indexController.login); // <----formulario loginUsuario
 router.post ('/',  validacionLogin, indexController.login);// <----- modal loginUsuario  poner '/',validacionLogin, ....
+         /*  En / hay 4 modales: /#inicio-sesion  ----> supervisor renderiza a /usuarios/listaTodosUsuarios
+                                                 ----> admin renderiza a /productos/listadoProductos
+                                                 ----> usuario renderiza a /
+                                /#registro-usuario  
+                                /#devolver
+                                /#buscar
+        */
 
 //exportamos la variable router ya con todas las rutas guardadas, que se usará en app.js
 module.exports = router;
