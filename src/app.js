@@ -51,9 +51,46 @@ app.use(rutaLogin);
 app.use(rutaUsuarios);
 app.use(rutaProductos);
 
+/*************************probamos conexion  con la base de datos REMOTA *********************/
+/*var mysql = require('mysql'); //<----- npm install mysql 
+
+var conexion = mysql.createConnection({
+    host:'db4free.net',
+    database:'stoneblack_db',
+    user:'dh_grupo3',
+    password:'12345678'});
+  
+    conexion.connect (function (error){
+        if (error){
+            throw error;
+        } else { console.log("Conecto con éxito la base de Datos")}
+    });
+    conexion.end();
+/***************************************************************************** */
+
+/*************************probamos conexion  con la base de datos local *********************/
+var mysql2 = require('mysql2'); //<----- npm install mysql2 
+
+var conexion = mysql2.createConnection({
+    host:'127.0.0.1',
+    database:'stoneblack_db',
+    user:'root',
+    password:'master4'});
+  
+    conexion.connect (function (error){
+        if (error){
+            throw error;
+        } else { console.log("Conecto con éxito la base de Datos")}
+    });
+    conexion.end();
+/***************************************************************************** */
+
+
+
+
 
 // ponemos a escuchar el servidor
-app.listen(3041, () =>
+app.listen(process.env.PORT || 3041, () =>  // si subimos a un hosting este nos dará el puerto, sinó sera 3041
 console.log('Servidor corriendo en http://localhost:3041')
 );
 
