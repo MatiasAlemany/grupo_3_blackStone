@@ -52,7 +52,7 @@ app.use(rutaUsuarios);
 app.use(rutaProductos);
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
-/*var mysql = require('mysql'); //<----- npm install mysql 
+var mysql = require('mysql'); //<----- npm install mysql 
 
 var conexion = mysql.createConnection({
     host:'db4free.net',
@@ -66,10 +66,10 @@ var conexion = mysql.createConnection({
         } else { console.log("Conecto con éxito la base de Datos")}
     });
     conexion.end();
-/***************************************************************************** */
+/*****************************************************************************/
 
 /*************************probamos conexion  con la base de datos local *********************/
-var mysql2 = require('mysql2'); //<----- npm install mysql2 
+/* var mysql2 = require('mysql2'); //<----- npm install mysql2 
 
 var conexion = mysql2.createConnection({
     host:'127.0.0.1',
@@ -82,7 +82,7 @@ var conexion = mysql2.createConnection({
             throw error;
         } else { console.log("Conecto con éxito la base de Datos")}
     });
-    conexion.end();
+    conexion.end(); */
 /***************************************************************************** */
 
 

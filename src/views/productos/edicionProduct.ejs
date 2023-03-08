@@ -13,52 +13,64 @@
 <body>
     <main>
         <div>
-            <h2 class="titulo-principal">Estas editando: <%=allProducts.nombre %></h2>
+            <h2 class="titulo-principal">Estas editando: </h2>
         </div>
         <section>
             <div class="form-imagen">
-            <form action="/edicionProduct/<%= allProducts.id %>?_method=PUT" method="POST" class="" enctype="multipart/form-data">
+            <form action="/edicionProduct/<%= Productos.id %>" method="POST" class="" enctype="multipart/form-data">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
                 <!-- NUMERO DE ID -->
                 <div>
                     <label for="">Numero de id:</label>
-                    <input type="text" name="id" value="<%= allProducts.id %>" class="form-control" id="id" required />
+                    <input type="text" name="id" value="<%= Productos.id %>" class="form-control" id="id" required />
                 </div>
                 <!-- NOMBRE ARTICULO -->
                 <div>
                     <label for="">Nombre de articulo:</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" value="<%= allProducts.nombre %>" placeholder="Nombre de articulo"
+                    <input type="text" name="nombre" class="form-control" id="nombre" value="<%= Productos.nombre %>" placeholder="Nombre de articulo"
                         required />
                 </div>
                 <!-- DESCRIPCION ARTICULO -->
                 <div >
                     <label for="">Descripcion de articulo:</label>
                     <input outline="none" type="text" name="descripcion" class="form-control" id="nombreUsuario"
-                        placeholder="Descripcion de articulo" value="<%= allProducts.descripcion %>" required />
+                        placeholder="Descripcion de articulo" value="<%= Productos.descripcion %>" required />
                 </div>
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="file" name="imagenProducto" id="imagenProducto" class="form-control" required/>
+                    <input type="file" name="img" id="img" class="form-control" value="<%= Productos.img %>"/>
+                </div>
+                <!-- FOTO DE PRODUCTO 2-->
+                <div class="foto">
+                    <label for="foto">Fotos de producto:</label>
+                    <input type="text" name="uri_foto2" id="imagenProducto2" class="form-control" placeholder="Introduce tu URL" value="<%= Productos.uri_foto2 %>"/>
+                </div>
+                <!-- FOTO DE PRODUCTO 3-->
+                <div class="foto">
+                    <label for="foto">Fotos de producto:</label>
+                    <input type="text" name="uri_foto3" id="imagenProducto3" class="form-control" placeholder="Introduce tu URL" value="<%= Productos.uri_foto3 %>"/>
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
                     <label for="">Precio articulo:</label>
-                    <input type="text" name="precio" class="form-control" id="precio" value="<%= allProducts.precio%>"
-                        required />
+                    <input type="text" name="precio" class="form-control" id="precio" value="<%= Productos.precio%>" required />
                 </div>
                 <!-- DESCUENTO ARTICULO -->
                 <div>
                     <label for="">Descuento articulo:</label>
-                    <input type="text" name="descuento" class="form-control" id="descuento"
-                    value="<%= allProducts.descuento %>" required />
+                    <input type="text" name="descuento" class="form-control" id="descuento" value="<%= Productos.descuento %>" required />
                 </div>
-                <!-- CUOTAS ARTICULO -->
+                <!-- Talle ARTICULO -->
                 <div>
-                    <label for="">Cuotas articulo:</label>
-                    <input type="text" name="cuotas" class="form-control" id="cuotas" value="<%= allProducts.cuotas %>"
-                        required />
+                    <label for="">Talle articulo:</label>
+                    <input type="text" name="talle" class="form-control" value="<%= Productos.talle %>"/>
+                </div>
+                <!-- COLOR ARTICULO -->
+                <div>
+                    <label for="">Color articulo:</label>
+                    <input type="text" name="color" class="form-control" value="<%= Productos.color %>"/>
                 </div>
                 </div>
 
@@ -75,7 +87,7 @@
             </form>
                 <!-- BOTON ELIMINAR ARTICULO --> 
                 <div class="espacio-botones">
-                    <form action="/delete/<%= allProducts.id %>?_method=DELETE" method="POST">
+                    <form action="/delete/<%= Productos.id %>?_method=DELETE" method="POST">
                     <button type="submit" class="btn btn-outline-secondary">ELIMINAR ARTICULO</button>
                     </form>
                 </div>
@@ -83,7 +95,7 @@
             <!-- IMAGEN ARTICULO -->
             <div class="imagen-art">
                 <label>Imagen de tu articulo:</label>
-                <img src="/images/<%= allProducts.img%>" alt="FOTO DE PRUEBA">
+                <img src="/images/<%= Productos.img%>" alt="FOTO DE PRUEBA">
             </div>
         </div>
         </section>

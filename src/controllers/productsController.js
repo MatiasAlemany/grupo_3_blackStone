@@ -17,8 +17,14 @@ const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 //const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
-//creamos el objeto literal con los metodos a exportar
+/* BASE DE DATOS */
+  const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op, where } = require("sequelize");
+const Productos = db.Productos
 
+
+//creamos el objeto literal con los metodos a exportar
 const productsController = {
   // manejo del pedido get con ruta /
 
@@ -43,19 +49,40 @@ const productsController = {
   },
 
   edicionProd: (req, res) => {
-    const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
     const { id } = req.params;
 
-    const listaProductos = remeras.find((prod) => {
-      return prod.id == id;
+    Productos.findByPk(req.params.id)
+    .then(Productos => {
+      res.render("./productos/edicionProduct", {Productos})
+      
     });
 
-    res.render("./productos/edicionProduct", { allProducts: listaProductos });
-
-    //return res.render('./productos/edicionProduct');
   },
 
+  procesoEdicion: async (req, res) => {
+    let productoId = req.params.id;
 
+    await Productos
+    .update(
+      {
+      id: req.body.id,
+      nombre: req.body.nombre,
+      imagenUsuario: req.body.img,
+      descripcion: req.body.descripcion,
+      precio: req.body.precio,
+      descuento: req.body.descuento,
+      talle: req.body.talle,
+      color: req.body.color,
+      uri_foto2: req.body.uri_foto2,
+      uri_foto3: req.body.uri_foto3
+    },
+    {
+      where: {id: productoId}
+    })
+     return res.redirect("/")
+
+  },
+  
   buscarProd: (req, res) => {
     // en loBuscado esta la descripcion que viene del formulario html
     let loBuscado = req.query.buscar;
@@ -74,38 +101,6 @@ const productsController = {
       });
     // sinó indicamos que no hay productos que coincidan
     res.send("No hay productos que coincidan con la busqueda");
-  },
-
-  
-  procesoEdicion: (req, res) => {
-    const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
-
-    let id = req.params.id;
-    let productoAnterior = remeras.find((producto) => {
-      return producto.id == id;
-    });
-
-    let productoEditado = {
-      id: productoAnterior.id,
-      nombre: req.body.nombre,
-      imagenUsuario: req.file ? req.file.filename : productoAnterior.img,
-      descripcion: req.body.descripcion,
-      precio: req.body.precio,
-      descuento: req.body.descuento,
-      cuotas: req.body.cuotas,
-    };
-
-    /* "PUSHEANDO" El archivo editado */
-
-    let indice = remeras.findIndex((product) => {
-      return product.id == id;
-    });
-
-    remeras[indice] = productoEditado;
-
-    /* Sobreescribir el archivo JSON */
-    fs.writeFileSync(remerasFilePath, JSON.stringify(remeras, null, " "));
-    res.redirect("/login");
   },
 
   destroy: (req, res) => {

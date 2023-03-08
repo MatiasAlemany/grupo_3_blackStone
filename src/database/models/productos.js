@@ -15,13 +15,14 @@ let alias = "Productos";
     talle: {type: DataTypes.INTEGER, notNull : true},
     color: {type: DataTypes.STRING(12), notNull : true },
     precio: {type: DataTypes.DECIMAL, notNull : true },
-    costo: {type: DataTypes.DECIMAL, notNull: true },
-    uri_foto1: {type: DataTypes.STRING(1000) },
+    descripcion:{type: DataTypes.STRING(200), notNull: true},
+    descuento:{type: DataTypes.DECIMAL, notNull: true},  
+    img: {type: DataTypes.STRING(1000) },
     uri_foto2: {type: DataTypes.STRING(1000) },
-    uri_foto3: {type: DataTypes.STRING(1000) },
+    uri_foto3: {type: DataTypes.STRING(1000) }
         };
  let config =  {
-    tableName : 'productos',
+    tableName : 'products',
     timestamps : false
               }; 
 

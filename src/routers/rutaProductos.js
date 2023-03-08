@@ -51,11 +51,11 @@ router.get ('/listarProdBuscado', productsController.listarProdBuscado);
 
 // ************************** Editar un producto **************************
 //Renderiza la pagina de editar producto 
-router.get ('/edicionProduct/:id', adminMiddleware, productsController.edicionProd);
+router.get ('/edicionProduct/:id', productsController.edicionProd);
 //Renderiza la pagina de editar producto 
 //router.get ('/edicionProduct/:id', productsController.edicionProd); // <---------- esta  repetida
 //Procesa la edicion del producto
-router.put('/edicionProduct/:id', upload.single("imagenProducto"), productsController.procesoEdicion);
+router.post('/edicionProduct/:id', upload.single("imagenProducto"), productsController.procesoEdicion);
 
 
 // ************************** Eliminar un producto **************************
