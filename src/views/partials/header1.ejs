@@ -239,50 +239,61 @@
     </div>
 </marquee>
 
-<section class="cabecera">
-    <a href="/">
-    <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
-        
 
-    <% if (locals.isLogged) {   %> 
-        <div class="usuario-logueado">
-            <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;">
-                    
-        </div>
-        <div class="usuario-logueado">
-            <h5>Hola <%= locals.usuarioLogueado.nombre_y_apellido %></h5>             
-        </div>
-    <% } %>
-    <div class="lupa">
-        <a href="#buscar"><i class="fas fa-search"></i></a></div>
-    
-    <div class="carrito-compras">
-        <a href="/product-cart">
-        <i class="fa-solid fa-cart-shopping carrito"></i></a>
-    </div>
+<section class="cabecera">
+  
+    <div class=""><a href="/">
+    <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
+    </div>   
+
+
+        <% if (locals.isLogged) {   %> 
+        <div class="menu-item"><a href="/logout" class="boton-inicio">Terminar sesion</a></div>
+        <% } else {%> 
+        <div class="" ><a href="#inicio-sesion" class="boton-inicio">Inicio de sesion</a></div> <!----para formulario loginUsuario href=loginUsuario  -->
+
+        <div class=""><a href="#registro-usuario" class="registrarse">Registrarse</a></div><!----para formulario loginUsuario href="/usuarios/registroUsuario"  -->
+
+        <% } %> 
+
+    <div class=""><a href="#devolver" class="devolver">Devolver</a></div>
 
     <div class="burger-menu">
         <button class="abrir-menu" aria-label="Abrir menú">
         <i class="fa fa-bars burger"></i></button>
     </div>
+
+
+
+    <div class="lupa">
+        <a href="#buscar"><i class="fas fa-search"></i></a>
+    </div>
+
+    <div class="carrito-compras">
+        <a href="/product-cart">
+        <i class="fa-solid fa-cart-shopping carrito"></i></a>
+    </div>
+   
 </section>
+
+
 <section class="barra-menu">
-    <ul class="menu">
+    <div class="menu">
 
         <% if (locals.isLogged) {   %> 
-            <li class="menu-item"><a href="/logout" class="boton-inicio">Terminar sesion</a></li>
-        <% } else {%> 
-            <li class="menu-item" ><a href="#inicio-sesion" class="boton-inicio">Inicio de sesion</a></li> <!----para formulario loginUsuario href=loginUsuario  -->
-
-            <li class="menu-item"><a href="#registro-usuario" class="registrarse">Registrarse</a></li><!----para formulario loginUsuario href="/usuarios/registroUsuario"  -->
-
-        <% } %> 
-            
+            <div class="usuario-logueado">
+                <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;">
+                        
+            </div>
+            <div class="usuario-logueado">
+                <h5>Hola <%= locals.usuarioLogueado.nombre_y_apellido %></h5>             
+            </div>
+        <% } %>
           
 
         
-        <li class="menu-item"><a href="#devolver" class="devolver">Devolver</a></li>
-    </ul>
+        
+        </div>
 </section>
 
 <div class="banner">
