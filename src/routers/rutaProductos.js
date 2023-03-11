@@ -53,8 +53,6 @@ router.get ('/listarProdBuscado', productsController.listarProdBuscado);
 //Renderiza la pagina de editar producto 
 router.get ('/edicionProduct/:id', productsController.edicionProd);
 //Renderiza la pagina de editar producto 
-//router.get ('/edicionProduct/:id', productsController.edicionProd); // <---------- esta  repetida
-//Procesa la edicion del producto
 router.post('/edicionProduct/:id', upload.single("imagenProducto"), productsController.procesoEdicion);
 
 

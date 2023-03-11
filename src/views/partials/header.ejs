@@ -246,11 +246,11 @@
 
     <% if (locals.isLogged) {   %> 
         <div class="lupa">
-            <img src="/images/usuarios/<%= locals.usuarioLogueado.imagenUsuario %>" width="70px" style="border-radius: 100%;">
+            <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;">
                     
         </div>
         <div class="lupa">
-            <h5>Hola <%= locals.usuarioLogueado.nombreYapellido %></h5>             
+            <h5>Hola <%= locals.usuarioLogueado.nombre_y_apellido %></h5>             
         </div>
     <% } %>
     <div class="lupa">

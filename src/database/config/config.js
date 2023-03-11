@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "mati41029289",
+    "username": "dh_grupo3",
+    "password": "12345678",
     "database": "stoneblack_db",
-    "host": "127.0.0.1",
+    "host": "db4free.net",
     "dialect": "mysql"
   },
   "test": {

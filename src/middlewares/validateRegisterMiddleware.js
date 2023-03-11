@@ -1,9 +1,6 @@
 const path = require('path');
 const { body } = require('express-validator');
 
- 
-
-
 	const validateRegisterMiddleware = [
 	body('nombreYapellido').notEmpty().withMessage('escribe un nombre'),
 	body('nombreUsuario').notEmpty().withMessage('Escribe un nombre de usuario'),
@@ -13,6 +10,4 @@ const { body } = require('express-validator');
 	body('confirmarClave').notEmpty().withMessage('Confirma tu clave')	
 	
 ]
-
-
 module.exports = validateRegisterMiddleware;

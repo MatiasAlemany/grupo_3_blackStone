@@ -58,7 +58,7 @@ router.put ('/listaUsuarios/:id', userController.editarUsuario);
 
 
 // ******************* crear administrador *********************
-router.post ('/listaTodosUsuarios',upload.single("imagenUsuario"), supervisorMiddleware ,validaciones, userController.crearAdmin);//<---- validaciones-----  solo el supervisor ingresa
+router.post ('/listaTodosUsuarios',supervisorMiddleware ,upload.single("imagenUsuario"), validaciones, userController.crearAdmin);//<---- validaciones-----  solo el supervisor ingresa
 //procesa el pedido post con ruta /listaTodosUsuarios    <------ ese nombre va en el action del HTML
 router.get ('/listaTodosUsuarios', supervisorMiddleware ,userController.listarTodos);//<----------- solo supervisor ingresa
 

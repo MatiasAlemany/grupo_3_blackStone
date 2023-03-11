@@ -20,10 +20,10 @@
 
         <form action="/formUsuario/<%= usuario.id %>?_method=PUT" method="POST" class="formulario" enctype="multipart/form-data">
             <div class="nombre">      
-                <input type="text" name="nombreYapellido" class="boton3" id="nombre" value="<%= usuario.nombreYapellido %>"  required minlength="4">
+                <input type="text" name="nombreYapellido" class="boton3" id="nombre" value="<%= usuario.nombre_y_apellido %>"  required minlength="4">
             </div>
             <div class="nombre-usuario">
-                <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"value="<%= usuario.nombreUsuario %>" required minlength="4">
+                <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"value="<%= usuario.nombre_usuario %>" required minlength="4">
             </div>
     
             

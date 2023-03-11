@@ -20,9 +20,9 @@
          <form action="/listaUsuariosDevolucion" method="POST">
         <tr>
             <% for(let i=0; i < devolucionesSolas.length; i++) {%>
-          <td class="fila"><%=devolucionesSolas[i].nombreYapellido  %></td>
+          <td class="fila"><%=devolucionesSolas[i].nombre_y_apellido  %></td>
           <td class="fila"><%= devolucionesSolas[i].email%></td>
-          <td class="fila"><%= devolucionesSolas[i].numeroDeFactura %></td>
+          <td class="fila"><%= devolucionesSolas[i].numero_factura %></td>
           <td class="fila"><%= devolucionesSolas[i].clave %></td >
           <td class="botones">
           </form>
@@ -46,38 +46,3 @@
     </body>
     </html>
 
-
-<!--<section id="devolver" class="modalDialog" >
-    <div class="modal">
-
-        <form action="/listaUsuariosDevolucion" method="POST" class="formulario">
-        <table class="default">
-
-            <tr>
-          
-              <th scope="row">Nombre y Apellido</th>
-          
-              <th>Email</th>
-          
-              <th>Número de factura</th>
-          
-            </tr>
-          
-            <tr>
-          
-              <th></th>
-          
-              <td></td>
-          
-              <td></td>
-          
-            </tr>   
-          
-          </table>
-          
-        </form>
-
-
-
-        
-           
