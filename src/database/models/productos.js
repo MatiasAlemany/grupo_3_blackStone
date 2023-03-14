@@ -22,7 +22,7 @@ let alias = "Productos";
     uri_foto3: {type: DataTypes.STRING(1000) }
         };
  let config =  {
-    tableName : 'productoproductos/tableNames',
+    tableName : 'productos',
     timestamps : false
               }; 
 

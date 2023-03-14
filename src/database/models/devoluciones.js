@@ -9,12 +9,12 @@ let alias = "Devoluciones";
          primaryKey : true,
          notNull : true
     },
-
     fecha: {type: DataTypes.DATE, notNull : true},
-    id_usuario: {type: DataTypes.INTEGER, notNull : true},
+    id_usuario: {type: DataTypes.INTEGER},
     id_producto: {type: DataTypes.INTEGER, notNull : true },
     numero_factura: {type: DataTypes.INTEGER, notNull : true },
-   
+    nombre_y_apellido: {type: DataTypes.STRING(65),notNul : true},
+    email: {type: DataTypes.STRING(65), notNull: true}, 
         };
  let config =  {
     tableName : 'devoluciones',

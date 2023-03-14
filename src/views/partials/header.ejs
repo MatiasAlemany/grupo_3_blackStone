@@ -198,26 +198,32 @@
                         <% } %> 
             </div>
 
-
-            <div class="nombre">
-                <input type="password" name="clave" class="boton3"   id="password" placeholder="Contraseña" >
-                <%  if (locals.errors && errors.clave) {  %> 
+            <div class="nombre-usuario">
+                <input type="text" name="idProducto" class="boton3"   id="" placeholder="ID de producto" 
+                value="<%= locals.oldData ? oldData.idProducto : null %>">  
+                <%  if (locals.errors && errors.idProducto) {  %> 
                     <div class="pie-form">
-                        <p class="credenciales-invalidas" ><%= errors.clave.msg %> </p>
+                        <p class="credenciales-invalidas" ><%= errors.idProducto.msg %> </p>
                     </div>
-                    <% } %> 
+                    <% } %>                                               
             </div>
 
-
-            <div class="nombre">
-                <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword"
-                    placeholder="Confirmar contraseña" >
-                    <%  if (locals.errors && errors.confirmarClave) {  %> 
-                        <div class="pie-form">
-                            <p class="credenciales-invalidas" ><%= errors.confirmarClave.msg %> </p>
-                        </div>
-                        <% } %> 
+            <div class="nombre-usuario fecha">
+                <input type="date" name="fechaDeCompra" class="boton3"   id="" placeholder="Fecha de compra"
+                value="<%= locals.oldData ? oldData.fechaDeCompra : null %>" > 
+                <%  if (locals.errors && errors.fechaDeCompra) {  %> 
+                    <div class="pie-form">
+                        <p class="credenciales-invalidas" ><%= errors.fechaDeCompra.msg %> </p>
+                    </div>
+                    <% } %>                                                   
             </div>
+            
+            <%  if (locals.errors && errors.pieForm) {  %> 
+    
+                <div name="pieForm">
+                    <p class="pie-form"> <%= errors.pieForm.msg %> </p>
+                </div>
+                <% } %> 
 
             <div class="reg-reset">
                 <button class="reset" type="reset"><a href="/" title="Close" id="close1">Volver</a></button>
@@ -245,11 +251,11 @@
         
 
     <% if (locals.isLogged) {   %> 
-        <div class="usuario-logueado">
+        <div class="lupa">
             <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;">
                     
         </div>
-        <div class="usuario-logueado">
+        <div class="lupa">
             <h5>Hola <%= locals.usuarioLogueado.nombre_y_apellido %></h5>             
         </div>
     <% } %>

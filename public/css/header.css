@@ -120,6 +120,9 @@ transition: opacity 400ms ease-in;
 .register:hover , .reset:hover, .envio:hover{
     background-color: #0022AA;  
 }
+.fecha{
+	width: 80%;             /* <--------------------------------se agrego */
+}
 
 /* ---------------------- para emergente de registrar ------------------- */
 #registro {
@@ -231,8 +234,6 @@ label, .foto {
 	padding: 8px 30px ;  /* <-------------- fijo 8px antes 15  */
 	text-decoration: none;
   }
- 
-
   .logo {
 	width: 100px;
 	height: 30px;
@@ -267,18 +268,16 @@ label, .foto {
 	padding: 10px; 
   }
   .barra-menu{
-	margin-top: 90px; /* <-----------   para header fijo  */
+	margin-top: 100px; /* <-----------   para header fijo  */
 	position: fixed;
-	background-color: white;
+	background-color: transparent; /* <---------------- para que se vea imagen y nombre  */
 	width: 100%;
 	height: 30px;
 	margin-bottom: 20px;
+
   }
   .menu{
 	display: none;
-  }
-  .menu-item {
-	margin-left: 20px;
   }
   .menu_visible{
 	display: flex;

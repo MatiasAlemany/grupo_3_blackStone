@@ -1,17 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 const fs = require("fs");
 const bcryptjs = require('bcryptjs'); //<--- para encriptar/desencriptar la clave
 // requerimos el archivo con la imagen y los datos de las remeras
@@ -26,9 +13,9 @@ const { validationResult } = require('express-validator');
 
 /* En la constante "remeras" ya tenemos los productos que están 
 guardados en la carpeta data como Json (un array de objetos literales) */
-const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
+//const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
 //const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
+//const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 //const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8")); //<----------------
 
 const sequelize = require ("sequelize"); //<------------ para usar Op
@@ -38,7 +25,8 @@ const Op = sequelize.Op;
 //creamos el objeto literal con los metodos a exportar
 const indexController = {
   //--------------------------------------------------------------------------------------------------------------------
-  index: (req, res) => {
+  index: async (req, res) => {
+    var remeras =  await db.Productos.findAll();
     //return res.render ('index.ejs', {'allProducts':data} ); // data es un archivo js
     return res.render("index.ejs", { allProducts: remeras }); // remeras es un js
   },

@@ -13,6 +13,16 @@ const devolverMiddleware = require('../middlewares/devolverMiddleware.js');
 //const validacionRegistro = require('../middlewares/validateRegisterMiddleware.js');
 
 
+const validacionesDev = [
+	body('nombreYapellido').notEmpty().withMessage('escribe un nombre'),	
+	body('email').notEmpty().withMessage('Tienes que escribir tu correo').bail()
+			.isEmail().withMessage('Escribe un formato de correo válido'),
+    body('numeroDeFactura').notEmpty().withMessage('Escribe el número de la factura'),        
+	body('idProducto').notEmpty().withMessage('Escribe el código de producto'),
+	body('fechaDeCompra').notEmpty().withMessage('Escribe la fecha de compra')
+	
+]
+
 const validaciones = [
 	body('nombreYapellido').notEmpty().withMessage('escribe un nombre'),
 	body('nombreUsuario').notEmpty().withMessage('Escribe un nombre de usuario'),
@@ -85,7 +95,7 @@ router.delete ('/listaTodosUsuarios/:id', supervisorMiddleware , userController.
 router.get ('/crearDevolucion', userController.crearDevolucion);
 
 //procesa el pedido post con ruta /crearDevolucion    <------ ese nombre va en el action del HTML
-router.post ('/crearDevolucion',devolverMiddleware, userController.crearDevolucion);//<----- validamos los datos del formulario de devolucion
+router.post ('/crearDevolucion',validacionesDev , userController.crearDevolucion);//<----- validamos los datos del formulario de devolucion
                                                                                     // con devolverMiddleware
 
 

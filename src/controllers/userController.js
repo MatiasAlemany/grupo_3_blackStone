@@ -11,18 +11,18 @@ const { json } = require("express");
 
 /* En la constante "remeras" ya tenemos los productos que están 
 guardados en la carpeta data como Json (un array de objetos literales) */
-const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
-const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
-const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
+//const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
+//const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
+//const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
+//const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
 const devolucionesFilePath = path.join(__dirname, "../data/devoluciones.json");
 
 const devoluciones = JSON.parse(fs.readFileSync(devolucionesFilePath, "utf-8"));
 
-
+const sequelize = require ("sequelize"); //<------------ para usar Op
 const db = require('../database/models/index.js');
-const Op = db.sequelize.Op;
+const Op = sequelize.Op;
 
 
 const userController = {
@@ -32,26 +32,59 @@ const userController = {
 },
 
    // ************************************************************************************************************************    
-    crearUsuario : function (req,res) {
-            db.Usuarios.create({
-              nombre_y_apellido: req.body.nombreYapellido,
-              nombre_usuario: req.body.nombreUsuario,
-              uri_avatar: req.file ? req.file.filename : " ",
-              email: req.body.email,
-              clave: bcryptjs.hashSync (req.body.clave, 10),  // <------------ se encripta la clave
-              rol: "usuario",
-        }).then(() => {
-        console.log("usuario creado");
-        return res.render("index.ejs", { allProducts: remeras ,
-          errors:{ pieForm: { msg: 'el usuario ' + req.body.nombreYapellido +'  se creo correctamente'}},
-          oldData: req.body }) ;   
-        
+   crearUsuario :async function (req,res) {
+
+    var remerasTodas =  await db.Productos.findAll();
+    var usuariosBD = await db.Usuarios.findAll();
+
+    const resultadosValidacion = validationResult(req);
+
+    if (resultadosValidacion.errors.length > 0) {
+      
+      return res.render("index.ejs", { 
+        //usuariosSolos: todos,
+        errors: resultadosValidacion.mapped(),
+        oldData: req.body
+      });
+    }
+      //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
+        for (let i = 0; i < usuariosBD.length; i++) {
+          if (
+      usuariosBD[i].email == req.body.email && usuariosBD[i].rol == "usuario") {
+
+      return res.render("index.ejs", { allProducts: remerasTodas ,
+        errors:{ pieForm: { msg: 'el usuario '+ req.body.nombreYapellido+' ya existe'}},
+         oldData : req.body}) ; 
+    }
+  }
+  if (req.body.clave == req.body.confirmarClave) { //<----- se crea el usuario
+
+    
+          db.Usuarios.create({
+            nombre_y_apellido: req.body.nombreYapellido,
+            nombre_usuario: req.body.nombreUsuario,
+            uri_avatar: req.file ? req.file.filename : " ",
+            email: req.body.email,
+            clave: bcryptjs.hashSync (req.body.clave, 10),  // <------------ se encripta la clave
+            rol: "usuario",
+      }).then(() => {
+      console.log("usuario creado");
+      return res.render("index.ejs", { allProducts: remerasTodas ,
+        errors:{ pieForm: { msg: 'el usuario ' + req.body.nombreYapellido +'  se creo correctamente'}},
+        oldData: req.body }) ;   
+      
+    })
+      .catch(err => {
+          res.send("el email ya existe")
       })
-        .catch(err => {
-            res.send("el email ya existe")
-        })
-        
-     },  
+    } else {
+        return res.render ("index.ejs", { allProducts: remerasTodas ,
+          errors:{ confirmarClave: { msg: 'la clave no coincide'}},
+          oldData: req.body }) ;
+      }
+      
+   },  
+   
      
 // ***************************************************************************************************************************
   crearAdmin: async (req, res) => {
@@ -59,15 +92,11 @@ const userController = {
     var usuariosBD = await db.Usuarios.findAll();
 
     const resultadosValidacion = validationResult(req);
-    //console.log(resultadosValidacion.errors.length);
-    //console.log("entro a crear usuario");
-      
-    let todos = usuariosBD;
-
+   
     if (resultadosValidacion.errors.length > 0) {
       console.log("entro crear admin");
 			return res.render("./usuarios/listaTodosUsuarios", { 
-        usuariosSolos: todos,
+        usuariosSolos: usuariosBD,
 				errors: resultadosValidacion.mapped(),
 				oldData: req.body
 			});
@@ -77,42 +106,20 @@ const userController = {
     for (let i = 0; i < usuariosBD.length; i++) {
       if (
         usuariosBD[i].email == req.body.email && usuariosBD[i].rol == "administrador") {
-        //return res.send("el administrador con este email ya existe");
+    
 
         return res.render("./usuarios/listaTodosUsuarios.ejs", { usuariosSolos: usuariosBD,
           errors:{ pieForm: { msg: 'el administrador '+ req.body.nombreYapellido+' ya existe'}},
            oldData : req.body}) ; 
 
 
-        //return res.render("index.ejs", { allProducts: remeras ,
-          //errors:{ email: { msg: 'el administrador con este email ya existe'}}  }) ; 
-
 
       }
     }
     if (req.body.clave == req.body.confirmarClave) {
-      // si clave y confirmar clave coinciden creamos el nuevo usuario
-      //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
-      //  ------>    let id = usuariosJS[usuariosJS.length - 1].id + 1; // para que no se repita al eliminar y agregar
-
-      /*
-      let user = {
-        id: id,
-        nombre_y_apellido: req.body.nombreYapellido,
-        nombre_usuario: req.body.nombreUsuario,
-        uri_avatar: req.file ? req.file.filename : " ",
-        email: req.body.email,
-        clave:bcryptjs.hashSync (req.body.clave, 10),  // <------------ se encripta la clave ,
-        rol: "administrador",
-      };
-      */
+      // si clave y confirmar clave coinciden creamos el nuevo administrador
+     
       // creo el administrador
-      //usuariosJS.push(user); // agrego el usuario creado en el archivo js
-
-      //let usuariosJSON = JSON.stringify(usuariosJS, null, " "); 
-      //convierto el js en JSON
-      //fs.writeFileSync("src/data/usuarios.json", usuariosJSON, "utf-8");
-       // vuelvo a crear el archivo JSON
        db.Usuarios.create({
         nombre_y_apellido: req.body.nombreYapellido,
         nombre_usuario: req.body.nombreUsuario,
@@ -128,8 +135,8 @@ const userController = {
         res.send(err);
     })
     } else {
-      return res.render("./usuarios/listaTodosUsuarios.ejs", { usuariosSolos: usuariosJS ,
-        errors:{ confirmarClaveA: { msg: 'la clave no coincide'}}  }) ; 
+      return res.render("./usuarios/listaTodosUsuarios.ejs", { usuariosSolos: usuariosBD ,
+        errors:{ confirmarClave: { msg: 'la clave no coincide'}}  }) ; 
     }
   },
 
@@ -148,9 +155,8 @@ const userController = {
 
   // ****************************************************************************************************************
   listarTodos: (req, res) => {
-    //const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
-    db.Usuarios.findAll({
-     // where : { rol : "usuario"},  //<---- busco en la tabla usuarios si existe el mail que viene del body
+    
+    db.Usuarios.findAll({where : { rol : {[Op.ne ] : "supervisor"}} ,  //el supervisor no debe aparecer en la lista   
       raw : true      // <-------  se agrega para que no traiga todos los metadatos que no usamos
     }).then(usuariosTodos => {
 
@@ -212,8 +218,63 @@ const userController = {
      .catch(error => res.send(error)) 
     },
 
+
 // **********************************************************************************************************************
-    crearDevolucion: (req, res) => {
+crearDevolucion: async (req, res) => {
+   
+  const resultadosValidacion = validationResult(req);
+
+if (resultadosValidacion.errors.length > 0) {
+ 
+  return res.render("index.ejs", { 
+    allProducts: remerasTodas,
+    errors: resultadosValidacion.mapped(),
+    oldData: req.body
+  });
+}
+            
+const usuarioDevuelve = await db.Usuarios.findOne( {where : { email: req.body.email}, raw : true});
+var remerasTodas =  await db.Productos.findAll();
+
+
+if (usuarioDevuelve == null){   // <--------- si existe el email creamos la devolucion
+  return res.render("index.ejs", { allProducts: remerasTodas ,
+    errors:{ pieForm: { msg:"el usuario con este email no existe"}},
+    oldData : req.body });
+  }
+
+// hacemos una consulta para ver si esta devolución ya fue registrada antes
+var devolucion = await db.Devoluciones.findAll({ where: {[Op.and]: [
+                                                                 { email: req.body.email },
+                                                                 { id_producto: req.body.idProducto },
+                                                                 { numero_factura : req.body.numeroDeFactura}
+                                                           ] }, raw : true });
+
+  
+  
+  if (devolucion.length != 0 ){
+    return res.render ("index.ejs", { allProducts: remerasTodas ,
+      errors:{ pieForm: { msg: 'Esta devolucion fue registrada ántes'}},
+        oldData : req.body }
+    );
+  }  else {
+          db.Devoluciones.create ({
+          nombre_y_apellido: req.body.nombreYapellido,
+          email: req.body.email,
+          numero_factura: req.body.numeroDeFactura,
+          id_producto : req.body.idProducto,
+          fecha : req.body.fechaDeCompra,
+          }).then ( () => {
+            return res.render ("index.ejs", { allProducts: remerasTodas ,
+            errors:{ pieForm: { msg: 'la devolucion se registró'}},
+              oldData : req.body }
+          );
+          }).catch(error => res.send(error)) 
+    } 
+},
+   
+// **********************************************************************************************************************
+    crearDevolucion1: (req, res) => {
 
       const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
       const resultadosValidacion = validationResult(req);
@@ -264,10 +325,20 @@ const userController = {
         return res.send("el usuario con este email no existe");
     
   },
-       
-
+     // *****************************************************************************************************************
+     listaDevolucion: (req, res) => {
+      db.Devoluciones.findAll({ 
+        raw : true,      
+      }).then(devoluciones => {
+        
+      return res.render("./usuarios/listaUsuariosDevolucion.ejs", { devolucionesSolas: devoluciones});
+    }) .catch(err => {  
+      res.send(err)
+      });
+    },
+  
   // *****************************************************************************************************************
-      listaDevolucion:
+      listaDevolucion1:
 
       (req, res) => {
         const devoluciones = JSON.parse(fs.readFileSync(devolucionesFilePath, "utf-8"));
