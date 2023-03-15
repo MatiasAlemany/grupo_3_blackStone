@@ -273,58 +273,7 @@ var devolucion = await db.Devoluciones.findAll({ where: {[Op.and]: [
     } 
 },
    
-// **********************************************************************************************************************
-    crearDevolucion1: (req, res) => {
 
-      const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
-      const resultadosValidacion = validationResult(req);
-
-       if (resultadosValidacion.errors.length > 0) { // <---- verificamos resultados de validacion
-      return res.render("index.ejs", {               // con array en ruta usuarios o middleware de ruta
-      allProducts: remeras ,
-      errors: resultadosValidacion.mapped(),
-      oldData: req.body
-      });
-      };
-
-    //primero chequeamos que el usuario no exista, lo que no se debe repetir es el email
-    for (let i = 0; i < usuariosJS.length; i++) {
-       //console.log (usuariosJS [i].email, req.body.email);
-
-
-       if (req.body.email == usuariosJS[i].email && req.body.clave == usuariosJS[i].clave && usuariosJS[i].rol == "usuario"){
-
-        //console.log ("entro");
-            // si clave y confirmar clave coinciden creamos la nueva devolucion
-            //let id=usuariosJS.length + 1;// el id sera +1 de la longuitud actual
-            let id = devoluciones[devoluciones.length - 1].id + 1; // para que no se repita al eliminar y agregar
-      
-            //console.log(id);
-      
-            let user = {
-              id: id,
-              nombreYapellido: req.body.nombreYapellido,
-              email: req.body.email,
-              numeroDeFactura: req.body.numeroDeFactura,
-              clave: req.body.clave,
-              rol: "usuario",
-            };
-      
-            //console.log(user);
-      
-            devoluciones.push(user); // agrego el usuario creado en el archivo js
-      
-            let devolucionesJSON = JSON.stringify(devoluciones, null, " "); 
-            //convierto el js en JSON
-            fs.writeFileSync("src/data/devoluciones.json", devolucionesJSON, "utf-8");
-             // vuelvo a crear el archivo JSON
-            return res.send("usuario guardado correctamente");
-          } 
-          
-        }
-        return res.send("el usuario con este email no existe");
-    
-  },
      // *****************************************************************************************************************
      listaDevolucion: (req, res) => {
       db.Devoluciones.findAll({ 
@@ -337,23 +286,7 @@ var devolucion = await db.Devoluciones.findAll({ where: {[Op.and]: [
       });
     },
   
-  // *****************************************************************************************************************
-      listaDevolucion1:
-
-      (req, res) => {
-        const devoluciones = JSON.parse(fs.readFileSync(devolucionesFilePath, "utf-8"));
-    
-        //hacemos array de las devoluciones solamente
-        const devolucionesSolas = devoluciones.filter(
-          (user) => user.rol == "administrador"
-        );
-    
-        return res.render("./usuarios/listaUsuariosDevolucion.ejs", {
-          devolucionesSolas: devolucionesSolas});
-
-        //res.send(devoluciones);
-      },
-
+  
     // ********************************************************************************************************
       formClaveIncorrecta : (req, res) => {
         console.log(req.body.email);

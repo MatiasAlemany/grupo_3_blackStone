@@ -62,8 +62,10 @@ const indexController = {
       console.log( req.body.email)
    
       // traemos todos los usuarios menos el supervisor, no se debe mostrar en la lista
-  var usuariosTodos = await db.Usuarios.findAll( {where : { rol : {[Op.ne ] : "supervisor"}} });  // <--------- se puso el async en la funcion login
+    var usuariosTodos = await db.Usuarios.findAll( {where : { rol : {[Op.ne ] : "supervisor"}} });  // <--------- se puso el async en la funcion login
      
+    var remerasTodas =  await db.Productos.findAll();
+
     db.Usuarios.findOne({
       where : { email : req.body.email},  //<---- busco en la tabla usuarios si existe el mail que viene del body
       raw : true,      // <-------  se agrega para que no traiga todos los metadatos que no usamos
@@ -72,7 +74,7 @@ const indexController = {
       console.log(usuario);
 
       if (usuario == null) {    // <--------- verificamos si encontro el usuario en la BD
-            return res.render("index.ejs", { allProducts: remeras ,
+            return res.render("index.ejs", { allProducts: remerasTodas ,
                     errors:{ email: { msg: 'El usuario '+ req.body.email + " no esta registrado."}}  }) ;
           
       }
@@ -108,9 +110,9 @@ const indexController = {
 
       req.session.usuarioLogueado = usuarioBD;
       //console.log(req.session.usuarioLogueado.email);
-    return res.render("./productos/listadoProductos.ejs", {allProducts: remeras});
+    return res.render("./productos/listadoProductos.ejs", {allProducts: remerasTodas});
   }
-  return res.render("index.ejs", { allProducts: remeras ,
+  return res.render("index.ejs", { allProducts: remerasTodas ,
     errors:{ email: { msg: 'Los datos del usuario ingresados antes no son correctos'}}  }) ;
 
   //  *******************************  usuario  ******************************
@@ -130,7 +132,7 @@ const indexController = {
       } req.session.usuarioLogueado=usuarioBD;
         return res.redirect ("/" );
       }else{
-           return res.render("index.ejs", { allProducts: remeras ,
+           return res.render("index.ejs", { allProducts: remerasTodas ,
                     errors:{ email: { msg: 'Los datos del usuario ingresados antes no son correctos'}}  }) ;
     } 
     }
