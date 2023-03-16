@@ -47,11 +47,12 @@ const indexController = {
     // <---------------------- para hacerlo con express-validator --------------------------------------------
     const validacionLogin = validationResult(req);
     var usuarioLogueado = req.body;
+    var remerasTodas =  await db.Productos.findAll();
 
     if (validacionLogin.errors.length > 0 ){
   
         return res. render('index.ejs', {
-          allProducts: remeras,
+          allProducts: remerasTodas,
           errors: validacionLogin.mapped(),
           oldData: req.body
       });  
@@ -64,7 +65,7 @@ const indexController = {
       // traemos todos los usuarios menos el supervisor, no se debe mostrar en la lista
     var usuariosTodos = await db.Usuarios.findAll( {where : { rol : {[Op.ne ] : "supervisor"}} });  // <--------- se puso el async en la funcion login
      
-    var remerasTodas =  await db.Productos.findAll();
+    
 
     db.Usuarios.findOne({
       where : { email : req.body.email},  //<---- busco en la tabla usuarios si existe el mail que viene del body
