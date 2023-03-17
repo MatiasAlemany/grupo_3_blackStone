@@ -177,6 +177,9 @@ margin-top: 15px;
   .botones {
     display: flex;
   }
+  #volver{
+    color:var(--black-coral);
+  }
   .botonEditar {
     margin: 4px;
     background-color:lightgreen;

@@ -41,7 +41,9 @@ body {
     margin: auto;
 	  margin-top: 2px;
   }
-  
+  #close{
+    color:var(--black-coral);
+  }
   .botonL {
     width: 20%;
     padding: 10px;
@@ -51,8 +53,11 @@ body {
     background-color:var(--silver-chalice);
 	  border-radius: 10px;
     text-align: center;
+    margin-top: 4px;
 }
-
+#close{
+  color:var(--black-coral);
+}
   .titulo {
    
     text-align: center;
@@ -129,6 +134,13 @@ body {
     }
     .img1{
       height: 420px;
+    }
+    .opcionesAdmin{
+      flex-direction: row;
+    }
+    .botonL {
+      width: 15%;
+      margin-top: 0;
     }
     
   }
