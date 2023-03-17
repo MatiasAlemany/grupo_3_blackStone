@@ -30,16 +30,21 @@
     <div class="modal">
         <form action="/#inicio-sesion" method="POST">
          <div class=" control-login">
-             <input type="email" name="email" class="control boton3"class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+             <input type="email" name="email" id="form-control" class="control boton3" <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                              placeholder="e-mail" value="<%= locals.oldData ? oldData.email : null %>">
                     <%  if (locals.errors && errors.email) {  %> 
                         <div class="texto-advertencia">
                             <p class="credenciales-invalidas" ><%= errors.email.msg %> </p>
                         </div>
-                    <% } %>           
+                    <% } %>        
+                        <div class="texto-advertencia"> 
+                            <small class="errorNombre"></small>
+                        </div>
+                    
+
         </div>
           <div class="control-login">
-                <input type="password" name="clave" class="control boton3" placeholder="Contraseña" >
+                <input type="password" id="clave-login" name="clave" class="control boton3" placeholder="Contraseña" >
             </div>
             <div class="control-login">
 
@@ -48,9 +53,13 @@
                             <p class="credenciales-invalidas" ><%= errors.clave.msg %> </p>
                         </div>
                     <% } %> 
+                        <div  class="texto-advertencia">
+                            <small class="errorClave"></small>
+                        </div>
+
 
              <button class="envio" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
-             <button type="submit" class="envio">Enviar</button> 
+             <button type="submit" id="btn-envio" class="envio">Enviar</button> 
             </div>
 
             <div class="">
