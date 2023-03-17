@@ -28,18 +28,13 @@ const Productos = db.Productos
 const productsController = {
   // manejo del pedido get con ruta /
 
-  detalleProd: (req, res) => {
-    const { id } = req.params;
-    //let idProd = req.params.id;
-
-    //const listaProductos = data.filter((prod) => prod.id == id);
-    const listaProductos = remeras.filter((prod) => prod.id == id);
-
-    if (listaProductos.length)
-      return res.render("./productos/productDetail", {
-        allProducts: listaProductos,
-      });
-    res.send("Not Found");
+  detalleProd: async (req, res) => {
+    const id  = req.params.id;
+    
+    await Productos.findByPk(req.params.id)
+    .then(Productos => {
+      res.render("./productos/productDetail", {Productos})
+    })
   },
 
   detalleCarrito: (req, res) => {

@@ -18,9 +18,9 @@
         <!-- IMAGEN ARTICULO A DETALLAR: EN UN FUTURO VA A SER UN CARRUSEL -->
         <div class="caja-menu-imagen">
         <div class="imagen-articulo">
-            <img src="/images/<%= allProducts[0].img%>" alt="FOTO DE PRUEBA">
-            <img src="/images/<%= allProducts[0].img2%>" alt="FOTO DE PRUEBA">
-            <img src="/images/<%= allProducts[0].img3%>" alt="FOTO DE PRUEBA">
+            <img src="/images/<%= Productos.img%>" alt="FOTO DE PRUEBA">
+            <img src="/images/<%= Productos.uri_foto2%>" alt="FOTO DE PRUEBA">
+            <img src="/images/<%= Productos.uri_foto3%>" alt="FOTO DE PRUEBA">
         </div>
 
         <!-- <nav class="menu-derecha">
@@ -38,10 +38,10 @@
         <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
         <div class="caja-detalles">
             <div class="titulo-articulo">
-                <h2><%= allProducts[0].nombre%></h2>
+                <h2><%= Productos.nombre%></h2>
             </div>
             <div class="precio-articulo">
-                <h3>$<%= allProducts[0].precio%></h3>
+                <h3>$<%= Productos.precio%></h3>
             </div>
         </div>
 
@@ -70,7 +70,7 @@
         <!-- DESCRIPCION DEL PRODUCTO -->
         <div class="descripcion-articulo">
             <h4>DESCRIPCION DEL PRODUCTO:</h4>
-            <p><%= allProducts[0].descripcion%></p>
+            <p><%= Productos.descripcion%></p>
         </div>
 
         <!-- BOTON AGREGAR A CARRITO -->
@@ -80,10 +80,10 @@
             </a>
         </div>
 
-        <!-- PRODUCTOS RELACIONADOS: FUTURO CARRUSEL -->
+        <!-- Productos RELACIONADOS: FUTURO CARRUSEL -->
         <div>
-            <h5 class="titulo-productosRelacionados">PRODUCTOS RELACIONADOS:</h5>
-            <div class="productos-relacionados">
+            <h5 class="titulo-ProductosRelacionados">Productos RELACIONADOS:</h5>
+            <div class="Productos-relacionados">
                 <article>
                     <a href="/product-cart">
                     <img src="/images/acdc_roja.jpg" alt="">
