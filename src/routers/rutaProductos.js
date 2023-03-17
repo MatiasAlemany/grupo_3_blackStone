@@ -25,6 +25,9 @@ const validacionesForm = [
     body('nombre').notEmpty().withMessage("Completa el nombre"),
     body('descripcion').notEmpty().withMessage("Completa la descripcion"),
     body('precio').notEmpty().withMessage("Completa el precio"),
+    body('talle').notEmpty().withMessage("Completa el talle"),
+    body('color').notEmpty().withMessage("Completa el color"),
+    body('img').notEmpty().withMessage("Debes tener al menos una imagen"),
 ]
 
 // ******************* mostrar un producto ************************

@@ -103,49 +103,41 @@ const productsController = {
     res.send("No hay productos que coincidan con la busqueda");
   },
 
-  destroy: (req, res) => {
+  destroy: async (req, res) => {
     let id = req.params.id;
-    const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 
-    let productosFiltrados = remeras.filter((producto) => {
-      return producto.id != id;
-    });
+    await Productos
+    .destroy({where: {id: id}, force: true}) // force: true es para asegurar que se ejecute la acción
+    .then(()=>{
+        return res.redirect('/')})
 
-    fs.writeFileSync(
-      remerasFilePath,
-      JSON.stringify(productosFiltrados, null, " ")
-    );
-
-    res.redirect("/login");
   },
 
   creacionProd: (req, res) => {
     return res.render("./productos/creacionProduct");
   },
 
-  procesoCreacion: (req, res) => {
-    const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
+  procesoCreacion: async (req, res) => {
+    /* const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8")); */
     let errors = validationResult(req);
 
     if(errors.isEmpty()){
-    let productoNuevo = {
-      id: remeras[remeras.length - 1].id + 1,
+ await Productos.create({
       nombre: req.body.nombre,
-      imagenUsuario: req.file ? req.file.filename : "Carga tu foto",
+      img: req.body.img,
       descripcion: req.body.descripcion,
       precio: req.body.precio,
       descuento: req.body.descuento,
-      cuotas: req.body.cuotas,
-    };
-
-    /* PUSHEANDO El archivo editado */
-    remeras.push(productoNuevo);
-
-    /* Sobreescribir el archivo JSON */
-    fs.writeFileSync(remerasFilePath, JSON.stringify(remeras, null, " "));
-    res.redirect("/login");
-    }else {
-      return res.render("./productos/creacionProduct", 
+      talle: req.body.talle,
+      color: req.body.color,
+      uri_foto2: req.body.uri_foto2,
+      uri_foto3: req.body.uri_foto3
+    })
+    .then
+    res.redirect("/");
+    } else {
+      console.log(Productos.PRIMARY)
+     return res.render("./productos/creacionProduct", 
 			{errors: errors.array(),
 			old: req.body })
     }
