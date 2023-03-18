@@ -28,7 +28,7 @@
     <% } else {%> 
 <section id="inicio-sesion" class="modalDialog">
     <div class="modal">
-        <form action="/#inicio-sesion" method="POST">
+        <form action="/#inicio-sesion"  class="form-login"  method="POST">
          <div class=" control-login">
              <input type="email" name="email" id="form-control" class="control boton3" <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                              placeholder="e-mail" value="<%= locals.oldData ? oldData.email : null %>">
