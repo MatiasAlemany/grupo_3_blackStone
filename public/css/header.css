@@ -67,6 +67,17 @@ transition: opacity 400ms ease-in;
 	color: #FFFFFF;
 }
 
+/* ------------------------ para emergente buscar -------------------------- */
+
+#buscar{	
+	margin-top: 200px;
+}
+.control-buscar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
 /* ---------------------- para emergente devolver --------------------------*/
 #devolver {
     display: flex;
@@ -125,7 +136,7 @@ transition: opacity 400ms ease-in;
 }
 
 /* ---------------------- para emergente de registrar ------------------- */
-#registro {
+#registro-usuario {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,6 +220,7 @@ label, .foto {
 .credenciales-invalidas {
     color: red;
     padding-top: 10px;
+	text-align: center;
   }
   .recordar-box{
 	margin-right: 10px;

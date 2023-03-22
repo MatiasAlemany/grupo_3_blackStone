@@ -78,11 +78,14 @@ const productsController = {
 
   },
   
-  buscarProd: (req, res) => {
+  buscarProd: async (req, res) => {
     // en loBuscado esta la descripcion que viene del formulario html
     let loBuscado = req.query.buscar;
     //creo array vacio donde pondremos los productos encontrado
     let resultadoBuscar = [];
+
+
+    var remerasTodas =  await db.Productos.findAll();
     // recorremos las remeras buscando coincidencia
     for (let i = 0; i < remeras.length; i++) {
       if (remeras[i].descripcion.includes(loBuscado)) {
@@ -90,12 +93,16 @@ const productsController = {
       }
     }
     // si el array resultadoBuscar no es cero lo mostramos
-    if (resultadoBuscar.length)
+    if (resultadoBuscar.length){
       return res.render("./productos/listarProdBuscado", {
         allProducts: resultadoBuscar,
       });
     // sinó indicamos que no hay productos que coincidan
-    res.send("No hay productos que coincidan con la busqueda");
+  } else {
+    return res.render("index.ejs", { allProducts: remerasTodas ,
+      errors:{ buscar: { msg: "No se encontró ningún producto"}}  }) ;
+        }
+
   },
 
   destroy: async (req, res) => {
@@ -117,16 +124,16 @@ const productsController = {
     let errors = validationResult(req);
 
     if(errors.isEmpty()){
- await Productos.create({
-      nombre: req.body.nombre,
-      img: req.body.img,
-      descripcion: req.body.descripcion,
-      precio: req.body.precio,
-      descuento: req.body.descuento,
-      talle: req.body.talle,
-      color: req.body.color,
-      uri_foto2: req.body.uri_foto2,
-      uri_foto3: req.body.uri_foto3
+            await Productos.create({
+                  nombre: req.body.nombre,
+                  img: req.body.img,
+                  descripcion: req.body.descripcion,
+                  precio: req.body.precio,
+                  descuento: req.body.descuento,
+                  talle: req.body.talle,
+                  color: req.body.color,
+                  uri_foto2: req.body.uri_foto2,
+                  uri_foto3: req.body.uri_foto3
     })
     .then
     res.redirect("/");
@@ -137,27 +144,27 @@ const productsController = {
 			old: req.body })
     }
   },
-
-  listaProduct: (req, res) => {
-    //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
+  listaProduct: async (req, res) => {
+    var remerasTodas =  await db.Productos.findAll();
     return res.render("./productos/listadoProductos.ejs", {
-      allProducts: remeras,
+      allProducts: remerasTodas,
     });
   },
 
-  listarProd: (req, res) => {
-    //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
+  listarProd: async (req, res) => {
+    var remerasTodas =  await db.Productos.findAll();
     return res.render("./productos/listadoProductos.ejs", {
-      allProducts: remeras,
+      allProducts: remerasTodas,
     });
   },
 
-  listarProdBuscado: (req, res) => {
-    //return res.render ('./productos/listadoProductos.ejs', {'allProducts':data} );
+  listarProdBuscado: async (req, res) => {
+    var remerasTodas =  await db.Productos.findAll();
     return res.render("./productos/listarProdBuscado.ejs", {
-      allProducts: remeras,
+      allProducts: remerasTodas,
     });
   },
+  
 };
 
 module.exports = productsController;

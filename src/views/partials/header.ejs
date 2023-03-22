@@ -6,13 +6,22 @@
 <!--------------------------codigo de ventana emergente buscar ------------------------>
 <section id="buscar" class="modalDialog">
     <div class="modal">
-        <form action="/buscarProd" method="GET">
-         <div class=" control-login">
+        <form action="/buscarProd#buscar" method="GET">
+         <div class=" control-buscar  ">
              <input type="text" name="buscar" class="control boton3" placeholder="Ingrese descripción" required>
-        </div>     
+        </div> 
+        
+        <%  if (locals.errors && errors.buscar) {  %> 
+            <div class="texto-advertencia">
+                <p class="credenciales-invalidas" ><%= errors.buscar.msg %> </p>
+            </div>
+        <% } %>  
+
+
+
             <div class="control-login">
-             <button class="envio" type="reset" ><a href="/" title="Close" id="close">Volver</a></button>
-             <button type="submit" class="envio" title="buscar" id="buscar">Buscar</button>
+             <button class="envio" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
+             <button type="submit" class="envio" title="buscar" id="">Buscar</button>
             </div>
         </form>
     </div>

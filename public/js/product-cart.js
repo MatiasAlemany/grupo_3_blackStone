@@ -20,7 +20,7 @@ function calcularTotal (products) {
 
 if (localStorage.carrito) {
 
-    let carrito = JSON.parse (localStorage.carrito); ---traigo el carrito y lo parseo
+    let carrito = JSON.parse (localStorage.carrito); //traigo el carrito y lo parseo
     console.log (carrito); --aparece en inspeccionar consola los productos que compramos en el carrito
     --me va a aparecer solo id, la cantidad y no esta el precio porque si viene una persona un mes despues y compra al precio del mes pasado porque quedo asi guardado en localStorage por eso siempre lo que va a ser inmutable es el id de producto y la cantidad 
 carrito.forEach((item,index)=> {      --para mostrar el producto hago un forEach por cada uno de los productos

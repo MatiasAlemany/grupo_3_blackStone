@@ -1,4 +1,4 @@
-unction productosEnElCarrito (){
+function productosEnElCarrito (){
     /*hago un return del localStorage.carrito preguntado ? sy hay parseo el JSON localStorage.carrito y con length se le saca la cantida de items que tiene y sino devuelve 0*/
     return localStorage.carrito? JSON.parse (localStorage.carrito).length:0;
     }
