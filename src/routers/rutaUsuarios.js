@@ -71,9 +71,9 @@ router.get ('/listaUsuarios', userController.listarUsuarios);
 
 // *************** crear un usuario *************
 //procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
-router.get ('/registroUsuario/',imageValidatorMiddleware,userController.verFormulario);
+router.get ('/registroUsuario/',userController.verFormulario);
 //procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
-router.post ('/modalUsuario', upload.single("imagenUsuario"), validaciones,  userController.crearUsuario);// <----- validaciones
+router.post ('/modalUsuario', upload.single("imagenUsuario"), imageValidatorMiddleware, validaciones,  userController.crearUsuario);// <----- validaciones
 
 //procesa el pedido post con ruta /formUsuario ------> ese nombre va en el action del HTML
 router.put ('/listaUsuarios/:id', userController.editarUsuario);
