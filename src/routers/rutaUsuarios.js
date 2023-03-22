@@ -10,6 +10,7 @@ const userController = require ("../controllers/userController.js");
 const adminMiddleware = require('../middlewares/adminMiddleware.js');
 const supervisorMiddleware = require('../middlewares/supervisorMiddleware');
 const devolverMiddleware = require('../middlewares/devolverMiddleware.js');
+const imageValidatorMiddleware = require('../middlewares/imageValidatorMiddleware.js');
 //const validacionRegistro = require('../middlewares/validateRegisterMiddleware.js');
 
 
@@ -49,6 +50,17 @@ const upload = multer({storage: storage})
 //en vez de app.get , utilizamos router.get . Esto va guardando en router
 //las distintas rutas, que luego exportamos
 
+ // Verificar la extensión del archivo
+ 
+// Ruta que utiliza el middleware de validación de imagen
+//Router.post('/upload', upload.single('image'), validacionImagen, (req, res, next) => {
+ // Enviar respuesta exitosa si todo es correcto
+// res.status(200).json({ message: 'Archivo subido exitosamente' });
+//});
+
+
+
+
 // ****************** mostrar un usuario ***********************
 
 
@@ -59,7 +71,7 @@ router.get ('/listaUsuarios', userController.listarUsuarios);
 
 // *************** crear un usuario *************
 //procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
-router.get ('/registroUsuario/',  userController.verFormulario);
+router.get ('/registroUsuario/',imageValidatorMiddleware,userController.verFormulario);
 //procesa el pedido post con ruta /listaUsuarios    <------ ese nombre va en el action del HTML
 router.post ('/modalUsuario', upload.single("imagenUsuario"), validaciones,  userController.crearUsuario);// <----- validaciones
 
