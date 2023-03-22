@@ -19,11 +19,12 @@ const upload = multer({storage: storage})
 
 //importamos el controlador de las rutas por defecto 
 const productsController = require ("../controllers/productsController.js");
+const imageValidatorMiddleware = require('../middlewares/imageValidatorMiddleware.js');
 
 /* VALIDACIONES */
 const validacionesForm = [
-    body('nombre').notEmpty().withMessage("Completa el nombre"),
-    body('descripcion').notEmpty().withMessage("Completa la descripcion"),
+    body('nombre').notEmpty().withMessage("Completa el nombre").isLength({min:5}),
+    body('descripcion').notEmpty().withMessage("Completa la descripcion"),isLength({min:20}),
     body('precio').notEmpty().withMessage("Completa el precio"),
     body('talle').notEmpty().withMessage("Completa el talle"),
     body('color').notEmpty().withMessage("Completa el color"),
@@ -40,7 +41,7 @@ router.get ('/productDetail/:id', productsController.detalleProd);
 //Renderiza la pagina creacion producto
 router.get ('/creacionProduct', adminMiddleware, productsController.creacionProd); //<-----  solo el administrador ingresa
 //Procesa la creacion del producto
-router.post ('/creacionProduct', upload.single("imagenProducto"), validacionesForm, productsController.procesoCreacion)
+router.post ('/creacionProduct', upload.single("imagenProducto"), imageValidatorMiddleware, validacionesForm, productsController.procesoCreacion)
 
 
 // ********************* Devolver todos los productos *********************** 
