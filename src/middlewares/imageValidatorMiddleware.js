@@ -10,6 +10,19 @@ async function imageValidatorMiddleware (req,res,next){
  
   var remerasTodas =  await db.Productos.findAll();
 
+   // si no hay imagen catgada no hay problemas , sigue con la siguiente validacion
+  if (req.file){  // primero verificamos que hay archivo cargado
+
+    const ext = path.extname(req.file.originalname);
+
+    if (!extensionesValidas.includes(ext)) {  //si el array extensiones Validas  NO "incluye" la extension ext va el mensaje
+  return res.render("index.ejs", { allProducts: remerasTodas ,
+     errors:{ pieForm: { msg: 'Cargar archivos JPG, JPEG, PNG Y GIF'}},
+      oldData : req.body}) ; 
+  }} 
+    next();
+}
+  /*
  if (!req.file){
     
   return res.render("index.ejs", { allProducts: remerasTodas ,
@@ -29,5 +42,5 @@ async function imageValidatorMiddleware (req,res,next){
     next();
 
 }
-
+*/
 module.exports = imageValidatorMiddleware;

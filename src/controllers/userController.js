@@ -42,7 +42,7 @@ const userController = {
     if (resultadosValidacion.errors.length > 0) {
       
       return res.render("index.ejs", { 
-        //usuariosSolos: todos,
+        allProducts: remerasTodas ,
         errors: resultadosValidacion.mapped(),
         oldData: req.body
       });
@@ -223,7 +223,8 @@ const userController = {
 crearDevolucion: async (req, res) => {
    
   const resultadosValidacion = validationResult(req);
-
+  var remerasTodas =  await db.Productos.findAll();
+  
 if (resultadosValidacion.errors.length > 0) {
  
   return res.render("index.ejs", { 
@@ -234,7 +235,7 @@ if (resultadosValidacion.errors.length > 0) {
 }
             
 const usuarioDevuelve = await db.Usuarios.findOne( {where : { email: req.body.email}, raw : true});
-var remerasTodas =  await db.Productos.findAll();
+
 
 
 if (usuarioDevuelve == null){   // <--------- si existe el email creamos la devolucion
