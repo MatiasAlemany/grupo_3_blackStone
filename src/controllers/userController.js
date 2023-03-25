@@ -267,7 +267,7 @@ var devolucion = await db.Devoluciones.findAll({ where: {[Op.and]: [
           fecha : req.body.fechaDeCompra,
           }).then ( () => {
             return res.render ("index.ejs", { allProducts: remerasTodas ,
-            errors:{ pieForm: { msg: 'la devolucion se registró'}},
+            errors:{ pieForm: { msg: 'La devolucion se registró'}},
               oldData : req.body }
           );
           }).catch(error => res.send(error)) 

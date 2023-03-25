@@ -39,7 +39,7 @@
     <div class="modal">
         <form action="/#inicio-sesion"  class="form-login"  method="POST">
          <div class=" control-login">
-             <input type="email" name="email" id="form-control" class="control boton3" <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+             <input type="email" name="email" id="form-control-login" class="control boton3" <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                              placeholder="e-mail" value="<%= locals.oldData ? oldData.email : null %>">
                     <%  if (locals.errors && errors.email) {  %> 
                         <div class="texto-advertencia">
@@ -47,7 +47,7 @@
                         </div>
                     <% } %>        
                         <div class="texto-advertencia"> 
-                            <small class="errorNombre"></small>
+                            <small class="errorNombreLogin"></small>
                         </div>
                     
 
@@ -63,12 +63,12 @@
                         </div>
                     <% } %> 
                         <div  class="texto-advertencia">
-                            <small class="errorClave"></small>
+                            <small class="errorClaveLogin"></small>
                         </div>
 
 
              <button class="envio" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
-             <button type="submit" id="btn-envio" class="envio">Enviar</button> 
+             <button type="submit" id="btn-envio-login" class="envio">Enviar</button> 
             </div>
 
             <div class="">
@@ -94,7 +94,7 @@
                 
                 
                 <input type="text" name="nombreYapellido" class="boton3" id="nombre" 
-                            class="form-control <%= locals.errors && errors.nombreYapellido ? 'is-invalid' : null %>" placeholder="nombre y apellido"
+                            class="form-control <%= locals.errors && errors.nombreYapellido ? 'is-invalid' : null %>" placeholder=" nombre y apellido "
                             value="<%= locals.oldData ? oldData.nombreYapellido : null %>" > 
                       <%  if (locals.errors && errors.nombreYapellido) {  %> 
                 
@@ -102,14 +102,21 @@
                         <p class="credenciales-invalidas" ><%= errors.nombreYapellido.msg %> </p>
                     </div>
                     <% } %> 
+                    <div  class="texto-advertencia">
+                        <small class="errorNombreRegUser"></small>
+                    </div>
             </div>
+
             <div class="nombre-usuario">
-                <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" value="<%= locals.oldData ? oldData.nombreUsuario : null %>" placeholder="Nombre de Usuario">
+                <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario" value="<%= locals.oldData ? oldData.nombreUsuario : null %>" placeholder=" Nombre de Usuario ">
                 <%  if (locals.errors && errors.nombreUsuario) {  %> 
                     <div class="pie-form">
                         <p class="credenciales-invalidas" ><%= errors.nombreUsuario.msg %> </p>
                     </div>
                     <% } %> 
+                    <div  class="texto-advertencia">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                        <small class="errorNombreUsuarioRegUser"></small>
+                    </div>
             </div>
               
                 
@@ -120,17 +127,18 @@
         </div>
             
             <div class="nombre">
-                <input type="email" name="email" class="boton3" id="email" value="<%= locals.oldData ? oldData.email : null %>" placeholder="e-mail" >
+                <input type="email" name="email" class="boton3" id="emailUser" value="<%= locals.oldData ? oldData.email : null %>" placeholder="e-mail" >
 
                 <%  if (locals.errors && errors.email) {  %> 
                     <div class="pie-form">
                         <p class="credenciales-invalidas" ><%= errors.email.msg %> </p>
                     </div>
                     <% } %> 
-
-
-
+                    <div  class="texto-advertencia">
+                        <small class="errorEmailRegUser"></small>
+                    </div>
             </div>
+
             <div class="nombre">
                 <input type="password" name="clave" class="boton3" id="password"  value="<%= locals.oldData ? oldData.clave : null %>" placeholder="Contraseña">
                 <%  if (locals.errors && errors.clave) {  %> 
@@ -138,7 +146,11 @@
                         <p class="credenciales-invalidas" ><%= errors.clave.msg %> </p>
                     </div>
                     <% } %> 
+                    <div  class="texto-advertencia">
+                        <small class="errorClaveRegUser"></small>
+                    </div>
             </div>
+
             <div class="nombre">
                 <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword"  placeholder="Confirmar">
                 <%  if (locals.errors && errors.confirmarClave) {  %> 
@@ -146,11 +158,14 @@
                         <p class="credenciales-invalidas" ><%= errors.confirmarClave.msg %> </p>
                     </div>
                     <% } %> 
+                    <div  class="texto-advertencia">
+                        <small class="errorVerifClaveRegUser"></small>
+                    </div>
             </div>
             
             <div class="reg-reset">
                 <button class="reset" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
-                <button class="register" type="submit">Enviar</button>
+                <button class="register" id="btn-reg-user" type="submit">Enviar</button>
             </div>
 
             
@@ -184,7 +199,7 @@
         <form action="/crearDevolucion#devolver" method="POST" class="formulario">
             
             <div class="nombre">
-                <input type="text"  name="nombreYapellido" class="boton3" class="form-control <%= locals.errors && errors.nombreYapellido ? 'is-invalid' : null %>"
+                <input type="text"  name="nombreYapellido" id="nombre-dev" class="boton3" class="form-control <%= locals.errors && errors.nombreYapellido ? 'is-invalid' : null %>"
                       id="nombre" value="<%= locals.oldData ? oldData.nombreYapellido : null %>" placeholder="nombre y apellido">
            
                  <%  if (locals.errors && errors.nombreYapellido) {  %> 
@@ -193,47 +208,62 @@
                     <p class="credenciales-invalidas" ><%= errors.nombreYapellido.msg %> </p>
                 </div>
                 <% } %> 
+                <div  class="texto-advertencia">
+                    <small class="errorNombreDev"></small>
+                </div>
             </div>
 
             <div class="nombre-usuario">
-                <input outline="none" type="email" class="boton3" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>"
+                <input outline="none" type="email" class="boton3" name="email" id="email-user-dev" value="<%= locals.oldData ? oldData.email : null %>"
                     placeholder="email">
                     <%  if (locals.errors && errors.email) {  %> 
                         <div class="pie-form">
                             <p class="credenciales-invalidas" ><%= errors.email.msg %> </p>
                         </div>
                         <% } %> 
+                        <div  class="texto-advertencia">
+                            <small class="errorEmailDev"></small>
+                        </div>
 
             </div>
 
             <div class="nombre-usuario">
-                <input outline="none" type="text" class="boton3" name="numeroDeFactura" value="<%= locals.oldData ? oldData.numeroDeFactura : null %>" id="numeroFactura"
+                <input outline="none" type="text" class="boton3" id="fact-dev" name="numeroDeFactura" value="<%= locals.oldData ? oldData.numeroDeFactura : null %>" id="numeroFactura"
                     placeholder="Numero de factura" >
                     <%  if (locals.errors && errors.numeroDeFactura) {  %> 
                         <div class="pie-form">
                             <p class="credenciales-invalidas" ><%= errors.numeroDeFactura.msg %> </p>
                         </div>
                         <% } %> 
+                        <div  class="texto-advertencia">
+                            <small class="errorFactDev"></small>
+                        </div>
             </div>
 
             <div class="nombre-usuario">
-                <input type="text" name="idProducto" class="boton3"   id="" placeholder="ID de producto" 
+                <input type="text" name="idProducto" class="boton3"   id="id-prod-dev" placeholder="ID de producto" 
                 value="<%= locals.oldData ? oldData.idProducto : null %>">  
                 <%  if (locals.errors && errors.idProducto) {  %> 
                     <div class="pie-form">
                         <p class="credenciales-invalidas" ><%= errors.idProducto.msg %> </p>
                     </div>
-                    <% } %>                                               
+                    <% } %>   
+                    <div  class="texto-advertencia">
+                        <small class="errorIdProdDev"></small>
+                    </div>                                         
             </div>
 
             <div class="nombre-usuario fecha">
-                <input type="date" name="fechaDeCompra" class="boton3"   id="" placeholder="Fecha de compra"
+                <input type="date" name="fechaDeCompra" class="boton3"   id="fecha-dev" placeholder="Fecha de compra"
                 value="<%= locals.oldData ? oldData.fechaDeCompra : null %>" > 
                 <%  if (locals.errors && errors.fechaDeCompra) {  %> 
                     <div class="pie-form">
                         <p class="credenciales-invalidas" ><%= errors.fechaDeCompra.msg %> </p>
+                    </div>           
+                    <% } %> 
+                    <div  class="texto-advertencia">
+                        <small class="errorFechaDev"></small>
                     </div>
-                    <% } %>                                                   
             </div>
             
             <%  if (locals.errors && errors.pieForm) {  %> 
@@ -245,12 +275,14 @@
 
             <div class="reg-reset">
                 <button class="reset" type="reset"><a href="/" title="Close" id="close1">Volver</a></button>
-                <button class="register" type="submit">Enviar</button>
+                <button class="register" id="btn-dev-prod" type="submit">Enviar</button>
             </div>
 
         </form>
     </div>
 </section>
+
+
 
 
 <!----------------------------------------------------------------------------------------->

@@ -89,7 +89,7 @@ transition: opacity 400ms ease-in;
     margin: auto;
 	margin-top: 100px;
 }
-.formulario {
+.formulario-devolver {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,6 +145,11 @@ transition: opacity 400ms ease-in;
     width:100%;
     margin: auto;
 	margin-top: 100px;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 label, .foto {
     margin-top: 25px;
@@ -205,6 +210,7 @@ label, .foto {
 }
 .texto-advertencia{
 	margin-top: 10px;
+	color:rgb(13, 25, 97);
 }
 .envio {
     height: 30px;
@@ -226,9 +232,7 @@ label, .foto {
 	margin-right: 10px;
 	margin-top: 30px;
   }
-  .errorClave, .errorNombre{
-	color:rgb(70, 91, 212);
-}
+
 /*-----fin emergente login-------------------------------------------*/
 
 /*-------------------- sigue el header ----------------------------------*/
