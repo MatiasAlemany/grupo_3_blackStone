@@ -196,7 +196,7 @@
             de Comercio Interior y no se traten de productos exceptuados como productos personalizados y
             todos los comprendidos en el art. 1116 del Código Civil y Comercial.</p>
 
-        <form action="/crearDevolucion#devolver" method="POST" class="formulario">
+        <form action="/crearDevolucion#devolver" method="POST" class="formulario-devolver">
             
             <div class="nombre">
                 <input type="text"  name="nombreYapellido" id="nombre-dev" class="boton3" class="form-control <%= locals.errors && errors.nombreYapellido ? 'is-invalid' : null %>"
@@ -291,7 +291,12 @@
 
 <marquee scrollamount="10" class="marquesina">
     <div>
+        <% if (locals.isLogged) {   %>
+            <p class="texto-marquesina">Hola <%= locals.usuarioLogueado.nombre_y_apellido %></p>
+        <% } else { %>
         <p class="texto-marquesina">Semana de ofertas increibles en StoneBlack!!!</p>
+
+        <% } %>
     </div>
 </marquee>
 
@@ -301,13 +306,11 @@
         
 
     <% if (locals.isLogged) {   %> 
-        <div class="lupa">
-            <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;">
+        <div class="lupa-logged">
+            <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;margin-left:40px;">
                     
         </div>
-        <div class="lupa">
-            <h5>Hola <%= locals.usuarioLogueado.nombre_y_apellido %></h5>             
-        </div>
+       
     <% } %>
     <div class="lupa">
         <a href="#buscar"><i class="fas fa-search"></i></a></div>
@@ -322,8 +325,14 @@
         <i class="fa fa-bars burger"></i></button>
     </div>
 </section>
-<section class="barra-menu">
-    <ul class="menu">
+
+    <% if (locals.isLogged) {   %>
+    <section class="barra-menu" style="background-color:transparent">
+    <% } else { %>
+              <section class="barra-menu" >  
+    <% } %> 
+    
+            <ul class="menu"> 
 
         <% if (locals.isLogged) {   %> 
             <li class="menu-item"><a href="/logout" class="boton-inicio">Terminar sesion</a></li>

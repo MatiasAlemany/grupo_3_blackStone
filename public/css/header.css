@@ -271,6 +271,12 @@ label, .foto {
 	font-size: 20px;
 	margin-left:auto;
   }
+  .lupa-logged {
+	display: none;
+	color:black;
+	font-size: 20px;
+	margin-left:auto;
+  }
   .carrito {
 	color:black;
 	margin-left: 25px;
@@ -291,9 +297,9 @@ label, .foto {
 	padding: 10px; 
   }
   .barra-menu{
-	margin-top: 100px; /* <-----------   para header fijo  */
+	margin-top: 90px; /* <-----------   para header fijo  */
 	position: fixed;
-	background-color: transparent; /* <---------------- para que se vea imagen y nombre  */
+	background-color: white; /* <---------------- para que se vea imagen y nombre debe ser tranaparent pero lo correjimos en el ejs */
 	width: 100%;
 	height: 30px;
 	margin-bottom: 20px;
@@ -304,13 +310,14 @@ label, .foto {
   }
   .menu_visible{
 	display: flex;
-	flex-direction: column;
+	flex-direction:row;
 	align-items: center;
   }
   .boton-inicio, .registrarse, .devolver{
 	color: var(--silver-chalice);
 	border-radius: 3px;
 	font-size: 14px;
+	padding: 10px;
   }
   .boton-inicio:hover, .registrarse:hover, .devolver:hover{
   color: white;
@@ -368,11 +375,7 @@ label, .foto {
 		.boton-inicio, .registrarse, .devolver{
 			font-size: 20px;
 		  }
-		  .menu{
-			
-
-		  }
-
+		
 	  }
 
 /* -----------------------------  notebook -----------------------------------------  */
@@ -394,5 +397,10 @@ label, .foto {
 			font-size: 24px;
 		  }
 	  }
+	  @media (min-width:1200px){
+		.lupa-logged {
+			display: block;
 
+	  }
+	}
 	  /* ---------------------------fin header---------------------------------------*/
