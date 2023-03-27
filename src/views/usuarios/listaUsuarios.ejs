@@ -86,8 +86,8 @@
      
       <td class="botones">
         <button class="botonEditar" type="submit"  data-dismiss="modal"><a href="/formUsuario/<%= usuariosSolos[i].id %> ">Editar</a></button>
-        <form action="/listaUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST">
-                    <button class="botonBorrar" type="submit" >Borrar</button>
+        <form action="/listaUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST" class="form-borrar" >
+                    <button class="botonBorrar" type="submit" onclick="eliminar_usuario(event);" >Borrar</button>
         </form>
         </td>
     </tr>
@@ -101,6 +101,6 @@
 </section>
 
 
-
+<script  defer src="/js/borrarUsuario.js"></script>
 </body>
 </html>

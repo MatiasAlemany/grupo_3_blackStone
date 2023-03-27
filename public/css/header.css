@@ -329,7 +329,7 @@ label, .foto {
 	height: auto;
   }
   /*  -----------------------------   TABLETAS ----------------------------- */
-  @media (min-width:424px){
+  @media (min-width:426px){
 	  .cabecera {
 		  padding-left: 60px;
 		  padding-right: 60px;
@@ -352,6 +352,7 @@ label, .foto {
 		}
 		.barra-menu{   /*  <-----------   HEADER FIJO  */
 			margin-top: 100px;
+			background-color: white;
 		}
 		.banner {
 		  display: block;
@@ -400,7 +401,9 @@ label, .foto {
 	  @media (min-width:1200px){
 		.lupa-logged {
 			display: block;
-
 	  }
+	  .barra-menu{   /*  <-----------   HEADER FIJO  */
+		background-color:transparent;	
+	}
 	}
 	  /* ---------------------------fin header---------------------------------------*/

@@ -174,7 +174,7 @@ margin-top: 15px;
     text-align: center;
   }
   .botonVolver {
-    width: 10%;
+    width: 20%;
     height: 30px;
     border-radius: 10px;
   }
@@ -213,7 +213,9 @@ margin-top: 15px;
   
   /*   notebook   */
   @media (min-width:769px){
-    
+    .botonVolver {
+      width: 10%;
+    }
   }
   @media (min-width: 1200px){
    
