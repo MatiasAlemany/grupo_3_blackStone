@@ -100,8 +100,8 @@
       <td class="fila"><%= usuariosSolos[i].email %></td>
       
       <td class="botones">
-        <form action="/listaTodosUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST">
-                    <button class="botonBorrar" type="submit" >Borrar</button>
+        <form action="/listaTodosUsuarios/<%= usuariosSolos[i].id %>?_method=DELETE" method="POST" class="form-borrar-admin">
+                    <button class="botonBorrar" type="submit" onclick="eliminar_admin(event);" >Borrar</button>
         </form>
         </td>
     </tr>
@@ -117,6 +117,6 @@
 </section>
 
 
-
+<script  defer src="/js/borrarAdmin.js"></script>
 </body>
 </html>
