@@ -16,8 +16,11 @@
             <h2 class="titulo-principal">Estas editando: </h2>
         </div>
         <section>
+            <div class="errores">
+                <ul id="ul"> </ul>
+            </div>
             <div class="form-imagen">
-            <form action="/edicionProduct/<%= Productos.id %>" method="POST" class="" enctype="multipart/form-data">
+            <form action="/edicionProduct/<%= Productos.id %>" id="form" method="POST" class="" enctype="multipart/form-data">
                 <!-- CAJA FORMULARIO -->
                 <div class="caja-formulario">
                 <!-- NUMERO DE ID -->
@@ -34,23 +37,23 @@
                 <!-- DESCRIPCION ARTICULO -->
                 <div >
                     <label for="">Descripcion de articulo:</label>
-                    <input outline="none" type="text" name="descripcion" class="form-control" id="nombreUsuario"
+                    <input outline="none" type="text" name="descripcion" class="form-control" id="descripcion"
                         placeholder="Descripcion de articulo" value="<%= Productos.descripcion %>" required />
                 </div>
                 <!-- FOTO DE PRODUCTO -->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="file" name="img" id="img" class="form-control" value="<%= Productos.img %>"/>
+                    <input type="text" name="img" id="img" class="form-control" value="<%= Productos.img %>"/>
                 </div>
                 <!-- FOTO DE PRODUCTO 2-->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="text" name="uri_foto2" id="imagenProducto2" class="form-control" placeholder="Introduce tu URL" value="<%= Productos.uri_foto2 %>"/>
+                    <input type="text" name="uri_foto2" id="img2" class="form-control" placeholder="Introduce tu URL" value="<%= Productos.uri_foto2 %>"/>
                 </div>
                 <!-- FOTO DE PRODUCTO 3-->
                 <div class="foto">
                     <label for="foto">Fotos de producto:</label>
-                    <input type="text" name="uri_foto3" id="imagenProducto3" class="form-control" placeholder="Introduce tu URL" value="<%= Productos.uri_foto3 %>"/>
+                    <input type="text" name="uri_foto3" id="img3" class="form-control" placeholder="Introduce tu URL" value="<%= Productos.uri_foto3 %>"/>
                 </div>
                 <!-- PRECIO ARTICULO -->
                 <div>
@@ -65,12 +68,12 @@
                 <!-- Talle ARTICULO -->
                 <div>
                     <label for="">Talle articulo:</label>
-                    <input type="text" name="talle" class="form-control" value="<%= Productos.talle %>"/>
+                    <input type="text" name="talle" class="form-control" id="talle" value="<%= Productos.talle %>"/>
                 </div>
                 <!-- COLOR ARTICULO -->
                 <div>
                     <label for="">Color articulo:</label>
-                    <input type="text" name="color" class="form-control" value="<%= Productos.color %>"/>
+                    <input type="text" name="color" id="color" class="form-control" value="<%= Productos.color %>"/>
                 </div>
                 </div>
 
@@ -78,7 +81,7 @@
                 <div class="caja-botones">
                 <!-- BOTON MODIFICAR ARTICULO -->
                 <div class="espacio-botones">
-                    <button class="btn btn-outline-secondary" type="submit">Modificar</button>
+                    <button class="btn btn-outline-secondary" id="btnCargar" type="submit">Modificar</button>
                 </div>
                 <!-- BOTON RESETEAR FORMULARIO -->
                 <div class="espacio-botones">
@@ -88,18 +91,28 @@
                 <!-- BOTON ELIMINAR ARTICULO --> 
                 <div class="espacio-botones">
                     <form action="/delete/<%= Productos.id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="btn btn-outline-secondary">ELIMINAR ARTICULO</button>
+                    <button type="submit" id="btnBorrar" class="btn btn-outline-secondary">ELIMINAR ARTICULO</button>
                     </form>
                 </div>
             </div>
             <!-- IMAGEN ARTICULO -->
+            <div class="caja-imagenes">
             <div class="imagen-art">
                 <label>Imagen de tu articulo:</label>
                 <img src="/images/<%= Productos.img%>" alt="FOTO DE PRUEBA">
             </div>
+            <div class="imagen-art">
+                <label>Imagen de tu articulo:</label>
+                <img src="/images/<%= Productos.uri_foto2%>" alt="FOTO DE PRUEBA">
+            </div>
+            <div class="imagen-art">
+                <label>Imagen de tu articulo:</label>
+                <img src="/images/<%= Productos.uri_foto3%>" alt="FOTO DE PRUEBA">
         </div>
+    </div>
         </section>
     </main>
+    <script src="/js/edicionProduct.js"></script>
 </body>
 
 </html>

@@ -26,7 +26,7 @@ main {
 }
 
 .imagen-art img {
-    max-width: 90%;
+    /* max-width: 90%; */
     margin-left: 5%;
     margin-bottom: 10%;
 }
@@ -97,8 +97,7 @@ main {
     }
     
     .imagen-art img {
-        max-height: 80%;
-        max-width: 100%;
+        width: 150%;
     }
     
     .imagen-art label {
