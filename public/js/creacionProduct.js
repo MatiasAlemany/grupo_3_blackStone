@@ -71,6 +71,7 @@ window.onload = function () {
         } else {
             ulErrores.innerHTML = " ";
             form.submit();
+            alert("Producto creado con exito")
         }
     })
 }
