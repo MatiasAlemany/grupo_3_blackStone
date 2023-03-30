@@ -30,11 +30,14 @@ const productsController = {
 
   detalleProd: async (req, res) => {
     const id  = req.params.id;
-    
+
+    const ProductosRelacionados = await Productos.findAll()
+
     await Productos.findByPk(req.params.id)
     .then(Productos => {
-      res.render("./productos/productDetail", {Productos})
+      res.render("./productos/productDetail", {Productos, ProductosRelacionados})
     })
+    
   },
 
   detalleCarrito: (req, res) => {

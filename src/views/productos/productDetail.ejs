@@ -83,24 +83,23 @@
         <!-- Productos RELACIONADOS: FUTURO CARRUSEL -->
         <div>
             <h5 class="titulo-ProductosRelacionados">Productos RELACIONADOS:</h5>
-            <div class="Productos-relacionados">
-                <article>
-                    <a href="/product-cart">
-                    <img src="/images/acdc_roja.jpg" alt="">
+            <div class="carrusel">
+                <div class="carrusel-items">       
+                    <% for(let i=0; i < ProductosRelacionados.length; i++) {%>
+                    <div class="carrusel-item">
+                        <a href="/productDetail/<%= Productos.id%>"">
+                    <img src="/images/<%= ProductosRelacionados[i].img%>">
                 </a>
-                </article>
-                <article>
-                    <a href="/product-cart">
-                    <img src="/images/baller.jpg" alt="">
-                </a>
-                </article>
+                </div>
+                <%}%>    
+                </div>
             </div>
         </div>
 
     </main>
 <!--------------------------------- footer --------------------------------------------------------------->
 <%- include('../partials/footer.ejs') %>
-
+<script src="/js/productDetail.js"></script>
 </body>
 
 </html>
