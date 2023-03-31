@@ -70,6 +70,10 @@ main {
     margin-right: 10px;
 }
 
+.boton-eliminar {
+    margin-left: 10px;
+}
+
 /* COLORES BOTONES CARGAR Y RESTABLECER */
 .btn-primary {
     --bs-btn-color: #fff;

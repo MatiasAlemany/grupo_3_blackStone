@@ -60,7 +60,7 @@ const productsController = {
   procesoEdicion: async (req, res) => {
     let productoId = req.params.id;
 
-    await Productos
+     await Productos
     .update(
       {
       id: req.body.id,
@@ -76,9 +76,10 @@ const productsController = {
     },
     {
       where: {id: productoId}
-    })
-     return res.redirect("/")
+    }).then
 
+     return res.redirect("/")
+  
   },
   
   buscarProd: async (req, res) => {

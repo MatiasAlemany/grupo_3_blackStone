@@ -16,6 +16,13 @@
             <h2 class="titulo-principal">Estas editando: </h2>
         </div>
         <section>
+            <!-- forEach PARA MOSTRAR MSG DE ERRORES -->
+            <%if (locals.errors) { errors.forEach(error=> { %>
+                <p class="errores" style="color: blue">
+                    <%= error.msg %>
+                </p>
+                <% }) } %> 
+            <!-- LISTA VALIDACIONES FRONT -->
             <div class="errores">
                 <ul id="ul"> </ul>
             </div>
@@ -31,8 +38,7 @@
                 <!-- NOMBRE ARTICULO -->
                 <div>
                     <label for="">Nombre de articulo:</label>
-                    <input type="text" name="nombre" class="form-control" id="nombre" value="<%= Productos.nombre %>" placeholder="Nombre de articulo"
-                        required />
+                    <input type="text" name="nombre" class="form-control" id="nombre" value="<%= Productos.nombre %>" placeholder="Nombre de articulo" />
                 </div>
                 <!-- DESCRIPCION ARTICULO -->
                 <div >
@@ -87,9 +93,14 @@
                 <div class="espacio-botones">
                     <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer" value="Restablecer">
                 </div>
-            </form>
+            </form>        
+                <!-- BOTON VOLVER PAGINA ANTERIOR -->
+                <div>
+                    <input class="btn btn-outline-secondary" type="button" placeholder="Volver"
+                        value="Volver" id="btnVolver"  />
+                </div>
                 <!-- BOTON ELIMINAR ARTICULO --> 
-                <div class="espacio-botones">
+                <div class="boton-eliminar">
                     <form action="/delete/<%= Productos.id %>?_method=DELETE" method="POST">
                     <button type="submit" id="btnBorrar" class="btn btn-outline-secondary">ELIMINAR ARTICULO</button>
                     </form>
@@ -112,7 +123,7 @@
     </div>
         </section>
     </main>
-    <script src="/js/edicionProduct.js"></script>
+     <script src="/js/edicionProduct.js"></script> 
 </body>
 
 </html>

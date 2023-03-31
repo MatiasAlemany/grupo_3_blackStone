@@ -57,7 +57,7 @@ router.get ('/listarProdBuscado', productsController.listarProdBuscado);
 //Renderiza la pagina de editar producto 
 router.get ('/edicionProduct/:id', productsController.edicionProd);
 //Renderiza la pagina de editar producto 
-router.post('/edicionProduct/:id', upload.single("imagenProducto"), productsController.procesoEdicion);
+router.post('/edicionProduct/:id', upload.single("imagenProducto"),validacionesForm, productsController.procesoEdicion);
 
 
 // ************************** Eliminar un producto **************************

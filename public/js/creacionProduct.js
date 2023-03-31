@@ -74,4 +74,14 @@ window.onload = function () {
             alert("Producto creado con exito")
         }
     })
+
+     //BOTON VOLVER PAGINA ANTERIOR
+
+    let btnVolver = document.querySelector("#btnVolver")
+
+    btnVolver.addEventListener("click", function(e){
+        history.go(-1)
+    })
+
+
 }

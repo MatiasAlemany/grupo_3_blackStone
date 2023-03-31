@@ -19,11 +19,12 @@
         </div>
         <section>
             <!-- forEach PARA MOSTRAR MSG DE ERRORES -->
-            <!-- <%if (locals.errors) { errors.forEach(error=> { %>
-                <p class="errores">
+             <%if (locals.errors) { errors.forEach(error=> { %>
+                <p class="errores" style="color: blue">
                     <%= error.msg %>
                 </p>
-                <% }) } %> -->
+                <% }) } %> 
+                <!-- LISTA VALIDACIONES FRONT -->
                 <div class="errores">
                     <ul id="ul"> </ul>
                 </div>
@@ -101,6 +102,11 @@
                             <div>
                                 <input class="btn btn-outline-secondary" type="reset" placeholder="Restablecer"
                                     value="Restablecer" />
+                            </div>
+                            <!-- BOTON VOLVER PAGINA ANTERIOR -->
+                            <div>
+                                <input class="btn btn-outline-secondary" type="button" placeholder="Volver"
+                                    value="Volver" id="btnVolver"  />
                             </div>
                         </div>
                     </form>

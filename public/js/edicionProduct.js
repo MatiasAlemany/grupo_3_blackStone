@@ -76,6 +76,8 @@ window.onload = function () {
         }
     })
 
+    //BOTON BORRAR ARTICULO
+
     btnBorrar.addEventListener("click", function(e){
         e.preventDefault()
 
@@ -87,4 +89,13 @@ window.onload = function () {
             e.preventDefault()
         } 
     })
+
+     //BOTON VOLVER PAGINA ANTERIOR
+     
+     let btnVolver= document.querySelector("#btnVolver")
+
+     btnVolver.addEventListener("click", function(e){
+         history.go(-1)
+     })
+ 
 }
