@@ -1,9 +1,9 @@
-function setCarritoVacio(){
+/* function setCarritoVacio(){
     cartRows.innerHtml =
 
 
 }
-
+ */
 function vaciarCarrito () {
 
     localStorage.removeItem ("carrito");

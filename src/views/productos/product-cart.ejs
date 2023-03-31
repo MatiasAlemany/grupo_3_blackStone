@@ -15,7 +15,7 @@
   
     <main>
 
-        
+        <div id="carrito">
         <div class="contenedor1">
             <%  if (locals.usuarioLogueado) {%> 
             <div class="foto">
@@ -64,11 +64,12 @@
             </form>
 
         </div>
-
+    </div>
     </main>
 
     <!--------------------------------- footer --------------------------------------------------------------->
     <%- include('../partials/footer.ejs') %>
+    <script src="/js/product-cart1.js"></script>
 </body>
 
 </html>

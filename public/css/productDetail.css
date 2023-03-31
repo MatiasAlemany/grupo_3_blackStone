@@ -113,6 +113,8 @@ body {
 
   .caja-talles label input {
     display: none;
+    width: 34px;
+    height: 35px;
   }
 
   .listado-color1 {
@@ -121,13 +123,16 @@ body {
     line-height: 50px;
     font-family: "Klein Web Medium", sans-serif;
     font-size: 0.875rem;
-    border: 1px solid red;
     margin-right: 3%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     margin-top: 1%;
     text-align: center;
     background-color: red;
     cursor: pointer;
+  }
+
+  .rojo {
+    background-color: red;
   }
 
   .listado-color2 {
@@ -138,7 +143,7 @@ body {
     font-size: 0.875rem;
     border: 1px solid black;
     margin-right: 3%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     margin-top: 1%;
     text-align: center;
     background-color: black;
@@ -153,7 +158,7 @@ body {
     font-size: 0.875rem;
     border: 1px solid grey;
     margin-right: 3%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     margin-top: 1%;
     text-align: center;
     background-color: grey;
@@ -168,16 +173,17 @@ body {
     font-size: 0.875rem;
     border: 1px solid #a9a6a6;
     margin-right: 3%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     margin-top: 1%;
     text-align: center;
     background-color: white;
     cursor: pointer;
   }
 
-  .borde:hover {
+  .border {
     border-radius: 50%;
   }  
+  
   /* DESCRIPCION ARTICULO */
 
   .descripcion-articulo {
@@ -315,4 +321,9 @@ body {
         max-width: 80%;
         margin:auto;
       }
+
+      .border {
+        border-radius: 50%;
+      }  
+
     }
