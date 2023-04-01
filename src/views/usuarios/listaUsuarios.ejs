@@ -8,66 +8,7 @@
     <title>Listado de usuarios</title>
 </head>
 <body>
-<!--------------------------- modal de editar datos de usuarios registrados ------------------------->
-<section id="modalEditarUsuario" class="modalDialog">
 
-    <div class="modal">
-    <form action="/listaUsuarios/<%= usuariosSolos.id %>?_method=PUT" method="POST"  class="formulario">
-        <div class="nombre">      
-            <input type="text" name="nombreYapellido" class="boton3" id="nombre"  value="<%= usuariosSolos.nombreYapellido %>" required minlength="4">
-        </div>
-        <div class="nombre-usuario">
-            <input outline="none"  type="text" name="nombreUsuario" class="boton3" id="nombreUsuario"  required minlength="4">
-        </div>
-
-        
-         <div class="foto">
-            <label class="fechaNacimiento">Fecha de nacimiento</label>
-            <input  type="date" name="fechaNacimiento" class="boton3" id="fechaNacimiento" >
-        </div>
-        
-    
-        <div class="nombre">
-            <input type="emil" name="email" class="boton3" id="email" placeholder="e-mail" required>
-        </div>
-        <div class="nombre">
-            <input type="password" name="clave" class="boton3" id="password" placeholder="Contraseña" required minlength="4">
-        </div>
-        <div class="nombre">
-            <input type="password" name="confirmarClave" class="boton3" id="confirmarpassword" placeholder="Confirmar" required minlength="4">
-        </div>
-        
-        <div class="reg-reset">
-            <button class="reset" type="reset" ><a href="/listaUsuarios" title="Close" id="close">Volver</a></button>
-            <button class="register" type="submit">Guardar</button>
-        </div>
-
-    </form>
-</div>
-</section>
-<!------------------------------------------------------------------------------------------------------------------------->
-<!-----------------------------------------------------emergente seguro borrar --------------------------------------------------------->
-<section id="seguroBorrar" class="modalDialog">
-
-    <div class="modal">
-    
-        <div class="nombre">      
-            <h4>¿seguro quiere borrar?</h4>
-        </div>
-        <div class="nombre-usuario">
-
-            <form action="/listaUsuarios/<%= usuariosSolos.id %>?_method=DELETE" method="POST">
-            <button class="borrar-usuario" type="submit" >Borrar Usuario</button>
-            </form>
-
-        </div>
-        <div class="nombre-usuario">
-            <button class="boton3" type="submit"><a href="/listaUsuarios">Volver</a></button>     
-        </div>
-   
-</div>
-</section>
-<!------------------------------------------------------------------------------------------------------------------------->
 <!-----------------------------------------------------parte principal de tabla lista de usuarios --------------------------------------------------------->
 <section class="container3">
     
@@ -94,7 +35,7 @@
     <%}%>
 </table>
 
-  <div class="nombre-usuario">
+  <div class="btn-volver">
     <button class="botonVolver" type="reset"><a href="/listadoProductos">Volver</a></button>     
     </div>
 

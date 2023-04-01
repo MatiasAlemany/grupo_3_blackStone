@@ -1,3 +1,5 @@
+
+
 let formBorrarAdmin = document.querySelector(".form-borrar-admin");
 
 function eliminar_admin (event) {

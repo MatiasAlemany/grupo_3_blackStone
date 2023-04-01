@@ -180,8 +180,8 @@ const userController = {
          console.log(req.body);
 
       db.Usuarios.update({
-            nombre_y_apellido: req.body.nombre_y_apellido,
-            nombre_usuario: req.body.nombre_usuario,
+            nombre_y_apellido: req.body.nombreYapellido,
+            nombre_usuario: req.body.nombreUsuario,
             uri_avatar: req.body.uri_avatar,
             email: req.body.email,
             clave: bcryptjs.hashSync (req.body.clave, 10),  // <------------ se encripta la clave

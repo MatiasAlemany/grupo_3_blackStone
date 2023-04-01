@@ -19,14 +19,22 @@ body {
   /* ------------------- para ventanas modales --------------------------*/
 .modalDialog {
 	position:absolute;
-  
 	font-family: Arial, Helvetica, sans-serif;
 	top: 50px;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
 }
-	
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
 .modalDialog > div {
 	width:360px;
 	position: relative;
@@ -37,7 +45,9 @@ body {
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #6c6061);
 	background: -o-linear-gradient(#fff, #999);
- 
+  -webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
 }
 #close {
 	color: #FFFFFF;
@@ -48,11 +58,31 @@ body {
 	width: 24px;
 	text-decoration: none;
 	font-weight: bold;
-	
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
 }
 /* ---------------------- para emergente de editarRegistro ------------------- */
-
-
+#registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+  width:100%;
+  margin: auto;
+margin-top: 100px;
+}
+.borrar-usuario {
+  background-color: orange;
+  width: 80%;
+  padding: 10px;
+  color:var(--black-coral);
+  border: none;
+  outline: none;
+border-radius: 10px;
+text-align: center;
+}
 label, .foto {
   margin-top: 25px;    
 }
@@ -101,8 +131,16 @@ margin-top: 15px;
   border: none;
 }
 .register:hover , .reset:hover, .envio:hover{
-  background-color:var(--silver-chalice) ;
+  background-color: #0022AA;
   
+}
+.credenciales-invalidas {
+  color: red;
+  margin-top: 5px;
+}
+.pie-form {
+  color:yellow;
+  text-align: center;
 }
 /*----------------------------------------------------------------------*/
   /* -------------------------main ---------------------*/
@@ -115,27 +153,62 @@ margin-top: 15px;
   .container3 {
     padding-top: 30px;
   }
-  
+  .encabezado {
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    border-radius: 7px;
+  }
+  .tablaUsuarios {
+    border: solid 5px var(--granite-gray) ;
+    margin: auto;
+    background-color: #dee1d8; 
+    border-radius: 7px;
+
+  }
+  .fila{
+    text-align: center;
+  }
   .botonVolver {
     width: 10%;
     height: 30px;
     border-radius: 10px;
-    
+  }
+  .botones {
+    display: flex;
+    text-align: center;
+  }
+  #volver{
+    color:var(--black-coral);
   }
   
+  .botonBorrar {
+    margin: 4px;
+    margin-left: 20px;
+    background-color:orangered;
+    color: white;
+    border-radius: 5px;
+ 
+  }
+  .titulos {
+    border-style:solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 10px;
+  }
+  .datosUsuario {
+    font-size: 20px;
+  }
 
   
   /*  tablets    */
   @media (min-width:426px){
    
-    
   }
   
   /*   notebook   */
   @media (min-width:769px){
-
-   
-   
     
   }
   @media (min-width: 1200px){
