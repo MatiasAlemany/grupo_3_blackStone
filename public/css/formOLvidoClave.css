@@ -1,0 +1,33 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+    width:40%;
+    margin: auto;
+    padding-top: 20px;
+    margin-top: 80px;
+    border: solid black 4px;
+    border-radius: 4px;
+    background-color:#b9bcb9;  
+    font-size: 18px;
+}
+.boton{
+margin-top: 20px;
+background-color: aqua;
+border-radius: 4px;
+width: 20%;
+height: 30px;
+font-size: 20px;
+text-decoration: none;
+}
+.email{
+    margin-top: 20px;
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 20px;
+   
+}

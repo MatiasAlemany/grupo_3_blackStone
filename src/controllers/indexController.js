@@ -142,6 +142,11 @@ const indexController = {
       });
 },
 //-------------------------------------------------------------------------------------------------------------------------
+   olvidoClave : (req, res) => {
+
+    return res.render("./usuarios/formOlvidoClave.ejs");
+      },
+ // ---------------------------------------------------------------------------------------------------------
   logout: (req,res) => {
       //console.log("se borra sesion " );
      res.clearCookie('usuarioEmail');
