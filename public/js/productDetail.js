@@ -32,13 +32,13 @@ window.onload = function () {
 
   /* CSS PARA VER SELECCIONADOS LOS COLRES */
 
-  let colorSelec = document.querySelectorAll("#label")
+/*   let colorSelec = document.querySelectorAll("#label")
 
   colorSelec.addEventListener("click",function(e){
 
       colorSelec.classList.add("border");
 
-    })
+    }) */
 
    /*  if (colorSelec.classList.contains("border")) {
       colorSelec.classList.remove("border");
