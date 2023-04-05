@@ -52,3 +52,44 @@ Sprint 6 :
 Nos propusimos cumplir todos los requisitos en tiempo y forma, no salió como quisimos, hubo algunos
 problemas de "fuerza mayor" que  impidieron reunirnos semanalmente y avanzar en cada tema . De todas
 formas vamos a terminar el sprint con casi todo realizado.
+
+Sprint 7 :
+Validaciones del front-end
+● Registro de usuarios
+○ Nombre y apellido
+■ Obligatorio.
+■ Deberá tener al menos 2 caracteres.
+○ Email
+■ Obligatorio.
+■ Deberá ser válido.
+■ (Opcional) → No puede repetirse con los e-mails ya registrados.
+○ Contraseña
+■ Obligatoria.
+■ Deberá tener al menos 8 caracteres.
+■ (Opcional) → Deberá tener letras mayúsculas, minúsculas, un
+número y un carácter especial.
+○ Imagen
+■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+● Login de usuarios (este ya lo deberían tener de sprints anteriores 😊☝️)
+○ Email
+■ Obligatorio.
+■ Deberá ser válido.
+■ (Opcional) → Debe existir en la base de datos.
+○ Contraseña
+■ Obligatoria.
+● Creación y modificación de productos
+○ Nombre
+■ Obligatorio.
+■ Deberá tener al menos 5 caracteres.
+○ Descripción
+■ Deberá tener al menos 20 caracteres.
+○ Imagen
+■ Deberá ser un archivo válido (JPG, JPEG, PNG, GIF).
+● (Opcional) Resto de los formularios del sitio
+
+Mejoramos en este sprint, nos reunimos semanalmente, completamos las tareas y completamos
+alguna validación del back que estaba pendiente. Nos queda pendiente, como opcional, implementar
+el carrito de compras.
+
+Sprint 8 :
+
