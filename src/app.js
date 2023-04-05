@@ -45,11 +45,19 @@ let rutaLogin = require ('./routers/rutaLogin.js');
 let rutaUsuarios = require('./routers/rutaUsuarios.js');
 let rutaProductos = require ('./routers/rutaProductos.js');
 
+//Aquí llamo a la ruta de las api de usarios para consumir en el dashboard con react
+const apiUsuariosRouter = require('./routers/api/usuarios')
+const apiProductosRouter = require('./routers/api/productos')
+
 // usando los enrutadores importados
 
 app.use(rutaLogin);
 app.use(rutaUsuarios);
 app.use(rutaProductos);
+
+//Aquí creo los recursos de mis APIs para consumir en el dashboard con react
+app.use('/api/usuarios',apiUsuariosRouter);
+app.use("/api/productos", apiProductosRouter);
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
 var mysql = require('mysql'); //<----- npm install mysql 
