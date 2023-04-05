@@ -19,7 +19,7 @@
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
-	top: 0;
+	top: -60px;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -37,7 +37,7 @@
 .modalDialog > div {
 	border: solid 3px #6c6061;
 	width:360px;
-	position: relative;
+	position: absolute;
 	margin: auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
@@ -70,6 +70,10 @@ transition: opacity 400ms ease-in;
 /* ------------------------ para emergente buscar -------------------------- */
 
 #buscar{	
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 	margin-top: 200px;
 }
 .control-buscar {
@@ -102,7 +106,7 @@ transition: opacity 400ms ease-in;
     text-align: center;
 }
 .boton3 {
-    width: 70%;
+    width: 100%;
     padding: 10px;
     color:var(--black-coral);
     border: none;
@@ -323,8 +327,9 @@ label, .foto {
 	padding: 10px;
   }
   .boton-inicio:hover, .registrarse:hover, .devolver:hover{
-  color: white;
-  background-color: var(--independence);
+  color: #2b2c29;
+   /*transform: scale(1.2);  */
+  
   }
   .img-ban {
 	margin-top: 140px; /*  <----    para header fijo   */
