@@ -40,6 +40,7 @@ app.use(express.urlencoded({extended:false})); // MUY IMPORTANTE!!!  para usar e
 app.use(express.json()); // MUY IMPORTANTE!!!  para usar el metodo POST
 
 //importamos los distintos enrutadores
+
 let rutaLogin = require ('./routers/rutaLogin.js');
 let rutaUsuarios = require('./routers/rutaUsuarios.js');
 let rutaProductos = require ('./routers/rutaProductos.js');
@@ -49,9 +50,14 @@ const apiUsuariosRouter = require('./routers/api/usuarios')
 const apiProductosRouter = require('./routers/api/productos')
 
 // usando los enrutadores importados
+
 app.use(rutaLogin);
 app.use(rutaUsuarios);
 app.use(rutaProductos);
+
+//Aquí creo los recursos de mis APIs para consumir en el dashboard con react
+app.use('/api/usuarios',apiUsuariosRouter);
+app.use("/api/productos", apiProductosRouter);
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
 var mysql = require('mysql'); //<----- npm install mysql 
