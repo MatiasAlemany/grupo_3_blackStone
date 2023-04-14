@@ -16,3 +16,4 @@
  6- Terminar estilos http://localhost:3041/productDetail, y poner OPTIONS en cantidad, arreglar carrusel.
  7- Hacer la pagina http://localhost:3041/productDetail funcional con el carrito, para mandar informacion.
  8- Validaciones de http://localhost:3041/productDetail.
+ 9- Validacion para antes de comprar, crearse una cuenta.
