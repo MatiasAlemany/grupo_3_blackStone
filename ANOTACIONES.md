@@ -6,3 +6,13 @@
  2023-31-1 se agrego cookie para recordar usuario.
  2023-04-02  se bloquean rutas que son de uso del administrador y supervisor exclusivamente.
  2023-07-02 se completo validaciones del formulario de devolucion de producto con middleware de ruta (devolverMiddleware).
+ ------------------------------
+ ANOTACIONES PARA TERMINAR LA PAGINA 13/04/:
+ 1- Arreglar imagenes http://localhost:3041/edicionProduct en mobile y tablet y laptop.
+ 2- Subir formularios modales.
+ 3- Revisar lupa.
+ 4- Ponerle estilos al carrito. (CSS)
+ 5- Hacer la pagina carrito funcional.
+ 6- Terminar estilos http://localhost:3041/productDetail, y poner OPTIONS en cantidad, arreglar carrusel.
+ 7- Hacer la pagina http://localhost:3041/productDetail funcional con el carrito, para mandar informacion.
+ 8- Validaciones de http://localhost:3041/productDetail.
