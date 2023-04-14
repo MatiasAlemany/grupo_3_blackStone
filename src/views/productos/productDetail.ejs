@@ -4,7 +4,8 @@
 <head>
     <%- include('../partials/head.ejs') %>
     
-    <link rel="stylesheet" href="/css/productDetail.css" /> 
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"> 
 
     <title>Detalle de Producto</title>
 </head>
@@ -50,9 +51,9 @@
             
         <!-- TALLES -->       
         <div class="talle talle1">
-            <div class="caja-talles">
+            <div>
              <h4>ELEGI TU TALLE:</h4>
-             <select id="talle" name="talle">
+             <select id="talle" class="select-css" name="talle">
                 <option class="listado-talles" value="S">S</option>
                 <option  class="listado-talles" value="M">M</option>
                 <option class="listado-talles" value="L">L</option>
@@ -75,7 +76,13 @@
         <!-- CANTIDAD -->
         <div class="talle talle1">
             <h4 for="cantidad">CANTIDAD:</h4>
-            <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
+            <select id="cantidad" class="select-css" name="cantidad">
+                <option class="listado-talles" value="1">1</option>
+                <option  class="listado-talles" value="2">2</option>
+                <option class="listado-talles" value="3">3</option>
+                <option class="listado-talles" value="4">4</option>
+                <option class="listado-talles" value="5">5</option>
+             </select>
         </div>
 
         <!-- DESCRIPCION DEL PRODUCTO -->
@@ -86,15 +93,13 @@
 
         <!-- BOTON AGREGAR A CARRITO -->
         <div>
-            <a href="/product-cart">
                 <input type="submit" class="boton-comprar" value="AGREGAR AL CARRITO">
-            </a>
         </div>
     </form>
 
         <!-- Productos RELACIONADOS: FUTURO CARRUSEL -->
         <div>
-            <h5 class="titulo-ProductosRelacionados">Productos RELACIONADOS:</h5>
+            <h5 class="titulo-ProductosRelacionados">Productos Relacionados:</h5>
             <div class="carrusel">
                 <div class="carrusel-items">       
                     <% for(let i=0; i < ProductosRelacionados.length; i++) {%>

@@ -26,7 +26,7 @@ main {
 }
 
 .imagen-art img {
-    /* max-width: 90%; */
+     max-width: 90%; 
     margin-left: 5%;
     margin-bottom: 10%;
 }
@@ -81,6 +81,8 @@ main {
     --bs-btn-border-color: #656f78;
 }
 
+
+
 /* LAPTOP */
 
 @media (min-width: 769px) {
@@ -102,6 +104,7 @@ main {
     
     .imagen-art img {
         width: 150%;
+        max-width: 150%;
     }
     
     .imagen-art label {
