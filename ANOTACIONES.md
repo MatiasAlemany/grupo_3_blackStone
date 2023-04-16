@@ -17,5 +17,5 @@
  7- Hacer la pagina http://localhost:3041/productDetail funcional con el carrito, para mandar informacion.
  8- Validaciones de http://localhost:3041/productDetail.
  9- Validacion para antes de comprar, crearse una cuenta.
- 10- Boton para volver a stoneBlack desde el dashboard.
+ x 10- Boton para volver a stoneBlack desde el dashboard.
  11- Cuando se clickea en un producto relacionado de localhost:3041/productDetail mandarlo a ese producto.

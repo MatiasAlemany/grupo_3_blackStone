@@ -72,7 +72,7 @@ const indexController = {
       raw : true,      // <-------  se agrega para que no traiga todos los metadatos que no usamos
     }).then(usuario => {
         
-      console.log(usuario);
+      //console.log(usuario);
 
       if (usuario == null) {    // <--------- verificamos si encontro el usuario en la BD
             return res.render("index.ejs", { allProducts: remerasTodas ,
@@ -81,7 +81,7 @@ const indexController = {
       }
 
       var usuarioBD = usuario;  //<----- acá guardo los datos del usuario que vienen de la BD
-      console.log(usuarioBD);//<---------- lo imprimo para ver si esta
+      //console.log(usuarioBD);//<---------- lo imprimo para ver si esta
       //console.log(usuarioBD.rol);
 
 // *******************  supervisor  ********************************************
@@ -142,10 +142,7 @@ const indexController = {
       });
 },
 //-------------------------------------------------------------------------------------------------------------------------
-   olvidoClave : (req, res) => {
-
-    return res.render("./usuarios/formOlvidoClave.ejs");
-      },
+   
  // ---------------------------------------------------------------------------------------------------------
   logout: (req,res) => {
       //console.log("se borra sesion " );

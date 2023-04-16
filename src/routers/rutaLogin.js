@@ -35,10 +35,8 @@ const upload = multer({storage: storage});
 router.get ('/', indexController.index);
 
 
-// olvido contraseña
-router.get ('/olvidoClave', indexController.olvidoClave);
 
-// olvido contraseña
+// terminar sesion
 router.get ('/logout', indexController.logout)
 
 //procesa el pedido get con ruta /

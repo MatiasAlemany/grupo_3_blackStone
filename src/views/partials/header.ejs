@@ -19,9 +19,9 @@
 
 
 
-            <div class="control-login">
-             <button class="envio" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
-             <button type="submit" class="envio" title="buscar" id="">Buscar</button>
+            <div class="reg-reset">
+             <button class="register" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
+             <button type="submit" class="register" title="buscar" id="">Buscar</button>
             </div>
         </form>
     </div>
@@ -52,10 +52,11 @@
                     
 
         </div>
-          <div class="control-login">
+
+        <div class="control-login">
                 <input type="password" id="clave-login" name="clave" class="control boton3" placeholder="Contraseña" >
-            </div>
-            <div class="control-login">
+            
+            <div class="reg-reset">
 
                     <%  if (locals.errors && errors.clave) {  %> 
                         <div class="texto-advertencia">
@@ -65,21 +66,27 @@
                         <div  class="texto-advertencia">
                             <small class="errorClaveLogin"></small>
                         </div>
-
-
-             <button class="envio" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
-             <button type="submit" id="btn-envio-login" class="envio">Enviar</button> 
             </div>
+        
+             <button class="register" type="reset" ><a href="/" title="Close" id="close1">Volver</a></button>
+             <button type="submit" id="btn-envio-login" class="register">Enviar</button> 
+        </div> 
 
             <div class="">
                 <label class="">
                     <input type="checkbox" class="recordar-box" name="recordarme">Recordar mi usuario
                 </label>
             </div>
+             
+            
         </form>
+
+        
+        
         <div class="contraseña">
             <p href="" class="olvido"></p> <a class="olvido"   href="/olvidoClave">Has olvidado tu contraseña?</a>
         </div>
+
     </div>
 </section>
 <% } %>
@@ -303,17 +310,10 @@
 <section class="cabecera">
     <a href="/">
     <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
-        
 
-    <% if (locals.isLogged) {   %> 
-        <div class="lupa-logged">
-            <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" style="border-radius: 100%;margin-left:40px;">
-                    
-        </div>
-       
-    <% } %>
+  
     <div class="lupa">
-        <a href="#buscar"><i class="fas fa-search"></i></a></div>
+        <a href="#buscar"><i class="fas fa-search lupa1"></i></a></div>
     
     <div class="carrito-compras">
         <a href="/product-cart">
@@ -336,6 +336,11 @@
 
         <% if (locals.isLogged) {   %> 
             <li class="menu-item"><a href="/logout" class="boton-inicio">Terminar sesion</a></li>
+
+            <li class="menu-item"><a href="/formEditarUsuario/<%= usuarioLogueado.id %> " class="boton-inicio">
+                <img src="/images/usuarios/<%= locals.usuarioLogueado.uri_avatar %>" width="70px" 
+                    style="border-radius: 100%;margin-top: -20px;margin-bottom: -30px;"></a></li>
+
         <% } else {%> 
             <li class="menu-item" ><a href="#inicio-sesion" class="boton-inicio">Inicio de sesion</a></li> <!----para formulario loginUsuario href=loginUsuario  -->
 
@@ -356,5 +361,4 @@
 
 </header>
 <!----------------------------- fin del header ----------------------------------------------------------------->
-
     

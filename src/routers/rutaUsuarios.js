@@ -76,7 +76,7 @@ router.get ('/registroUsuario/',userController.verFormulario);
 router.post ('/modalUsuario', upload.single("imagenUsuario"), imageValidatorMiddleware, validaciones,  userController.crearUsuario);// <----- validaciones
 
 //procesa el pedido post con ruta /formUsuario ------> ese nombre va en el action del HTML
-router.put ('/listaUsuarios/:id', userController.editarUsuario);
+router.put ('/listaUsuarios/:id', userController.editarUsuarioUser);
 
 
 // ******************* crear administrador *********************
@@ -87,9 +87,16 @@ router.get ('/listaTodosUsuarios', supervisorMiddleware ,userController.listarTo
 
 // ************ editar un usuario ***********************
 //procesa el pedido get con ruta /formUsuario ------> ese nombre va en el action del HTML
-router.get ('/formUsuario/:id', userController.editarUsuario);
+router.get ('/formEditarUsuario/:id', userController.editarUsuarioUser); //<------------- por el usuario
+
 //procesa el pedido post con ruta /formUsuario ------> ese nombre va en el action del HTML
-router.put ('/formUsuario/:id', upload.single("imagenUsuarioEditada"), userController.procesoEdicionUsuario);
+router.put ('/formEditarUsuario/:id', upload.single("imagenUsuarioEditada"), userController.procesoEdicionUsuarioUser);
+
+
+//procesa el pedido get con ruta /formUsuario ------> ese nombre va en el action del HTML
+router.get ('/formUsuario/:id', userController.editarUsuarioAdmin); //<------------- por el administrador
+//procesa el pedido post con ruta /formUsuario ------> ese nombre va en el action del HTML
+router.put ('/formUsuario/:id', upload.single("imagenUsuarioEditada"), userController.procesoEdicionUsuarioAdmin);
 
 
 // *************** eliminar un usuario *********************
@@ -121,8 +128,12 @@ router.post ('/listaDevolucion',  userController.listaDevolucion);
 
 
 // ************** Recuperar contraseña********************
-//procesa el pedido get con ruta /claveIncorrecta     <------ ese nombre va en el action del HTML
-router.get ('/claveIncorrecta', userController.claveIncorrecta);
+
+
+// olvido contraseña
+router.get ('/olvidoClave', userController.olvidoClave);
+//procesa el pedido post con ruta /claveIncorrecta     <------ ese nombre va en el action del HTML
+router.post ('/enviarMail', userController.enviarMail);
 
 //exportamos la variable router ya con todas las rutas guardadas, que se usará en app.js
 module.exports = router;
