@@ -8,7 +8,7 @@
  2023-07-02 se completo validaciones del formulario de devolucion de producto con middleware de ruta (devolverMiddleware).
  ------------------------------
  ANOTACIONES PARA TERMINAR LA PAGINA 13/04/:
- 1- Arreglar imagenes http://localhost:3041/edicionProduct en mobile y tablet y laptop.
+ 1- Arreglar imagenes http://localhost:3041/edicionProduct en mobile y tablet y laptop. (TERMINADO)
  2- Subir formularios modales.
  3- Revisar lupa.
  4- Ponerle estilos al carrito. (CSS)
