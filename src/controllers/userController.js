@@ -535,7 +535,7 @@ procesoEdicionUsuarioUser: async (req, res) => {
         secure: true,
         auth: {
             user: 'ingenierorik@gmail.com',
-            pass: 'fjitlruglsxyhwxl'
+            pass: ''  //<-------------  aca va la clave del mail
         },
         tls: {
             rejectUnauthorized: false
