@@ -47,7 +47,7 @@
         </div>
 
         <!-- FORMULARIO COMPRA -->
-        <form id="form" onsubmit="agregarAlcarrito(); return false;"></form>
+        <form id="form" action="/product-cart" method="GET">
             
         <!-- TALLES -->       
         <div class="talle talle1">
@@ -93,7 +93,7 @@
 
         <!-- BOTON AGREGAR A CARRITO -->
         <div>
-                <input type="submit" class="boton-comprar" value="AGREGAR AL CARRITO">
+                <input type="submit" class="boton-comprar" id="btnComprar" value="AGREGAR AL CARRITO">
         </div>
     </form>
 
