@@ -46,7 +46,7 @@
         </div>
 
         <!-- FORMULARIO COMPRA -->
-        <form id="form" onsubmit="agregarAlcarrito(); return false;"></form>
+        <form id="form" action="/product-cart" method="GET">
             
         <!-- TALLES -->       
         <div class="talle talle1">
@@ -99,7 +99,7 @@
                 <div class="carrusel-items">       
                     <% for(let i=0; i < ProductosRelacionados.length; i++) {%>
                     <div class="carrusel-item">
-                        <a href="/productDetail/<%= Productos.id%>"">
+                        <a href="/productDetail/<%= Productos.id%>">
                     <img src="/images/<%= ProductosRelacionados[i].img%>">
                 </a>
                 </div>

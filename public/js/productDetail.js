@@ -1,16 +1,16 @@
 window.onload = function () {
   /* FUNCION PARA ENVIAR INFO AL CARRITO */
 
-  /* function agregarAlCarrito() {
+   function agregarAlCarrito() {
     var talle = document.getElementById("talle").value;
     var cantidad = document.getElementById("cantidad").value;
     var colores = [];
- */
+ 
   // Obtiene los checkboxes de color
-/*   var checkboxes = document.getElementsByName("color"); */
+  var checkboxes = document.getElementsByName("color"); 
 
    // Recorre los checkboxes y agrega los colores seleccionados a la lista
-  /*  for (var i = 0; i < checkboxes.length; i++) {
+    for (var i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
       colores.push(checkboxes[i].value);
     }
@@ -28,7 +28,16 @@ window.onload = function () {
   
     alert("El item se ha agregado al carrito.");
   }
- */
+
+  let form = document.querySelector("#form")
+
+  form.addEventListener("submit", function(e){
+     e.preventDefault();
+      agregarAlCarrito();
+     form.submit();
+     console.log(JSON.parse(localStorage.getItem("carrito")))
+  })
+ 
 
   /* CSS PARA VER SELECCIONADOS LOS COLRES */
 
@@ -76,5 +85,5 @@ window.onload = function () {
 
   start();
 
-
+  
 };
