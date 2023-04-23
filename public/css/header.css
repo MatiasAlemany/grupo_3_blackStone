@@ -272,6 +272,9 @@ label, .foto {
   .logo:hover {
 	transform: scale(1.2);
   }
+  .avatar-usuario{  
+	width :40px
+ }
   
   .lupa {
 	
@@ -291,6 +294,10 @@ label, .foto {
 	color:#7c7c7c;
 	margin-left: 25px;
 	font-size: 20px;
+  }
+  .cart-number{
+	color: red;
+	font-size: 18px;
   }
   .lupa1:hover{
 	transform: scale(1.2);
@@ -320,7 +327,7 @@ label, .foto {
 
   }
   .menu{
-	display: none;
+	display: none;/* <---------- baja y sube el menu  inicio...        registrar   devolver  */
 	
   }
   .menu_visible{
@@ -361,9 +368,13 @@ label, .foto {
 		  font-size: 30px;
 		}
 		.menu{
-			margin-top: -30px;
-			
+			margin-top: -50px;/* <---------- baja y sube el menu  inicio...        registrar   devolver  */
+			margin-left: 160px;
+			margin-right: 160px;
 		  }
+		  .avatar-usuario{  
+			width :70px
+		 }
 		.barra-menu ul{
 		  display: flex;
 		  flex-direction: row;
@@ -422,10 +433,16 @@ label, .foto {
 			font-size: 24px;
 		  }
 	  }
-	  @media (min-width:1200px){
+
+
+	  @media (min-width:1440px){
 		.lupa-logged {
 			display: block;
 	  }
+	  .menu{                      /* <---------- baja y sube el menu  inicio...        registrar   devolver  */
+		margin-top: -55px;	
+	  }
+
 	  .barra-menu{   /*  <-----------   HEADER FIJO  */
 		background-color:transparent;	
 	}
@@ -435,14 +452,18 @@ label, .foto {
 
 	  /* --------------------------- form olvido clave ---------------------------------- */
 
+	  * {
 
-	  .container-form-olvido-clave{
+		text-decoration: none;
+		list-style-type: none;
+	  }
+	.container-form-olvido-clave{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-start;
 		padding-bottom: 20px;
-		width:90%;
+		width:95%;
 		margin: auto;
 		padding-top: 20px;
 		margin-top: 80px;
@@ -459,25 +480,55 @@ label, .foto {
 	width: 30%;
 	height: 30px;
 	font-size: 20px;
-	text-decoration: none;
+	
 	}
+	.boton-form-olvido-clave-volver{
+		margin-top: 20px;
+		background-color: rgb(190, 240, 140);
+		border-radius: 4px;
+		width: 25%;
+		height: 30px;
+		font-size: 20px;
+		
+		}
 	.email-form-olvido-clave{
 		margin-top: 20px;
-		width: 80%;
+		width: 94%;
 		height: 30px;
 		border-radius: 5px;
 		font-size: 20px;
 	   
 	}
+	.pie-error {
+		color:red;
+		text-align: center;
+	  }
+	
+	  .pie-form {
+		color:green;
+		text-align: center;
+	  }
+
+	  #recaptcha{
+		
+		text-align: center;
+		margin-left:10px;
+	}
+
+
 	@media (min-width:426px){
 	.container-form-olvido-clave{
-		width: 70%;
+		width: 90%;
 	}
+	.boton-form-olvido-clave{
+		width: 40%;
 	}
-	@media (min-width:968px){
-		.container-form-olvido-clave{ width: 50%;
-		}
-		.boton-form-olvido-clave{
-			width: 20%;
-		}
+	.boton-form-olvido-clave-volver{
+		width: 14%;
 	}
+}
+@media (min-width:968px){
+    .container-form-olvido-clave{ width: 50%;
+    }
+   
+}

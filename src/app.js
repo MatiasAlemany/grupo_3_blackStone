@@ -6,7 +6,8 @@ const session = require('express-session');
 const usuarioLogueadoMiddleware = require('./middlewares/usuarioLogueadoMiddleware.js');
 const loginVacioMiddleware = require ( './middlewares/loginVacioMiddleware.js');
 const cookieParser = require ('cookie-parser');
-
+require('dotenv').config();
+const cors = require ('cors') // <--------- para que puedan ver los datos de nuestra api  hacer  --> npm i cors
 
 //const { cookie } = require('express-validator'); // <------------- ver que es?
 
@@ -24,6 +25,8 @@ app.set('views', './src/views');
 // o tambien asi :
 //app.set('views', path.join(__dirname,'../src/views'));
 
+app.use(cors());
+
 // usando los recursos estaticos css,images,etc
 app.use(cookieParser());
 app.use(session({
@@ -40,24 +43,28 @@ app.use(express.urlencoded({extended:false})); // MUY IMPORTANTE!!!  para usar e
 app.use(express.json()); // MUY IMPORTANTE!!!  para usar el metodo POST
 
 //importamos los distintos enrutadores
-
 let rutaLogin = require ('./routers/rutaLogin.js');
 let rutaUsuarios = require('./routers/rutaUsuarios.js');
 let rutaProductos = require ('./routers/rutaProductos.js');
 
 //Aquí llamo a la ruta de las api de usarios para consumir en el dashboard con react
-const apiUsuariosRouter = require('./routers/api/usuarios')
-const apiProductosRouter = require('./routers/api/productos')
+const apiUsuariosRouter = require('./routers/api/usuarios.js')
+const apiProductosRouter = require('./routers/api/productos.js')
+
+//Aqui llamo a la ruta para la api de consumo del carrito
+const apiController = require('./routers/api.js')
 
 // usando los enrutadores importados
-
 app.use(rutaLogin);
 app.use(rutaUsuarios);
 app.use(rutaProductos);
 
 //Aquí creo los recursos de mis APIs para consumir en el dashboard con react
-app.use('/api/usuarios',apiUsuariosRouter);
+app.use('/api/usuarios', apiUsuariosRouter);
 app.use("/api/productos", apiProductosRouter);
+
+//Aquí creo los recursos de mi API local
+app.use('/api/product', apiController);
 
 /*************************probamos conexion  con la base de datos REMOTA *********************/
 var mysql = require('mysql'); //<----- npm install mysql 
@@ -102,3 +109,4 @@ app.listen(process.env.PORT || 3041, () =>  // si subimos a un hosting este nos 
 console.log('Servidor corriendo en http://localhost:3041')
 );
 
+// subido a RENDER  como  https://stoneblack.onrender.com

@@ -534,8 +534,8 @@ procesoEdicionUsuarioUser: async (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'ingenierorik@gmail.com',
-            pass: ''  //<-------------  aca va la clave del mail
+            user: process.env.USER,
+            pass: process.env.PASS  //<-------------  aca va la clave del mail
         },
         tls: {
             rejectUnauthorized: false
@@ -568,7 +568,7 @@ procesoEdicionUsuarioUser: async (req, res) => {
 
      await db.Usuarios.update(
       {
-        clave: clave, // <------------ se encripta la clave
+        clave: bcryptjs.hashSync(clave1111, 10), // <------------ se encripta la clave
       },
       {
         where: {  email : email}, 
