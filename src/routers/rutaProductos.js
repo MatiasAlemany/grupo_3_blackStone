@@ -43,7 +43,7 @@ router.post ('/productDetail/:id', productsController.detalleProd);
 //Renderiza la pagina creacion producto
 router.get ('/creacionProduct', adminMiddleware, productsController.creacionProd); //<-----  solo el administrador ingresa
 //Procesa la creacion del producto
-router.post ('/creacionProduct', upload.single("imagenProducto"), validacionesForm, productsController.procesoCreacion)
+router.post ('/creacionProduct', upload.any(), productsController.procesoCreacion)
 
 
 // ************************* listado de ventas ***************************
