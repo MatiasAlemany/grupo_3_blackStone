@@ -36,18 +36,21 @@
 </div>
         
         <!-- DETALLES DEL PRODUCTO DEBAJO DE LA IMAGEN -->
+
+        
+
         <div class="caja-detalles">
             <div class="titulo-articulo">
-                <h2><%= Productos.nombre%></h2>
+                <h2 id="nombreProducto"><%= Productos.nombre%></h2>
             </div>
             <div class="precio-articulo">
-                <h3>$<%= Productos.precio%></h3>
+                <h3 id="precio">$<%= Productos.precio%></h3>
             </div>
         </div>
-
+        
         <!-- FORMULARIO COMPRA -->
         <form id="form" action="/product-cart" method="GET">
-            
+
         <!-- TALLES -->       
         <div class="talle talle1">
             <div class="caja-talles">

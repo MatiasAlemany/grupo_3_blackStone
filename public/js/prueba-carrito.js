@@ -1,28 +1,30 @@
-/* window.addEventListener("load", function () { 
+ window.addEventListener("load", function () { 
     
-    document.getElementById("agregarAlCarritoForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evitar que se recargue la página
-    agregarAlCarrito(); // Llamar a la función para agregar el item al carrito
-    mostrarItemsCarrito(); // Actualizar la tabla de items en el carrito
-});
+    // Obtén el contenido del carrito del objeto localStorage y conviértelo en un arreglo
+var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  function mostrarItemsCarrito() {
-    var carrito = JSON.parse(localStorage.getItem("carrito")) || []; // Obtener los items del carrito del localStorage
-    var itemsHtml = ""; // Variable para guardar el HTML de los items del carrito
-    for (var i = 0; i < carrito.length; i++) {
-        var item = carrito[i];
-        var coloresHtml = ""; // Variable para guardar el HTML de los colores del item
-        for (var j = 0; j < item.colores.length; j++) {
-            coloresHtml += "<span class='color " + item.colores[j] + "'></span>";
-        }
-        itemsHtml += "<tr>";
-        itemsHtml += "<td>" + item.producto + "</td>";
-        itemsHtml += "<td>" + item.talle + "</td>";
-        itemsHtml += "<td>" + item.cantidad + "</td>";
-        itemsHtml += "<td>" + coloresHtml + "</td>";
-        itemsHtml += "</tr>";
-    }
-    document.getElementById("itemsCarrito").innerHTML = itemsHtml; // Actualizar la tabla con los items del carrito
+// Obtén la referencia a la tabla del carrito y su cuerpo (tbody)
+var tablaCarrito = document.querySelector("#itemsCarrito");
+
+// Crea una función que agregue un elemento del carrito a la tabla
+function agregarElementoAlCarrito(item) {
+   
+  var fila = document.createElement("tr");
+  fila.innerHTML = `
+    <td>${tablaCarrito.children.length + 1}</td>
+    <td>${item.nombreProducto}</td>
+    <td>${item.precio}</td>
+    <td>${item.talle} - ${item.colores.join(", ")}</td>
+    <td>${item.cantidad}</td>
+    
+    <td><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+  `;
+  tablaCarrito.appendChild(fila);
 }
 
-}); */
+// Agrega los elementos del carrito a la tabla
+for (var i = 0; i < carrito.length; i++) {
+  agregarElementoAlCarrito(carrito[i]);
+}
+
+});

@@ -130,7 +130,7 @@ const productsController = {
     if(errors.isEmpty()){
             await Productos.create({
                   nombre: req.body.nombre,
-                  img: req.body.img,
+                  img: req.file ? req.file.filename : " ",
                   descripcion: req.body.descripcion,
                   precio: req.body.precio,
                   descuento: req.body.descuento,

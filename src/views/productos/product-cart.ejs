@@ -65,6 +65,7 @@
 
 -->
                 <div class="card-body">
+                    <form id="agregarAlCarritoForm">
                     <table class="table table-responsive-md mb-0">
                         <thead>
                             <tr>
@@ -78,17 +79,18 @@
                                     <strong>Precio</strong>
                                 </th>
                                 <th class="text-center">
-                                    <strong>Cantidad</strong>
+                                    <strong>Talle y Color</strong>
                                 </th>
                                 <th class="text-center">
-                                    <strong>Subtotal</strong>
+                                    <strong>Cantidad</strong>
                                 </th>
                                 <th style="width: 50px;"></th>
                             </tr>
                         </thead>
-                        <tbody class="cartRows" >
+                        <tbody class="cartRows" id="itemsCarrito">
                         </tbody>
                     </table>
+                </form>
                     <div class="card-footer text-right">
                         <h2>Total: <span class="totalAmount">$ 0</span></h2>
                     </div>
@@ -118,7 +120,7 @@
     <!--------------------------------- footer --------------------------------------------------------------->
     <%- include('../partials/footer.ejs') %>
     
-    <script src="/js/comprarCarrito.js"></script>
+    <script src="/js/carrito.js"></script>
 </body>
 
 </html>
