@@ -12,9 +12,9 @@ const {validationResult, body} = require('express-validator');
 
 /* En la constante "remeras" ya tenemos los productos que están 
 guardados en la carpeta data como Json (un array de objetos literales) */
-const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
+//const remerasFilePath = path.join(__dirname, "../data/dataRemeras.json");
 //const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
+//const remeras = JSON.parse(fs.readFileSync(remerasFilePath, "utf-8"));
 //const usuariosJS = JSON.parse(fs.readFileSync(usuariosFilePath, "utf-8"));
 
 /* BASE DE DATOS */
@@ -76,7 +76,7 @@ const productsController = {
     },
     {
       where: {id: productoId}
-    }).then
+    })
 
      return res.redirect("/")
   
@@ -143,7 +143,7 @@ const productsController = {
                   uri_foto3: req.files ? req.files[2].filename : " ",
     })
 
-    res.redirect("/");
+    return res.render("./productos/creacionProduct");
     } else {
       console.log(Productos.PRIMARY)
      return res.render("./productos/creacionProduct", 

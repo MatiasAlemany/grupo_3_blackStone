@@ -13,7 +13,7 @@ const productosAPIController = {
         meta: {
           status: 200,
           total: productos.length,
-          url: "api/productos",
+          url: "https://stoneblack.onrender.com/api/productos",
         },
         data: productos,
       };
@@ -29,7 +29,7 @@ const productosAPIController = {
           meta: {
             status: 200,
             total: productos.length,
-            url: "/api/productos/:id",
+            url: "https://stoneblack.onrender.com/api/productos/:id",
           },
           data: productos,
         };
