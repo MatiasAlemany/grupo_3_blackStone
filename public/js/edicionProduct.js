@@ -79,7 +79,7 @@ window.onload = function () {
     //BOTON BORRAR ARTICULO
 
     btnBorrar.addEventListener("click", function(e){
-        e.preventDefault()
+        //e.preventDefault()
 
          let confirma = confirm("¿Seguro deseas eliminar este articulo?")
 

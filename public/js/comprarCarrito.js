@@ -61,6 +61,9 @@ if (localStorage.carrito && localStorage.carrito != "[]") {
                 <th scope="row">${index + 1}</th>
                 <td>${product.data.nombre}</td>
                 <td>${product.data.talle}</td>
+
+                <td>${product.data.color}</td>
+
                 <td>$ ${product.data.precio}</td>
                 <td class="text-center">${item.cantidad}</td>
                 <td class="text-center">$ ${parseFloat(
@@ -74,6 +77,9 @@ if (localStorage.carrito && localStorage.carrito != "[]") {
             productId: product.data.id,
             nombre: product.data.nombre,
             talle: product.data.talle,
+
+            color: product.data.color,
+
             precio: product.data.precio,
             cantidad: item.cantidad,
           });

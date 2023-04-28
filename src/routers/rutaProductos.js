@@ -43,7 +43,7 @@ router.post ('/productDetail/:id', productsController.detalleProd);
 //Renderiza la pagina creacion producto
 router.get ('/creacionProduct', adminMiddleware, productsController.creacionProd); //<-----  solo el administrador ingresa
 //Procesa la creacion del producto
-router.post ('/creacionProduct', upload.any(), productsController.procesoCreacion)
+router.post ('/creacionProduct', upload.any(),  validacionesForm, productsController.procesoCreacion)
 
 
 // ************************* listado de ventas ***************************
@@ -63,7 +63,7 @@ router.get ('/listarProdBuscado', productsController.listarProdBuscado);
 //Renderiza la pagina de editar producto 
 router.get ('/edicionProduct/:id', productsController.edicionProd);
 //Renderiza la pagina de editar producto 
-router.post('/edicionProduct/:id', upload.single("imagenProducto"),validacionesForm, productsController.procesoEdicion);
+router.post('/edicionProduct/:id', upload.any(), validacionesForm, productsController.procesoEdicion);
 
 
 // ************************** Eliminar un producto **************************

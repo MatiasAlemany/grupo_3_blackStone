@@ -59,10 +59,11 @@ const productsController = {
 
   procesoEdicion: async (req, res) => {
     let productoId = req.params.id;
-
+    
      await Productos
     .update(
       {
+        /*
       id: req.body.id,
       nombre: req.body.nombre,
       imagenUsuario: req.body.img,
@@ -73,10 +74,23 @@ const productsController = {
       color: req.body.color,
       uri_foto2: req.body.uri_foto2,
       uri_foto3: req.body.uri_foto3
+        */
+      id: req.body.id,
+      nombre: req.body.nombre,
+      img: req.files ? req.files[0].filename : " ",
+      descripcion: req.body.descripcion,
+      precio: req.body.precio,
+      descuento: req.body.descuento,
+      talle: req.body.talle,
+      color: req.body.color,
+      uri_foto2: req.files ? req.files[1].filename : " ",
+      uri_foto3: req.files ? req.files[2].filename : " ",
     },
     {
       where: {id: productoId}
     })
+
+
 
      return res.redirect("/")
   
@@ -114,8 +128,8 @@ const productsController = {
 
     await Productos
     .destroy({where: {id: id}, force: true}) // force: true es para asegurar que se ejecute la acción
-    .then(()=>{
-        return res.redirect('/')})
+    
+        return res.redirect('/')
 
   },
 
