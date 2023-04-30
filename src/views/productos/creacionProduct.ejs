@@ -15,7 +15,7 @@
 <body class="body">
     <main>
         <div class="logo-ext">
-            <a href="/">
+            <a href="/listadoProductos">
                 <img class="logo" src="/images/StoneBlack.png" alt="logo"/></a>
             </div>
 
@@ -39,7 +39,7 @@
                         <div class="caja-formulario">
                             <!-- NOMBRE ARTICULO -->
                             <div>          
-                                <label for="foto">Nombre articulo:</label>
+                                <label for="foto">Nombre de artículo:</label>
                                 <input type="text" name="nombre"
                                     value="<%= locals.old && old.nombre ? old.nombre : '' %>" class="form-control"
                                     id="nombre" placeholder="Nombre de articulo" />
@@ -47,20 +47,20 @@
                             </div>
                             <!-- DESCRIPCION ARTICULO -->
                             <div>
-                                <label for="foto">Descripcion articulo:</label>
+                                <label for="foto">Descripcion de artículo:</label>
                                 <input outline="none" type="text" name="descripcion"
                                     value="<%= locals.old && old.descripcion ? old.descripcion : '' %>"
-                                    class="form-control" placeholder="Descripcion de articulo" id="descripcion" />
+                                    class="form-control" placeholder="Descripcion de articulo, mínimo 20 caracteres" id="descripcion" />
                             </div>
                             <!-- Talle ARTICULO -->
                             <div>
-                                <label for="">Talle articulo:</label>
+                                <label for="">Talle de artículo:</label>
                                 <input type="text" name="talle" class="form-control"
                                     value="<%= locals.old && old.talle ? old.talle : '' %>" id="talle" />
                             </div>
                             <!-- COLOR ARTICULO -->
                             <div>
-                                <label for="">Color articulo:</label>
+                                <label for="">Color de artículo:</label>
                                 <input type="text" name="color" class="form-control"
                                     value="<%= locals.old && old.color ? old.color : '' %>" id="color" />
                             </div>
@@ -74,7 +74,7 @@
                             </div>
                             <!-- DESCUENTO ARTICULO -->
                             <div>
-                                <label for="foto">Descuento de producto:</label>
+                                <label for="foto">Descuento de producto (Debes cargar 3 fotos) :</label>
                                 <input type="text" name="descuento" class="form-control" id="descuento"
                                     value="<%= locals.old && locals.descuento ? old.descuento : '' %>"
                                     placeholder="Descuento de articulo" id="descuento" />

@@ -176,6 +176,8 @@ const userController = {
     db.Usuarios.findAll({
       where: { rol: "usuario" }, //<---- busco en la tabla usuarios si existe el mail que viene del body
       raw: true, // <-------  se agrega para que no traiga todos los metadatos que no usamos
+      order : [['nombre_y_apellido' ,'ASC']]   // ordenado alfabeticamente
+
     })
       .then((usuarios) => {
         return res.render("./usuarios/listaUsuarios.ejs", {
@@ -192,6 +194,7 @@ const userController = {
     db.Usuarios.findAll({
       where: { rol: { [Op.ne]: "supervisor" } }, //el supervisor no debe aparecer en la lista
       raw: true, // <-------  se agrega para que no traiga todos los metadatos que no usamos
+      order : [['nombre_y_apellido' ,'ASC']]   // ordenado alfabeticamente
     })
       .then((usuariosTodos) => {
         return res.render("./usuarios/listaTodosUsuarios.ejs", {

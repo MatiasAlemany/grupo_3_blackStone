@@ -77,14 +77,12 @@ if (localStorage.carrito && localStorage.carrito != "[]") {
             productId: product.data.id,
             nombre: product.data.nombre,
             talle: product.data.talle,
-
             color: product.data.color,
-
             precio: product.data.precio,
             cantidad: item.cantidad,
           });
 
-          console.log(products);
+          //console.log(products);
 
         } else {
           carrito.splice(index, 1);

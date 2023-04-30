@@ -64,7 +64,7 @@ const productsController = {
     .update(
       {
         /*
-      id: req.body.id,
+      id: req.body.id,      //para una sola imagen
       nombre: req.body.nombre,
       imagenUsuario: req.body.img,
       descripcion: req.body.descripcion,
@@ -75,7 +75,8 @@ const productsController = {
       uri_foto2: req.body.uri_foto2,
       uri_foto3: req.body.uri_foto3
         */
-      id: req.body.id,
+       
+      id: req.body.id,            // para 3 imagenes a la vez
       nombre: req.body.nombre,
       img: req.files ? req.files[0].filename : " ",
       descripcion: req.body.descripcion,
@@ -85,14 +86,17 @@ const productsController = {
       color: req.body.color,
       uri_foto2: req.files ? req.files[1].filename : " ",
       uri_foto3: req.files ? req.files[2].filename : " ",
+      
     },
     {
       where: {id: productoId}
     })
 
 
-
-     return res.redirect("/")
+    var remerasTodas =  await db.Productos.findAll();
+    return res.render("./productos/listadoProductos.ejs", {allProducts: remerasTodas});
+  
+     //return res.redirect("/")
   
   },
   
@@ -146,6 +150,7 @@ const productsController = {
 
     if(errors.isEmpty()){
             await Productos.create({
+              
                   nombre: req.body.nombre,
                   img: req.files ? req.files[0].filename : " ",
                   descripcion: req.body.descripcion,
