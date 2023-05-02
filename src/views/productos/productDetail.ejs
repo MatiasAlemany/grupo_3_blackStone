@@ -55,7 +55,7 @@
         <!-- TALLES -->       
         <div class="talle talle1">
             <div class="caja-talles">
-             <h4>ELEGI TU TALLE:</h4>
+             <h4 class="distancia-select">ELEGI TU TALLE:</h4>
              <select id="talle" name="talle">
                 <option class="listado-talles" value="S">S</option>
                 <option  class="listado-talles" value="M">M</option>
@@ -77,8 +77,8 @@
         </div>
 
         <!-- CANTIDAD -->
-        <div class="talle talle1">
-            <h4 for="cantidad">CANTIDAD:</h4>
+        <div class="cantidad">
+            <h4 class="distancia-select" for="cantidad">CANTIDAD:</h4>
             <input type="number" id="cantidad" name="cantidad" min="1" max="10" required>
         </div>
 
@@ -104,7 +104,7 @@
 
         <!-- Productos RELACIONADOS: FUTURO CARRUSEL -->
         <div>
-            <h5 class="titulo-ProductosRelacionados">Productos RELACIONADOS:</h5>
+            <h5 class="titulo-ProductosRelacionados">Productos Relacionados:</h5>
             <div class="carrusel">
                 <div class="carrusel-items">       
                     <% for(let i=0; i < ProductosRelacionados.length; i++) {%>

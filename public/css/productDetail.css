@@ -107,6 +107,8 @@ body {
 
   .caja-talles {
     display: flex;
+    align-items: center;
+    
   } 
 
   /* COLORES */
@@ -185,11 +187,21 @@ body {
   }  
 
   .titulo-ProductosRelacionados {
-    
       font-size: 1.3em;
       margin-top: revert;
       text-align: center;
-  
+  }
+
+  /* CANTIDAD */
+
+  .cantidad {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+  }
+
+  .distancia-select {
+    margin-right: 1%;
   }
   
   /* DESCRIPCION ARTICULO */
