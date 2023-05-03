@@ -23,7 +23,7 @@ const imageValidatorMiddleware = require('../middlewares/imageValidatorMiddlewar
 
 /* VALIDACIONES */
 const validacionesForm = [
-    body('nombre').notEmpty().withMessage("Completa el nombre").isLength({min:5}),
+    body('nombre').notEmpty().withMessage("Completa el nombre"),
     body('descripcion').notEmpty().withMessage("Completa la descripcion").isLength({min:20}),
     body('precio').notEmpty().withMessage("Completa el precio"),
     body('talle').notEmpty().withMessage("Completa el talle"),

@@ -568,7 +568,8 @@ procesoEdicionUsuarioUser: async (req, res) => {
     // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
     //res.send("el mail se envió correctamente");
-
+    const clave1111 ="1111";
+    
      await db.Usuarios.update(
       {
         clave: bcryptjs.hashSync(clave1111, 10), // <------------ se encripta la clave
